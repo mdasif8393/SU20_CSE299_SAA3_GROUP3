@@ -2,6 +2,7 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 a,
@@ -10,6 +11,8 @@ a:link{
    text-decoration: none;
    color: #000;
 }
+
+/*****************************  PRODUCT LIST PAGE *****************************/
 
 .navbar{
     background-color: #f5f5f5;
@@ -80,5 +83,42 @@ a:link{
     margin-top: 0.5rem;
  }
 
+/*****************************  SINGLE PRODUCT PAGE *****************************/
 
+.back-button{
+    margin-left: 3rem;
+}
 
+.back-button button{
+    padding: 0.3rem 1rem 0.3rem 1rem;
+    background-color: #bdbdbd; 
+    border: 1px solid #bdbdbd;
+    border-radius: 1rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
+.single-product-image{
+    margin-left: 7rem;
+    margin-top: 1rem;
+}
+
+.single-product-image img{
+    width: 30rem;
+    height: 20rem;
+}
+
+.product-heading{
+    text-align: center;
+    color: #000;
+}
+
+.cart-button button{
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+    clear:both;
+    width: 25rem;
+    height: 2.5rem;
+    margin-left: 10rem;
+}
