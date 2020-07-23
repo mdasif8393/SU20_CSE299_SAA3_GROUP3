@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet"/>
+    <link href="grid.css" rel="stylesheet"/>
     <title>Panda</title>
 </head>
 <body>
     <!----------------------Navbar--------------------------->
     <header>
         <nav>
-            <div class="row">
+            <div class="row navbar">
                 <div class="col span-1-of-2">
                    <div class="nav-logo">
-                      <p>logo</p>
+                      <img src="img/logo.png"/>
                    </div>
                 </div>
                 <div class="col span-1-of-2">
                     <div class="nav-links">
                        <ul>
-                           <li>Browse Products</li>
-                           <li>Sign up</li>
-                           <li>My Cart</li>
+                           <li><a href="#">My Cart</a></li>
+                           <li><a href="#">Login</a></li>
+                           <li><a href="#">Sign up</a></li>
+                           <li><a href="#">Products</a></li>
                        </ul>
                     </div>
                  </div>
@@ -31,11 +34,18 @@
     <!----------------------Product Category--------------------------->
     <section>
          <div class="row">
-            <div></div>
-            <div class="col span-1-of-1">
-
+            <div class="col span-2-of-2 category-border-length">
+               <div class="category-links">
+                <ul>
+                    <li>Clothing</li>
+                    <li>Accessories</li>
+                    <li>Gadgets</li>
+                    <li>Baby Products</li>
+                    <li>Cosmetics</li>
+                    <li>Tools</li>
+                </ul>
+               </div>
             </div>
-            <div></div>
          </div>
     </section>
 
@@ -43,9 +53,78 @@
     <section>
         <div class="content">
            <div class="row">
-              <div class="col span-1-of-3">
-                  <div></div>
+              <div class="col span-2-of-2">
+                  <div class="product-container">
+                    <div class="product-list">
+                      <ul>
+                          <li>
+                            <a href="#">
+                               <img src="img/white-shirt.jpg"/>
+                               <p>Lorem, ipsum dolor sit </p>
+                               <p>Tk. 250</p>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                                <img src="img/shoe.jpg"/>
+                                <p>Lorem, ipsum dolor sit </p>
+                                <p>Tk. 250</p>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                                <img src="img/pink-dress.jpg"/>
+                                <p>Lorem, ipsum dolor sit </p>
+                                <p>Tk. 250</p>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                                <img src="img/mobile.jpg"/>
+                                <p>Lorem, ipsum dolor sit </p>
+                                <p>Tk. 250</p>
+                            </a>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
               </div>
+              <div class="col span-2-of-2">
+                <div class="product-container">
+                  <div class="product-list">
+                    <ul>
+                        <li>
+                            <a href="#">
+                               <img src="img/red-skirt.jpg"/>
+                               <p>Lorem, ipsum dolor sit </p>
+                               <p>Tk. 250</p>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                                <img src="img/mobile.jpg"/>
+                                <p>Lorem, ipsum dolor sit </p>
+                                <p>Tk. 250</p>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                                <img src="img/watch.jpg"/>
+                                <p>Lorem, ipsum dolor sit </p>
+                                <p>Tk. 250</p>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                                <img src="img/shoe.jpg"/>
+                                <p>Lorem, ipsum dolor sit </p>
+                                <p>Tk. 250</p>
+                            </a>
+                          </li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
            </div>
         </div>
     </section>
