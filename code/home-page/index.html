@@ -9,32 +9,45 @@
 </head>
 <body>
     
-    <div class="container">
+    <div class="Container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="">
                 <img src="images/logo.png" alt="">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
+          
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#shoes">Shoes</a>
+                  <a class="nav-link" href="#">Backpack</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#backpack">Backpack</a>
+                    <a class="nav-link" href="#">Shoes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Smartphones</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link " href="#subscribe" >Subscribe</a>
-                </li>
+                    <a class="nav-link" href="#">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="">Cart</a>
+                  </li>
+                
               </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
             </div>
           </nav>
     </div>
+
 
     <div class="container">
       <div id="carouselExampleControls" class="carousel slide orange-bg" data-ride="carousel">
@@ -89,6 +102,242 @@
           </a>
         </div>
   </div>
+
+  <div class="container catagories">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center cat1">
+          <h1>Watch</h1>
+        <img src="images/categories/watch.png" alt="">
+        </div>
+      </div>
+      <div class="col-md-4 ">
+        <div class="d-flex justify-content-between align-items-center cat2">
+          <h1>Bag</h1>
+        <img src="images/categories/bag1.png" alt="">
+        </div>
+      </div>
+      <div class="col-md-4 ">
+        <div class="d-flex justify-content-between align-items-center cat3">
+          <h1>Shoes</h1>
+        <img src="images/categories/shoes.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container shoes" id="shoes">
+    <div class="d-flex justify-content-between see-all">
+        <h3>Shoes</h3> 
+        <p>See all</p>
+    </div>
+    <div class="card-deck">
+      <div class="card ">
+        <img src="images/shoes/shoe-1.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Supply 350</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to .</p>
+          <h5>$120</h5>
+          <button class="buy-now-button">Buy Now >></button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/shoes/shoe-2.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Nike 360</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <h5>$320</h5>
+          <button class="buy-now-button">Buy Now >></button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/shoes/shoe-3.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Red Airmax</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to </p>
+          <h5>$350</h5>
+          <button class="buy-now-button">Buy Now >></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="backpack">
+    <div class="d-flex justify-content-between see-all">
+        <h3>Backpack</h3> 
+        <p>See all</p>
+    </div>
+    <div class="card-deck">
+      <div class="card">
+        <img src="images/bags/bag-1.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Red Laltu Bag</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <h5>$125</h5>
+        </div>
+        <div class="card-footer">
+          <button class="buy-now-button">Buy Now >></button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/bags/bag-2.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Blue Niltu Bag</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <h5>$329</h5>
+        </div>
+        <div class="card-footer">
+          <button class="buy-now-button">Buy Now >></button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/bags/bag-3.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Black Kaltu Bag</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <h5>$369</h5>
+        </div>
+        <div class="card-footer">
+          <button class="buy-now-button">Buy Now >></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container ">
+    <div class="d-flex justify-content-between see-all">
+      <h3>Smartphone</h3> 
+      <p>See all</p>
+    </div>
+    
+      <div class="card-deck ">
+          <div class="card card-decoration d-flex align-items-center justify-content-center padding-card">
+            <img src="images/phone/phone-1.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">iPhone11 Pro</h5>
+              <small class="card-text">This is a wider card with supporting text below as a natural lead-in to.</small>
+            </div>
+            <div class="card-footer">
+              <h5>$999</h5>
+              <button class="buy-now-button">BUY NOW >></button>
+            </div>
+          </div>
+          <div class="card card-decoration d-flex align-items-center justify-content-center padding-card">
+            <img src="images/phone/phone-2.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">iPhone11 Pro</h5>
+              <small class="card-text">This is a wider card with supporting text below as a natural lead-in to.</small>
+            </div>
+            <div class="card-footer">
+              <h5>$999</h5>
+              <button class="buy-now-button">BUY NOW >></button>
+            </div>
+          </div>
+          <div class="card card-decoration d-flex align-items-center justify-content-center padding-card">
+            <img src="images/phone/phone-3.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">iPhone11 Pro</h5>
+              <small class="card-text">This is a wider card with supporting text below as a natural lead-in to.</small>
+              
+            </div>
+            <div class="card-footer">
+              <h5>$999</h5>
+              <button class="buy-now-button">BUY NOW >></button>
+            </div>
+          </div>
+        </div>
+  </div>
+
+
+  <div class="container ">
+    <div class="d-flex justify-content-between see-all">
+      <h3>Laptop</h3> 
+      <p>See all</p>
+    </div>
+    
+      <div class="card-deck ">
+          <div class="card card-decoration d-flex align-items-center justify-content-center padding-card">
+            <img src="images/laptop/product-1.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">iPhone11 Pro</h5>
+              <small class="card-text">This is a wider card with supporting text below as a natural lead-in to.</small>
+            </div>
+            <div class="card-footer">
+              <h5>$999</h5>
+              <button class="buy-now-button">BUY NOW >></button>
+            </div>
+          </div>
+          <div class="card card-decoration d-flex align-items-center justify-content-center padding-card">
+            <img src="images/laptop/product-2.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">iPhone11 Pro</h5>
+              <small class="card-text">This is a wider card with supporting text below as a natural lead-in to.</small>
+            </div>
+            <div class="card-footer">
+              <h5>$999</h5>
+              <button class="buy-now-button">BUY NOW >></button>
+            </div>
+          </div>
+          <div class="card card-decoration d-flex align-items-center justify-content-center padding-card">
+            <img src="images/laptop/product-3.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">iPhone11 Pro</h5>
+              <small class="card-text">This is a wider card with supporting text below as a natural lead-in to.</small>
+              
+            </div>
+            <div class="card-footer">
+              <h5>$999</h5>
+              <button class="buy-now-button">BUY NOW >></button>
+            </div>
+          </div>
+        </div>
+  </div>
+
+
+  <div class="container">
+    <h5>Catagories</h5>
+    <div>
+        <div>
+            
+        </div>
+      <div class="row d-flex align-items-center">
+        <div  class="col-md-3 d-flex align-items-center card-decoration d-flex flex-column col-resize decoration">
+          <img class="footer-images" src="images/Categories/bag.png" alt="">
+          <h6>Bag</h6>
+        </div>
+        <div  class="col-md-3 ">
+          <div class="row card-decoration d-flex flex-column decoration">
+            <img class="footer-images" src="images/Categories/perfume.png" alt="">
+            <h6>Beauty</h6>
+          </div>
+          <div class="row card-decoration d-flex flex-column decoration">
+            <img class="footer-images" src="images/Categories/shoe.png" alt="">
+            <h6>Shoe</h6>
+          </div>
+        </div>
+        <div  class="col-md-5 ">
+          <img id="footer-margin" class="images" src="images/Categories/pale-order.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container orange-bg d-flex justify-content-center align-items-center" id="subscribe">
+    <div>
+       <h3>LET'S STAY IN TOUCH</h3>
+       <h6>Get updates on sales, specials and more</h6>
+       <input class="form-control" type="text">
+       <button class="buy-now-button">SUBMIT</button>
+    </div>
+   </div>
+
+
+   <footer>
+     <small>©2020. Panda Commerce. All rights reserved. Sofia, Bulgaria.</small>
+   </footer>
+
 
 
 

@@ -20,3 +20,53 @@
     padding: 9px 25px;
     cursor: pointer;
 }
+.cat1, .cat2, .cat3{
+    padding: 10px 30px;
+    border-radius: 10px;   
+}
+.cat1{
+    background-image:linear-gradient(45deg, #FB9A35 0%, #FFD019 100%);
+}
+.cat2{
+    background-image: linear-gradient(45deg, #FF589B 0%, #FF136F 100%);
+}
+.cat3{
+    background-image: linear-gradient(45deg, #4289FF 0%, #3F07F8 100%);
+}
+.catagories h1{
+    color: white;
+}
+.catagories img{
+    width: 100px;
+}
+.card{
+    border-radius: 10px;
+    border: none;
+    box-shadow: 5px 5px 10px lightgray;
+}
+.card-footer{
+    border: none;
+    background-color: white;
+}
+#subscribe{
+    height: 300px;
+}
+#subscribe h6{
+    color:gray;
+}
+footer small{
+    color: gray;
+}
+footer{
+    text-align: center;
+}
+img{
+    width:100%;
+}
+.footer-images{
+    height: 150px;
+    width: 150px;
+}
+#footer-margin{
+    margin-left: 20px;
+}
