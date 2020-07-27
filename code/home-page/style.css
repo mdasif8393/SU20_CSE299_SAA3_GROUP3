@@ -70,3 +70,14 @@ img{
 #footer-margin{
     margin-left: 20px;
 }
+.cart-image{
+    height: 20px;
+    width: 20px;
+}
+.text-center{
+    text-align: center;
+    color: red;
+}
+.box-title-decoration{
+    color: orange;
+}
