@@ -13,6 +13,7 @@ a:link{
 /*********navbar***********/
 .navbar{
     background-color: #e4e4e4;
+    border-bottom: 1px solid rgb(148, 146, 146);
 }
 
 .navbar-nav a{
@@ -45,15 +46,26 @@ a:link{
 }
 /****************end of navbar styling******************/
 
+/*****************************  SINGLE PRODUCT PAGE *****************************/
+.product-category-section{
+    border-bottom: 1px solid rgb(148, 146, 146);
+}
+
+.category-links li{
+    list-style: none;
+    float: left;
+    margin: 1rem;
+}
+
 .product-container{
-    width:80%;
-    margin-left: 10%;
+    
+   
 }
 
 .product-list li{
     list-style: none;
     float: left;
-    margin: 1rem;
+    margin: 0.5rem;
     background-color: #bdbdbd;
     width: 20%;
     height: 15rem;
@@ -61,7 +73,7 @@ a:link{
 }
 
 .product-list img{
-    width: 100%;
+    width: 13.4rem;
     height: 10rem;
 }
 
