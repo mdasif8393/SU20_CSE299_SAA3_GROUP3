@@ -44,7 +44,7 @@ a:link{
 }
 /****************end of navbar styling******************/
 
-/*****************************  SINGLE PRODUCT PAGE *****************************/
+/***************************** PRODUCT LIST PAGE *****************************/
 .product-category-section{
     border-bottom: 1px solid rgb(148, 146, 146);
 }
@@ -59,22 +59,28 @@ a:link{
     float: left;
     margin: 0.5rem;
     background-color: #bdbdbd;
-    width: 13.4rem;
+    width: 15.4rem;
     height: 15rem;
     margin-top: 3rem;
 }
 
+.product-list a:last-of-type{
+    float: left;
+    margin: 3rem 0rem 0.5rem 0.5rem;
+    background-color: #bdbdbd;
+    width: 15.4rem;
+    height: 15rem;
+}
+
 .product-list img{
-    width: 13.4rem;
+    width: 15.4rem;
     height: 10rem;
 }
 
-.product-list a{
-   text-align: center;
-}
 
 .product-list p{
     margin-top: 0.5rem;
+    text-align: center;
  }
 
 /*****************************  SINGLE PRODUCT PAGE *****************************/
