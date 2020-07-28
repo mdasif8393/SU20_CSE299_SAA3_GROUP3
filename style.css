@@ -57,17 +57,11 @@ a:link{
     margin: 1rem;
 }
 
-.product-container{
-    
-   
-}
-
-.product-list li{
-    list-style: none;
+.product-list a{
     float: left;
     margin: 0.5rem;
     background-color: #bdbdbd;
-    width: 20%;
+    width: 13.4rem;
     height: 15rem;
     margin-top: 3rem;
 }
