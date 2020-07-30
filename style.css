@@ -49,12 +49,6 @@ a:link{
     border-bottom: 1px solid rgb(148, 146, 146);
 }
 
-.category-links li{
-    list-style: none;
-    float: left;
-    margin: 1rem;
-}
-
 .product-list a{
     float: left;
     margin: 0.5rem;
@@ -258,4 +252,38 @@ a:link{
 .user-info th{
     margin: 1rem;
     padding : 1rem;
+}
+
+/*****************************  FOOTER *****************************/
+.footer{
+    background-color: rgb(1, 1, 24);
+}
+
+.footer a{
+    border-bottom:1px solid rgb(112, 102, 102);
+    color: #fff;
+    display: block;
+    margin: 3rem;
+
+}
+
+.footer-social a{
+    border-bottom:1px solid rgb(1, 1, 24);
+    display: inline;
+}
+
+.footer-social p{
+    color: #fff;
+    margin-top: 3rem;
+}
+
+.footer-copyright p{
+    text-align: center;
+    color: #fff;
+    margin-top: 3rem;
+}
+
+.fa-social{
+    font-size: 2rem;
+    margin-top: 1rem;
 }
