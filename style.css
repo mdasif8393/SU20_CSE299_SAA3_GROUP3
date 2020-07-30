@@ -196,7 +196,66 @@ a:link{
     margin: 1rem 0rem 3rem 0rem;
 }
 
+/***************************** USER DASHBOARD *****************************/
+.user-dashboard-body{
+    background-color: #fafbfd;
+}
 
+.user-navbar{
+    background-color: #fafbfd !important;
+    height: 3rem !important;
+    border-bottom: 1px solid rgb(236, 236, 236);
+}
 
+.nav-logo img{
+    height: 1rem;
+}
 
+.user-menu-options button,
+.user-menu-options-sidebar button{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+    outline: inherit;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
 
+.user-menu-options{
+    background-color: #fff;
+}
+
+.user-menu-options a{
+    display: block;
+    margin: 3rem 0rem 3rem 2rem;
+}
+
+.fa-black{
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+}
+
+.user-menu-options-sidebar a{
+     font-size: 1rem;
+}
+
+.user-menu-options-sidebar a{
+    display: block;
+    margin: 3rem 0rem 3rem 2rem;
+}
+
+.user-info table {
+    width:100%;
+    border: "1";
+    margin-top: 5rem;
+}
+
+.user-info tr,
+.user-info td,
+.user-info th{
+    margin: 1rem;
+    padding : 1rem;
+}
