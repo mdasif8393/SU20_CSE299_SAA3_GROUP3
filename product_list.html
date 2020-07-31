@@ -69,12 +69,12 @@
         <div class="container-fluid">
            <div class="row">
              <div class="col-md-3">
-               <div class="category-table">
-                <table>
+               <div>
+                <table class="category-table" border="1">
                   <tr>
                     <th>Categories</th>
                   </tr>
-                  <tr>
+                  <tr >
                     <td><a><img src="icons/mobile.png"> Phones & Accessories</a> </td>
                   </tr>
                   <tr>
@@ -93,19 +93,19 @@
                     <td><a><img src="icons/lipstick.png">  Beauty, Hair & Health</a> </td>
                   </tr>
                   <tr>
-                    <td><a><img src="icons/shoes.png">  Shoes</a> </td>
+                    <td><a><img src="icons/shoe.png">  Shoes</a> </td>
                   </tr>
                   <tr>
-                    <td><a><img src="icons/purse.png">  Bags</a> </td>
+                    <td><a><img src="icons/bag.png">  Bags</a> </td>
                   </tr>
                   <tr>
                     <td><a><img src="icons/ball.png"> Sports & Outdoors</a> </td>
                   </tr>
                   <tr>
-                    <td><a><img src="icons/bathtub.png">Home Improvement Tools</a> </td>
+                    <td><a><img src="icons/game.png"> Home Improvement Tools</a> </td>
                   </tr>
                   <tr>
-                    <td><a><img src="icons/gadget.png"> Gadgets</a> </td>
+                    <td><a><img src="icons/game.png"> Gadgets</a> </td>
                   </tr>
                   <tr>
                     <td><a>See All</a> </td>
@@ -113,7 +113,54 @@
                 </table>
                </div>
              </div>
-             <div class="col-xs-12 col-sm-12 col-md-9 product-list">
+             <div class="col-xs-12 col-sm-12 col-md-9">
+               <div class="custom-search">
+                  <form class="custom-search-form">
+                    <div class="row">
+                      <div clas="col-md-6 col-xl-6">
+                        <label for="category-list">Category :</label>
+                        <select name="" id="">
+                          <option value=""> Phones & Accessories</option>
+                          <option value=""> Kitchen Tools</option>
+                          <option value=""> Baby Products</option>
+                          <option value=""> Women's Clothing</option>
+                          <option value=""> Men's Clothing</option>
+                          <option value=""> Beauty, Hair & Health</option>
+                          <option value=""> Shoes</option>
+                          <option value=""> Bags</option>
+                          <option value=""> Sports & Outdoors</option>
+                          <option value=""> Home Improvement Tools</option>
+                          <option value=""> Gadgets</option>
+                        </select>
+                      </div>
+                      <div clas="col-md-6 col-xl-6">
+                        <label for="category-list">Price :</label>
+                        <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" /><span> -</span>
+                        <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+                      </div>
+                    </div>
+
+                    <div class="row">
+                       <div class="col-md-12 col-xl-12">
+                           <span><p>Sort by: </p></span>
+                           <span><button>Best Match</button></span>
+                           <span><button>Newest</button></span>
+                           <span><button>Orders</button></span>
+                       </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-1"></div>
+                      <div class="col-xs-12 col-sm-12 col-md-10  signup-input">
+                       <input type="submit" value="Search">
+                      </div>
+                      <div class="col-md-1"></div>
+                  </div>
+                  </form>
+               </div>
+             
+
+              <div class="product-list">
                <a href="single_product.html">
                  <img src="img/white-shirt.jpg"/>
                  <p>Lorem, ipsum dolor sit </p>
@@ -156,7 +203,8 @@
               </a>
              </div>
              
-            </div>            
+            </div> 
+          </div>           
         </div>               
                  
           
