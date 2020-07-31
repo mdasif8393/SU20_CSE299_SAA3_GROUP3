@@ -45,23 +45,51 @@ a:link{
 /****************end of navbar styling******************/
 
 /***************************** PRODUCT LIST PAGE *****************************/
-.product-category-section{
-    border-bottom: 1px solid rgb(148, 146, 146);
+.product-search input[type="text"]{
+    border-radius: 0.5rem;
+    width: 80%;
+    border: 1px solid rgb(196, 192, 192);
+    margin: 1rem;
+    height: 2rem;
+    text-indent: 1rem;
 }
+
+.product-search button{
+    background-color: rgb(196, 192, 192);
+    height: 2rem;
+    border: 1px solid rgb(196, 192, 192);
+    margin-left: -50px;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.category-table table{
+    width: 100%;
+}
+
+.category-table table > tr > td > a{
+   margin: 2rem;
+}
+
+.category-table img{
+   width: 2rem;
+ }
+
 
 .product-list a{
     float: left;
     margin: 0.5rem;
-    background-color: #bdbdbd;
+    background-color: #dddada;
     width: 15.4rem;
     height: 15rem;
     margin-top: 3rem;
+    border-radius: 1rem;
 }
 
 .product-list a:last-of-type{
     float: left;
     margin: 3rem 0rem 0.5rem 0.5rem;
-    background-color: #bdbdbd;
+    background-color: #dddada;
     width: 15.4rem;
     height: 15rem;
 }
@@ -69,6 +97,8 @@ a:link{
 .product-list img{
     width: 15.4rem;
     height: 10rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 }
 
 
