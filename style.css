@@ -299,7 +299,8 @@ a:link{
 
 .signup-container input[type="text"],
 .signup-container input[type="email"],
-.signup-container input[type="password"]{
+.signup-container input[type="password"],
+.signup-container textarea{
     width: 100%;
     border-radius: 0.4rem;
     border: 1px solid #302f2f;
