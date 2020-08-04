@@ -1,0 +1,31 @@
+body{
+    background-color: whitesmoke;
+}
+.help-search{
+    width: auto;
+    height: 250px;
+    background-color: rgb(158, 233, 214);
+    padding: 55px 400px;
+    display: auto;
+    margin-bottom: 50px;
+}
+.font-color{
+    color: rgb(39, 39, 199);
+}
+.icon-resize{
+    height: 75px;
+    width: 75px;
+    
+}
+.text-align{
+    text-align: center;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card-decoration{
+      background-color: rgb(228, 241, 238);
+      box-shadow: 5px 5px 5px 1px;
+  }

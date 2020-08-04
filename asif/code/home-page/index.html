@@ -8,98 +8,103 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="Container" >
-        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar fixed-top">
-            <a class="navbar-brand" href="">
-                <img src="images/logo.png" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <img class="cart-image" src="images/home-logo.png" alt=""></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Backpack <img class="cart-image" src="images/backpack-logo.jpg" alt=""></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Shoes <img class="cart-image" src="images/shoe-logo.jpg" alt=""></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Smartphones <img class="cart-image" src="images/smartphone-logo.jpg" alt=""></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login <img class="cart-image" src="images/login-logo.png" alt=""></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1:5500/code/cart/index.html" target="_blank">Cart<img class="cart-image" src="images/cart-image.png" alt=""></a>
-                  </li>
-                
-              </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
-            </div>
-          </nav>
-    </div>
-
-
-    <div class="container">
-      <div id="carouselExampleControls" class="carousel slide orange-bg" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row align-items-center"> <!--small image size in carousal-->
-                  <div class="col-md-7">
-                      <h1>Mega LCD TV</h1>
-                      <p>This is the best tv in the world.</p>
-                      <h1 class="price">65000 Taka</h1>
-                      <button class="buy-now-button">Buy Now</button>
-                  </div>
-                  <div class="col-md-5">
-                      <img src="images/banner-images/tv.png" class="d-block w-100" alt="...">
-                  </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row align-items-center">
-                  <div class="col-md-7">
-                    <h1>Star Headphone</h1>
-                      <p>This is the best headphone in the world.</p>
-                      <h1 class="price">1200 Taka</h1>
-                      <button class="buy-now-button">Buy Now</button>
-                  </div>
-                  <div class="col-md-5">
-                      <img src="images/banner-images/headphone.png" class="d-block w-100" alt="...">
-                  </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row align-items-center">
-                  <div class="col-md-7">
-                    <h1>X-Box</h1>
-                      <p>This is the best x-box in the world.</p>
-                      <h1 class="price">30000 Taka</h1>
-                      <button class="buy-now-button">Buy Now</button>
-                  </div>
-                  <div class="col-md-5">
-                      <img src="images/banner-images/xbox.png" class="d-block w-100" alt="...">
-                  </div>
-              </div>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+  <header>
+    <nav class="navbar navbar-expand-sm">
+        <!-- Brand/logo -->
+        <div class="nav-logo">
+            <a href="#"><img src="images/logo.png"/></a>
         </div>
+        <!-- Links -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"><i class="fa fa-bars"></i>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="product_list.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html">Sign up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="payment.html">My Cart</a>
+          </li>
+        </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class="container" style="margin-top: 10px;">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action">Watch</a>
+            <a href="#" class="list-group-item list-group-item-action">Bag</a>
+            <a href="#" class="list-group-item list-group-item-action">Shoe</a>
+            <a href="#" class="list-group-item list-group-item-action">Smartphone</a>
+            <a href="#" class="list-group-item list-group-item-action">Laptop</a>
+            <a href="#" class="list-group-item list-group-item-action">Women's Fashion</a>
+            <a href="#" class="list-group-item list-group-item-action">Men's Fashion</a>
+          </div>
+        </div>
+        <div class="col-md-10">
+          <div id="carouselExampleControls" class="carousel slide orange-bg" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row align-items-center"> <!--small image size in carousal-->
+                    <div class="col-md-7">
+                        <h1>Mega LCD TV</h1>
+                        <p>This is the best tv in the world.</p>
+                        <h1 class="price">65000 Taka</h1>
+                        <button class="buy-now-button">Buy Now</button>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="images/banner-images/tv.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row align-items-center">
+                    <div class="col-md-7">
+                      <h1>Star Headphone</h1>
+                        <p>This is the best headphone in the world.</p>
+                        <h1 class="price">1200 Taka</h1>
+                        <button class="buy-now-button">Buy Now</button>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="images/banner-images/headphone.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row align-items-center">
+                    <div class="col-md-7">
+                      <h1>X-Box</h1>
+                        <p>This is the best x-box in the world.</p>
+                        <h1 class="price">30000 Taka</h1>
+                        <button class="buy-now-button">Buy Now</button>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="images/banner-images/xbox.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
   </div>
 
   <div class="container catagories">

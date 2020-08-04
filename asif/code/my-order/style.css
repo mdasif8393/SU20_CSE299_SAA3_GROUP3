@@ -1,3 +1,36 @@
+.navbar{
+  background-color: #e4e4e4;
+  border-bottom: 1px solid rgb(148, 146, 146);
+}
+
+.navbar-nav a{
+  border-bottom: 1px solid transparent;
+}
+
+.navbar-nav a:hover,
+.navbar-nav a:active{
+  border-bottom: 1px solid #000;
+}
+
+.nav-item,
+.nav-logo a{
+  padding: 1rem;
+  color: rgb(0, 0, 0);
+}
+
+.nav-logo a:hover,
+.nav-logo a:link{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  border-bottom: hidden;
+}
+
+.nav-logo{
+  font-family: Pacifico;
+}
+.nav-item a{
+  color: rgb(0, 0, 0);
+}
 /* The side navigation menu */
 .sidebar {
     margin: 0;
@@ -138,3 +171,10 @@
   body{
       background-color: whitesmoke;
   }
+  a,
+a:hover,
+a:link{
+   text-decoration: none;
+   color: #000;
+   cursor: pointer;
+}
