@@ -52,6 +52,10 @@ a:link{
 .price{
     color: #FF136F;
 }
+.product-catagories{
+    font-weight: bold;
+    background-color: rgb(214, 212, 212);
+}
 .buy-now-button{
     background-image: linear-gradient(to bottom, #ff589b 0%, #ff136f 100%);
     color: #fff;
