@@ -420,6 +420,7 @@ a:link{
 /*****************************  FOOTER *****************************/
 .footer{
     background-color: rgb(1, 1, 24);
+    margin-top: 3rem;
 }
 
 .footer a{
@@ -430,14 +431,13 @@ a:link{
 
 }
 
+.footer-social{
+    margin-top: 3rem;
+}
+
 .footer-social a{
     border-bottom:1px solid rgb(1, 1, 24);
     display: inline;
-}
-
-.footer-social p{
-    color: #fff;
-    margin-top: 3rem;
 }
 
 .footer-copyright p{
@@ -449,4 +449,8 @@ a:link{
 .fa-social{
     font-size: 2rem;
     margin-top: 1rem;
+}
+
+.footer a:hover{
+    color: rgb(146, 192, 252);
 }
