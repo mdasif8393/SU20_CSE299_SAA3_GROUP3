@@ -317,9 +317,13 @@ a:link{
     margin: 1rem 0rem 3rem 0rem;
 }
 
+#favourites, #my-orders{
+    margin-left: 9rem;
+}
+
 /***************************** USER DASHBOARD *****************************/
 .user-dashboard-body{
-    background-color: #fafbfd;
+    background: #EEF2F7;
 }
 
 .user-navbar{
@@ -368,17 +372,48 @@ a:link{
     margin: 3rem 0rem 3rem 2rem;
 }
 
+.user-menu-options-sidebar a:hover{
+    background-color: rgb(129, 129, 255);
+    color: #fff;
+    cursor: pointer;
+}
+
 .user-info table {
     width:100%;
-    border: "1";
     margin-top: 5rem;
+    margin-left: 15rem;
+    border-radius: 2rem;
+    padding: 2rem;
+   background-color: #fff;
+
+        box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12)
+      ;
+    
 }
 
 .user-info tr,
 .user-info td,
 .user-info th{
     margin: 1rem;
-    padding : 1rem;
+    padding : 2rem;
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+.user-info img{
+    width: 10rem;
+    height:10rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-info h6{
+    margin-left: 1rem;
 }
 
 /*****************************  FOOTER *****************************/

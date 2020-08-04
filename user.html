@@ -18,9 +18,9 @@
         
           <div id="main" class="user-menu-options col-md-1">
           <button class="user-menu" onclick="openSidebar()"><i class="fa fa-bars fa-black"></i></button>
-          <a><i class="fa fa-home fa-black"></i></a>
           <a><i class="fa fa-user-circle fa-black"></i></a>
           <a><i class="fa fa-shopping-basket fa-black"></i></a>
+          <a><i class="fa fa-heart fa-black"></i></a>
           <a><i class="fa fa-cog fa-black"></i></a>
         </div>
       
@@ -28,10 +28,10 @@
       <div class="col-md-2" id="menu-sidebar">
         <div class="user-menu-options-sidebar">
           <button class="user-menu " onclick="closeSidebar()"><i class="fa fa-bars fa-black"></i></button>
-          <a><i class="fa fa-home fa-black"></i> Dashboard</a>
-          <a><i class="fa fa-user-circle fa-black"></i> My Profile</a>
-          <a><i class="fa fa-shopping-basket fa-black"></i> My Orders</a>
-          <a><i class="fa fa-cog fa-black"></i> Settings </a>
+          <a onclick="profile_page()"><i class="fa fa-user-circle fa-black" ></i> My Profile</a>
+          <a onclick="my_orders_page()"><i class="fa fa-shopping-basket fa-black"></i> My Orders</a>
+          <a onclick="favourites_page()"><i class="fa fa-heart fa-black"></i> Favourites </a>
+          <a onclick="settings_page()"><i class="fa fa-cog fa-black"></i> Settings </a>
         </div>
       </div>
         <div class="col-md-10">
@@ -53,17 +53,17 @@
     <section>
      
         <div class="row" id="my-profile">
-          <div class="col-md-3"></div>
+          <div class="col-md-2"></div>
             
-              <div class="col-md-6">
+              <div class="col-md-7">
                 <div class="user-info">
-                    <table border="1" style="width:100%;">
+                    <table class="table">
                       <tr>
                         <th>Username : </th>
                         <td> nusy_b </td>
                         <td rowspan="6">
-                          <h6>Profile Picture</h6>
-                          <img style="width:20px;"src="img/pink-dress.jpg">
+                          <h6> <strong> Profile Picture</strong></h6>
+                          <img src="img/profile-pic.jpg">
                        </td>
                       </tr>
 
@@ -99,8 +99,8 @@
         </div>
 
         <div class="row" id="my-orders">
-            <div class="col-md-2"></div>
-            <div class="col-xs-12 col-sm-12 col-md-9 product-list">
+            <div class="col-md-1"></div>
+            <div class="col-xs-12 col-sm-12 col-md-10 product-list">
               <a href="single_product.html">
                 <img src="img/white-shirt.jpg"/>
                 <p>Lorem, ipsum dolor sit </p>
@@ -135,9 +135,9 @@
             <div class="col-md-1"></div>
         </div>  
         
-        <div class="row" id="wish-list">
-          <div class="col-md-2"></div>
-          <div class="col-xs-12 col-sm-12 col-md-9 product-list">
+        <div class="row" id="favourites">
+          <div class="col-md-1"></div>
+          <div class="col-xs-12 col-sm-12 col-md-10 product-list">
             <a href="single_product.html">
               <img src="img/white-shirt.jpg"/>
               <p>Lorem, ipsum dolor sit </p>
@@ -172,12 +172,12 @@
           <div class="col-md-1"></div>
       </div> 
       
-      <div class="row" id="my-profile">
+      <div class="row" id="settings">
         <div class="col-md-3"></div>
           
             <div class="col-md-6">
               <div class="user-info">
-                  <table border="1" style="width:100%;">
+                  <table >
 
                     <tr>
                       <td> Change Personal Information</td>
