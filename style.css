@@ -114,6 +114,7 @@ a:link{
       width: 6rem;
       border-radius: 4px;
       border: 1px solid #bdbdbd;
+      text-indent: 1rem;
   }
 
   .custom-search-form select{
@@ -185,6 +186,23 @@ a:link{
     margin-top: 0.5rem;
     text-align: center;
  }
+
+.pagination{
+    display: inline-block;
+}
+  
+.pagination a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+.pagination a:hover:not(.active) {background-color: #ddd;}
 
 /*****************************  SINGLE PRODUCT PAGE *****************************/
 
