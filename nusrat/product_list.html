@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -29,7 +29,10 @@
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="product_list.html">Products</a>
+              <a class="nav-link" href="signup.html">Become a Seller</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="product_list.html">Browse Products</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="signup.html">Sign up</a>
@@ -45,33 +48,120 @@
       </nav>
   </header>
    
-    <!----------------------Product Category--------------------------->
-    <section class="product-category-section">
-      <div class="container">
+    <!----------------------Search Item--------------------------->
+    <section>
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 category-border-length">
-               <div class="category-links">
-                <ul>
-                    <li>Clothing</li>
-                    <li>Accessories</li>
-                    <li>Gadgets</li>
-                    <li>Baby Products</li>
-                    <li>Cosmetics</li>
-                    <li>Tools</li>
-                </ul>
+            <div class="col-md-3"></div>
+            <div class="col-xs-12 col-sm-12 col-md-6  category-border-length">
+               <div class="product-search">
+                <form  action="/">
+                  <input type="text" placeholder="black T-shirt" name="search">
+                  <button type="submit">Search</button>
+                </form>
                </div>
             </div>
+            <div class="col-md-3"></div>
          </div>
-      </div>
     </section>
 
-    <!----------------------Product List--------------------------->
+    <!----------------------Product Category List--------------------------->
     <section>
         <div class="container-fluid">
            <div class="row">
-             <div class="col-md-1"></div>
-             <div class="col-xs-12 col-sm-12 col-md-10 product-list">
-               <a href="#">
+             <div class="col-md-3">
+               <div>
+                <table class="category-table" border="1">
+                  <tr>
+                    <th>Categories</th>
+                  </tr>
+                  <tr >
+                    <td><a><img src="icons/mobile.png"> Phones & Accessories</a> </td>
+                  </tr>
+                  <tr>
+                    <td><a><img src="icons/knife.png"> Kitchen Tools</a> </td>
+                  </tr>
+                  <tr>
+                    <td><a><img src="icons/baby bottle.png">  Baby Products</a> </td>
+                  </tr>
+                  <tr>
+                    <td><a><img src="icons/dress.png">  Women's Clothing</a> </td>
+                  </tr>
+                  <tr>
+                    <td><a><img src="icons/men shirt.png">  Men's Clothing</a> </td>
+                  </tr>
+                  <tr>
+                    <td><a><img src="icons/lipstick.png">  Beauty, Hair & Health</a> </td>
+                  </tr>
+                  <tr>
+                    <td><a><img src="icons/shoe.png">  Shoes</a> </td>
+                  </tr>
+                  <tr>
+                    <td><a><img src="icons/bag.png">  Bags</a> </td>
+                  </tr>
+                  <tr>
+                    <td><a><img src="icons/ball.png"> Sports & Outdoors</a> </td>
+                  </tr>
+                  <tr>
+                    <td><a><img src="icons/game.png"> Home Improvement Tools</a> </td>
+                  </tr>
+                  <tr>
+                    <td><a><img src="icons/game.png"> Gadgets</a> </td>
+                  </tr>
+                  <tr>
+                    <td><a>See All</a> </td>
+                  </tr>
+                </table>
+               </div>
+             </div>
+             <div class="col-xs-12 col-sm-12 col-md-9">
+               <div class="custom-search">
+                  <form class="custom-search-form">
+                    <div class="row">
+                      <div clas="col-md-6 col-xl-6">
+                        <label for="category-list">Category :</label>
+                        <select name="" id="">
+                          <option value=""> Phones & Accessories</option>
+                          <option value=""> Kitchen Tools</option>
+                          <option value=""> Baby Products</option>
+                          <option value=""> Women's Clothing</option>
+                          <option value=""> Men's Clothing</option>
+                          <option value=""> Beauty, Hair & Health</option>
+                          <option value=""> Shoes</option>
+                          <option value=""> Bags</option>
+                          <option value=""> Sports & Outdoors</option>
+                          <option value=""> Home Improvement Tools</option>
+                          <option value=""> Gadgets</option>
+                        </select>
+                      </div>
+                      <div clas="col-md-6 col-xl-6">
+                        <label for="category-list">Price :</label>
+                        <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Min"/><span> -</span>
+                        <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Max"/>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                       <div class="col-md-12 col-xl-12">
+                           <span><p>Sort by: </p></span>
+                           <span><button>Best Match</button></span>
+                           <span><button>Newest</button></span>
+                           <span><button>Orders</button></span>
+                       </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-1"></div>
+                      <div class="col-xs-12 col-sm-12 col-md-10  signup-input">
+                       <input type="submit" value="Search">
+                      </div>
+                      <div class="col-md-1"></div>
+                  </div>
+                  </form>
+               </div>
+             
+
+              <div class="product-list">
+               <a href="single_product.html">
                  <img src="img/white-shirt.jpg"/>
                  <p>Lorem, ipsum dolor sit </p>
                  <p>Tk. 250</p>
@@ -91,16 +181,7 @@
                 <p>Lorem, ipsum dolor sit </p>
                 <p>Tk. 250</p>
                </a>
-             </div>
-             <div class="col-md-1"></div>
-            </div>            
-        </div>               
-                 
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-xs-12 col-sm-12 col-md-10 product-list">
-              <a href="#">
+               <a href="#">
                 <img src="img/red-skirt.jpg"/>
                 <p>Lorem, ipsum dolor sit </p>
                 <p>Tk. 250</p>
@@ -120,13 +201,48 @@
                 <p>Lorem, ipsum dolor sit </p>
                 <p>Tk. 250</p>
               </a>
+             </div>
+
+            <!-- <div class="pagination">
+              <a href="#">&laquo;</a>
+              <a href="#">1</a>
+              <a class="active" href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#">6</a>
+              <a href="#">&raquo;</a>-->
             </div>
-            <div class="col-md-1"></div>
-           </div>            
-       </div>                         
+              
+            </div>                        
    </section>
 
     <!----------------------Footer---------------------------> 
-    <footer></footer>
+    <footer>
+      <div class="footer">
+       <div class="row">
+         <div class="col-md-4">
+            <a>About</a>
+            <a>Trust &#38 Safety</a>
+         </div>
+         <div class="col-md-4">
+          <a>Career</a>
+          <a>Privacy & Terms</a>
+        </div>
+        <div class="col-md-4 footer-social">
+           <a href="#"><i class="fa fa-facebook fa-social"></i></a>
+           <a href="#"><i class="fa fa-twitter fa-social"></i></a>
+           <a href="#"><i class="fa fa-instagram fa-social"></i></a>
+        </div>
+       </div>
+       <div class="row">
+         <div class="col-md-12">
+         <div class="footer-copyright">
+          <p>&copy 2020 PANDA, Inc. All rights reserved </p>
+        </div>
+      </div>
+       </div>
+      </div>
+    </footer>
 </body>
 </html>
