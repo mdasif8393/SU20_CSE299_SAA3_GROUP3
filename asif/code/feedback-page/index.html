@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<header>
+    <nav class="navbar navbar-expand-sm">
+        <!-- Brand/logo -->
+        <div class="nav-logo">
+            <a href="#"><img src="images/logo.png"/></a>
+        </div>
+        <!-- Links -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"><i class="fa fa-bars"></i>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="product_list.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html">Sign up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="payment.html">My Cart</a>
+          </li>
+        </ul>
+        </div>
+    </nav>
+</header>
+<body>
+    <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                        <img class="van-image" src="images/delivery.jpg" alt="">
+                </div>
+                <div class="col-md-6 d-flex">
+                    <div class="feedback-area">
+                        <h6>How happy are you with PANDA?</h6>
+                        <small> Your feedback is very important for us. </small><br>
+                    <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5" />
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" />
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" />
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" />
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                      </div><br>
+                      <br>
+                    <h6>Review</h6>
+                    <input class="text-area form-control" type="text" name="" id="" placeholder="Give a review"><br>
+                    <button type="button" class="btn btn-primary btn-lg btn-block btn-decoration">SUBMIT REVIEW ></button>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <h4>Some review about us:</h4>
+                <div class="row personal-review">
+                    <div class="col-md-6">
+                        <div>
+                            <img class="rounded-circle person-image" src="images/profile1.jpg" alt="">
+                            <small>Delivery is fast and all the products are good and authentic. </small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="rounded-circle person-image" src="images/profile2.jpg" alt="">
+                            <small>I am satisfied with their service and behaviour. </small>
+                    </div>
+                </div>
+
+                <div class="row personal-review">
+                    <div class="col-md-6">
+                        <div>
+                            <img class="rounded-circle person-image" src="images/profile1.jpg" alt="">
+                            <small>Delivery is fast and all the products are good and authentic. </small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="rounded-circle person-image" src="images/profile2.jpg" alt="">
+                            <small>I am satisfied with their service and behaviour. </small>
+                    </div>
+                </div>
+                
+            
+            
+        </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
