@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Shopping Cart</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+   <link href="cart.css" rel="stylesheet">
+</head>
+
+  <!----------------------Navbar--------------------------->
+  <header>
+    <nav class="navbar navbar-expand-sm">
+        <!-- Brand/logo -->
+        <div class="nav-logo">
+            <a href="#"><img src="img/logo.png"/></a>
+        </div>
+        <!-- Links -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"><i class="fa fa-bars"></i>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="product_list.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html">Sign up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="payment.html">My Cart</a>
+          </li>
+        </ul>
+        </div>
+    </nav>
+</header>
+
+<body>
+
+   <section>
+      <div class="container">
+         <div class="cart">
+            <div class="cart-align">
+               <img src="img/logo.png" alt="">
+               <h3>Shopping Cart</h3>
+            </div>
+            
+            <div class="col-md-12 col-lg-10 mx-auto">
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <img src="img/product-1.png" alt="">
+                        <h5>iPhone 11 128GB Black</h5>
+                     </div>
+
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button id="iphoneMinusButton" class="btn btn-default"><i class="fas fa-minus"></i></button>
+
+                           <input type="text" id="iphoneNumber" class="form-control text-center" value="1"> 
+
+                           <button id="iphonePlusButton" class="btn btn-default"><i class="fas fa-plus"></i></button>
+
+                        </div>
+
+                        <h5>$ <span id = "iphonePrice">1219</span></h5>
+
+                        <img src="img/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item mx-auto">
+                        <img src="img/product-2.png" alt="">
+                        <h5>iPhone 11 Silicone Case - Black</h5>
+                     </div>
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+
+                           <button id="iphoneCaseMinusButton" class="btn btn-default"><i class="fas fa-minus"></i></button>
+
+                           <input id="iphoneCaseNumber" type="text" class="form-control text-center" value="1">
+
+                           <button id="iphoneCasePlusButton" class="btn btn-default"><i class="fas fa-plus"></i></button>
+
+                        </div>
+                        <h5>$ <span id = "iphoneCasePrice">59</span> </h5>
+                        <img src="img/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+
+                     <div class="col-md-8">
+                        <h5>Subtotal: </h5>
+                        <h5>Tax:</h5>
+                        <h5>Total:</h5>
+                     </div>
+
+                     <div class="col-md-4 status">
+                        <h5>$<span id="subTotal">1,278</span></h5>
+                        <h5>$0</h5>
+                        <h5>$<span id="total">1,278</span></h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 pt-4 pb-4">
+                  <button type="button" class=" check-out">Check Out</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!----------------------Footer---------------------------> 
+   <footer>
+    <div class="footer">
+     <div class="row">
+       <div class="col-md-4">
+          <a>About</a>
+          <a>Trust &#38 Safety</a>
+       </div>
+       <div class="col-md-4">
+        <a>Career</a>
+        <a>Privacy & Terms</a>
+      </div>
+      <div class="col-md-4 footer-social">
+         <a href="#"><i class="fa fa-facebook fa-social"></i></a>
+         <a href="#"><i class="fa fa-twitter fa-social"></i></a>
+         <a href="#"><i class="fa fa-instagram fa-social"></i></a>
+      </div>
+     </div>
+     <div class="row">
+       <div class="col-md-12">
+       <div class="footer-copyright">
+        <p>&copy 2020 PANDA, Inc. All rights reserved </p>
+      </div>
+    </div>
+     </div>
+    </div>
+  </footer>
+
+   <script>
+
+      //iphone + button work
+      var iphonePlusButton=document.getElementById('iphonePlusButton');
+      iphonePlusButton.addEventListener('click',function(){
+         iphoneNumberPositive ("iphoneNumber");
+         // var iphoneNumber = document.getElementById("iphoneNumber").value;
+         // var floatIphoneNumber = parseFloat(iphoneNumber.replace(/,/g, ''));
+         // document.getElementById("iphoneNumber").value = floatIphoneNumber +1;
+         iphonePricePositive("iphonePrice");
+         // var iphonePrice = document.getElementById("iphonePrice").innerText;
+         // var floatIphonePrice = parseFloat(iphonePrice.replace(/,/g, ''));
+         // document.getElementById("iphonePrice").innerText = floatIphonePrice + 1219 ;
+         iphoneSubTotalPositive("subTotal");
+
+         iphoneTotalPositive("total");
+
+      });
+
+      //iphone case + button work
+      var iphoneCasePlusButton=document.getElementById('iphoneCasePlusButton');
+      iphoneCasePlusButton.addEventListener('click',function(){
+         iphoneCaseNumberPositive ("iphoneCaseNumber");
+         
+         iphoneCasePricePositive("iphoneCasePrice");
+
+         iphoneCaseSubTotalPricePositive("subTotal");
+
+         iphoneCaseTotalPricePositive("total");
+         
+      });
+
+      //iphone - button work
+      var iphoneMinusButton = document.getElementById('iphoneMinusButton');
+      iphoneMinusButton.addEventListener('click',function(){
+         // var number = document.getElementById("iphoneNumber").value;
+         // var floatNumber = parseFloat(number.replace(/,/g, ''));
+         // document.getElementById("iphoneNumber").value = floatNumber -1;
+         iphoneNumberNegative("iphoneNumber");
+         // var Price = document.getElementById("iphonePrice").innerText;
+         // var floatPrice = parseFloat(Price.replace(/,/g, ''));
+         // document.getElementById("iphonePrice").innerText = floatPrice - 1219 ;
+         iphonePriceNegative("iphonePrice");
+
+         iphoneSubTotalNegative("subTotal");
+
+         iphoneTotalPriceNegative("total");
+      });
+
+       //iphone case - button work
+       var iphoneCaseMinusButton = document.getElementById('iphoneCaseMinusButton');
+       iphoneCaseMinusButton.addEventListener('click',function(){
+         
+         iphoneCaseNumberNegative("iphoneCaseNumber");
+         
+         iphoneCasePriceNegative("iphoneCasePrice");
+
+         iphoneCaseSubTotalPriceNegative("subTotal");
+
+         iphoneCaseTotalPriceNegative("total");
+
+      });
+
+      
+
+
+      //functions
+      //iphone number positive count function
+      function iphoneNumberPositive (id){
+         var iphoneNumber = document.getElementById(id).value;
+         var floatIphoneNumber = parseFloat(iphoneNumber.replace(/,/g, ''));
+         document.getElementById(id).value = floatIphoneNumber +1;
+      }
+      //iphone positive price count function
+      function iphonePricePositive (id){
+         var iphonePrice = document.getElementById(id).innerText;
+         var floatIphonePrice = parseFloat(iphonePrice.replace(/,/g, ''));
+         document.getElementById(id).innerText = floatIphonePrice + 1219 ;
+      }
+      //subtotal iphone positive price count function
+      function iphoneSubTotalPositive (id){
+         var iphonePrice = document.getElementById(id).innerText;
+         var floatIphonePrice = parseFloat(iphonePrice.replace(/,/g, ''));
+         document.getElementById(id).innerText = floatIphonePrice + 1219 ;
+      }
+      //total iphone positive price count function
+      function iphoneTotalPositive (id){
+         var iphonePrice = document.getElementById(id).innerText;
+         var floatIphonePrice = parseFloat(iphonePrice.replace(/,/g, ''));
+         document.getElementById(id).innerText = floatIphonePrice + 1219 ;
+      }
+
+      //iphone case number positive count function
+      function iphoneCaseNumberPositive (id){
+         var iphoneNumber = document.getElementById(id).value;
+         var floatIphoneNumber = parseFloat(iphoneNumber.replace(/,/g, ''));
+         document.getElementById(id).value = floatIphoneNumber +1;
+      }
+      //iphone case positive price count function
+      function iphoneCasePricePositive (id){
+         var iphonePrice = document.getElementById(id).innerText;
+         var floatIphonePrice = parseFloat(iphonePrice.replace(/,/g, ''));
+         document.getElementById(id).innerText = floatIphonePrice + 59 ;
+      }
+      //subtotal iphone case positive price count function
+      function iphoneCaseSubTotalPricePositive (id){
+         var iphonePrice = document.getElementById(id).innerText;
+         var floatIphonePrice = parseFloat(iphonePrice.replace(/,/g, ''));
+         document.getElementById(id).innerText = floatIphonePrice + 59 ;
+      }
+      //total iphone case positive price count function
+      function iphoneCaseTotalPricePositive (id){
+         var iphonePrice = document.getElementById(id).innerText;
+         var floatIphonePrice = parseFloat(iphonePrice.replace(/,/g, ''));
+         document.getElementById(id).innerText = floatIphonePrice + 59 ;
+      }
+
+      //iphone number negative count function
+      function iphoneNumberNegative (id){
+         var iphoneNumber = document.getElementById(id).value;
+         var floatIphoneNumber = parseFloat(iphoneNumber.replace(/,/g, ''));
+         if(floatIphoneNumber<1){
+            alert("Choose one item");
+         }
+         else{
+            document.getElementById(id).value = floatIphoneNumber -1;
+         }
+            
+         
+         
+         
+      }
+      //iphone negative price count function
+      function iphonePriceNegative (id){
+         var iphonePrice = document.getElementById(id).innerText;
+         var floatIphonePrice = parseFloat(iphonePrice.replace(/,/g, ''));
+         if(floatIphonePrice<1219){
+            document.getElementById(id).innerText = 0 ;
+         }
+         else{
+            document.getElementById(id).innerText = floatIphonePrice - 1219 ;
+         }
+            
+         
+         
+      }
+      //subtotal iphone negative price count function
+      function iphoneSubTotalNegative (id){
+         var iphonePrice = document.getElementById(id).innerText;
+         var floatIphonePrice = parseFloat(iphonePrice.replace(/,/g, ''));
+         if(floatIphonePrice<1219){
+            document.getElementById(id).innerText = floatIphonePrice ;
+         }
+         else{
+            document.getElementById(id).innerText = floatIphonePrice - 1219 ;
+         }
+            
+         
+         
+      }
+      //total iphone negative price count function
+      function iphoneTotalPriceNegative (id){
+         var iphonePrice = document.getElementById(id).innerText;
+         var floatIphonePrice = parseFloat(iphonePrice.replace(/,/g, ''));
+         if(floatIphonePrice<1219){
+            document.getElementById(id).innerText = floatIphonePrice ;
+         }
+         else{
+            document.getElementById(id).innerText = floatIphonePrice - 1219 ;
+         }
+         
+      }
+
+      //iphone case number negative count function
+      function iphoneCaseNumberNegative (id){
+         var iphoneNumber = document.getElementById(id).value;
+         var floatIphoneNumber = parseFloat(iphoneNumber.replace(/,/g, ''));
+         if(floatIphoneNumber<1){
+            alert("Choose one item");
+         }
+         else{
+            document.getElementById(id).value = floatIphoneNumber -1;
+         }
+            
+         
+         
+      }
+      //iphone case negative price count function
+      function iphoneCasePriceNegative (id){
+         var iphonePrice = document.getElementById(id).innerText;
+         var floatIphonePrice = parseFloat(iphonePrice.replace(/,/g, ''));
+         if(floatIphonePrice<59){
+            document.getElementById(id).innerText = 0 ;
+         }
+         else{
+            document.getElementById(id).innerText = floatIphonePrice - 59 ;
+         }
+            
+         
+         
+      }
+      //subtotal iphone case negative price count function
+      function iphoneCaseSubTotalPriceNegative (id){
+         var iphonePrice = document.getElementById(id).innerText;
+         var floatIphonePrice = parseFloat(iphonePrice.replace(/,/g, ''));
+         if(floatIphonePrice<59){
+            document.getElementById(id).innerText = floatIphonePrice ;
+         }
+         else{
+            document.getElementById(id).innerText = floatIphonePrice - 59 ;
+         }
+         
+      }
+      //total iphone case negative price count function
+      function iphoneCaseTotalPriceNegative (id){
+         var iphonePrice = document.getElementById(id).innerText;
+         var floatIphonePrice = parseFloat(iphonePrice.replace(/,/g, ''));
+         if(floatIphonePrice<59){
+            document.getElementById(id).innerText = floatIphonePrice;
+         }
+         else{
+            document.getElementById(id).innerText = floatIphonePrice - 59 ;
+         }
+         
+      }
+      
+   </script>
+</body>
+
+</html>

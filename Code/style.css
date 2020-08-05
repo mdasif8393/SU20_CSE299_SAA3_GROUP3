@@ -45,29 +45,131 @@ a:link{
 /****************end of navbar styling******************/
 
 /***************************** PRODUCT LIST PAGE *****************************/
-.product-category-section{
-    border-bottom: 1px solid rgb(148, 146, 146);
+.product-search input[type="text"]{
+    border-radius: 0.5rem;
+    width: 80%;
+    border: 1px solid rgb(196, 192, 192);
+    margin: 1rem;
+    height: 2rem;
+    text-indent: 1rem;
 }
 
-.category-links li{
-    list-style: none;
-    float: left;
-    margin: 1rem;
+.product-search button{
+    background-color: rgb(129, 129, 255);
+    height: 2rem;
+    border: 1px solid rgb(196, 192, 192);
+    margin-left: -50px;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    color: #fff;
 }
+
+.category-table{
+    width: 100%;
+    border: 1px solid rgb(200, 200, 243);  
+}
+
+.category-table th{
+    background-color: #c5c5c5;
+    text-align: center;
+}
+
+.category-table td {
+   margin: 2rem;
+   border-top: 1em solid transparent;
+ }
+
+ .category-table td:hover,
+ .custom-search-form button:hover {
+    background-color: rgb(129, 129, 255);
+    color: #fff;
+    cursor: pointer;
+  }
+
+ .category-table img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .custom-search{
+      border: 1px solid rgb(214, 214, 214);
+      width: 80%;
+      border-radius: 5px;
+      margin: 1rem;
+      background-color: rgb(241, 240, 240);;
+  }
+
+  .custom-search-form label{
+      margin-left: 2rem;
+      display: inline-block;
+  }
+
+  .custom-search-form p{
+    margin-left: 1rem;
+    display: inline-block;
+}
+
+  .custom-search-form input[type="text"]{
+      margin: 1rem;
+      width: 6rem;
+      border-radius: 4px;
+      border: 1px solid #bdbdbd;
+      text-indent: 1rem;
+  }
+
+  .custom-search-form select{
+    margin: 1rem;
+    width: 12rem;
+    border-radius: 4px;
+    border: 1px solid #bdbdbd;
+}
+
+.custom-search-form button{
+    border: none;
+    background-color: rgb(218, 214, 214);
+    color: #000;
+    border-radius: 1rem;
+    width: 6rem;
+}
+
+.custom-search-form input[type="submit"]{
+    margin: 1rem;
+    width: 80%;
+    border-radius: 4px;
+    border: 1px solid #bdbdbd;
+    background-color: #eec0c6;
+   background-image: linear-gradient(315deg, #eec0c6 0%, #e58c8a 74%);
+}
+
+.custom-search-form input[type="submit"]:hover{
+    margin: 1rem;
+    width: 80%;
+    border-radius: 4px;
+    border: 1px solid #bdbdbd;
+    background-color: #a4508b;
+    background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+    color: #fff;
+}
+
+ .product-list{
+     margin-bottom: 6rem;
+ }
+
 
 .product-list a{
     float: left;
     margin: 0.5rem;
-    background-color: #bdbdbd;
+    background-color: #dddada;
     width: 15.4rem;
     height: 15rem;
     margin-top: 3rem;
+    border-radius: 1rem;
 }
 
 .product-list a:last-of-type{
     float: left;
     margin: 3rem 0rem 0.5rem 0.5rem;
-    background-color: #bdbdbd;
+    background-color: #dddada;
     width: 15.4rem;
     height: 15rem;
 }
@@ -75,6 +177,8 @@ a:link{
 .product-list img{
     width: 15.4rem;
     height: 10rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 }
 
 
@@ -82,6 +186,23 @@ a:link{
     margin-top: 0.5rem;
     text-align: center;
  }
+
+.pagination{
+    display: inline-block;
+}
+  
+.pagination a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+.pagination a:hover:not(.active) {background-color: #ddd;}
 
 /*****************************  SINGLE PRODUCT PAGE *****************************/
 
@@ -178,7 +299,8 @@ a:link{
 
 .signup-container input[type="text"],
 .signup-container input[type="email"],
-.signup-container input[type="password"]{
+.signup-container input[type="password"],
+.signup-container textarea{
     width: 100%;
     border-radius: 0.4rem;
     border: 1px solid #302f2f;
@@ -196,7 +318,139 @@ a:link{
     margin: 1rem 0rem 3rem 0rem;
 }
 
+#favourites, #my-orders{
+    margin-left: 9rem;
+}
 
+/***************************** USER DASHBOARD *****************************/
+.user-dashboard-body{
+    background: #EEF2F7;
+}
 
+.user-navbar{
+    background-color: #fafbfd !important;
+    height: 3rem !important;
+    border-bottom: 1px solid rgb(236, 236, 236);
+}
 
+.nav-logo img{
+    height: 1rem;
+}
 
+.user-menu-options button,
+.user-menu-options-sidebar button{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+    outline: inherit;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.user-menu-options{
+    background-color: #fff;
+}
+
+.user-menu-options a{
+    display: block;
+    margin: 3rem 0rem 3rem 2rem;
+}
+
+.fa-black{
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+}
+
+.user-menu-options-sidebar a{
+     font-size: 1rem;
+}
+
+.user-menu-options-sidebar a{
+    display: block;
+    margin: 3rem 0rem 3rem 2rem;
+}
+
+.user-menu-options-sidebar a:hover{
+    background-color: rgb(129, 129, 255);
+    color: #fff;
+    cursor: pointer;
+}
+
+.user-info table {
+    width:100%;
+    margin-top: 5rem;
+    margin-left: 15rem;
+    border-radius: 2rem;
+    padding: 2rem;
+   background-color: #fff;
+
+        box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12)
+      ;
+    
+}
+
+.user-info tr,
+.user-info td,
+.user-info th{
+    margin: 1rem;
+    padding : 2rem;
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+.user-info img{
+    width: 10rem;
+    height:10rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-info h6{
+    margin-left: 1rem;
+}
+
+/*****************************  FOOTER *****************************/
+.footer{
+    background-color: rgb(1, 1, 24);
+    margin-top: 3rem;
+}
+
+.footer a{
+    border-bottom:1px solid rgb(112, 102, 102);
+    color: #fff;
+    display: block;
+    margin: 3rem;
+
+}
+
+.footer-social{
+    margin-top: 3rem;
+}
+
+.footer-social a{
+    border-bottom:1px solid rgb(1, 1, 24);
+    display: inline;
+}
+
+.footer-copyright p{
+    text-align: center;
+    color: #fff;
+    margin-top: 3rem;
+}
+
+.fa-social{
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.footer a:hover{
+    color: rgb(146, 192, 252);
+}
