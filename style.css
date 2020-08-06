@@ -338,6 +338,8 @@ a:link{
 }
 
 .user-menu-options button,
+.seller-menu-options button,
+.seller-menu-options-sidebar button,
 .user-menu-options-sidebar button{
     background: none;
 	color: inherit;
@@ -350,11 +352,13 @@ a:link{
     margin-top: 1rem;
 }
 
-.user-menu-options{
+.user-menu-options,
+.seller-menu-options{
     background-color: #fff;
 }
 
-.user-menu-options a{
+.user-menu-options a,
+.seller-menu-options a{
     display: block;
     padding: 2rem 0rem 2rem 2rem;
 }
@@ -364,7 +368,8 @@ a:link{
     font-size: 1.2rem;
 }
 
-.user-menu-options-sidebar{
+.user-menu-options-sidebar,
+.seller-menu-options-sidebar{
     background-color: #fff;
 }
 
@@ -372,14 +377,18 @@ a:link{
      font-size: 1rem;
 }
 
-.user-menu-options-sidebar a{
+.user-menu-options-sidebar a,
+.user-menu-options-sidebar a,
+.seller-menu-options-sidebar a,
+.seller-menu-options-sidebar a{
     display: block;
     padding:  2rem 0rem 2rem 2rem;
-   /* margin: 3rem 0rem 3rem 2rem;*/
 }
 
 .user-menu-options-sidebar a:hover,
-.user-menu-options a:hover{
+.user-menu-options a:hover,
+.seller-menu-options-sidebar a:hover,
+.seller-menu-options a:hover{
     background-color: rgb(129, 129, 255);
     color: #fff;
     cursor: pointer;
@@ -438,6 +447,13 @@ a:link{
 
 .edit-profile-form input[type="text"]{
      
+}
+
+/***************************** SELLER DASHBOARD *****************************/
+.seller-menu-options-sidebar img,
+.seller-menu-options img{
+      width: 1.5rem;
+      display: inline-block;
 }
 
 /*****************************  FOOTER *****************************/
