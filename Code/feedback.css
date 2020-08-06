@@ -119,40 +119,43 @@ a:link{
 .rate > label:hover ~ input:checked ~ label {
     color: #c59b08;
 }
-/*****************************  FOOTER *****************************/
-.footer{
-    background-color: rgb(1, 1, 24);
-    margin-top: 3rem;
-}
-
-.footer a{
-    border-bottom:1px solid rgb(112, 102, 102);
-    color: #fff;
-    display: block;
-    margin: 3rem;
-
-}
-
-.footer-social{
-    margin-top: 3rem;
-}
-
-.footer-social a{
-    border-bottom:1px solid rgb(1, 1, 24);
-    display: inline;
-}
-
-.footer-copyright p{
-    text-align: center;
-    color: #fff;
-    margin-top: 3rem;
-}
-
-.fa-social{
-    font-size: 2rem;
-    margin-top: 1rem;
-}
-
-.footer a:hover{
-    color: rgb(146, 192, 252);
-}
+    /*****************************  FOOTER *****************************/
+    .footer{
+        background-color: rgb(1, 1, 24);
+        margin-top: 3rem;
+      }
+      
+      .footer a{
+        border-bottom:1px solid rgb(112, 102, 102);
+        color: #fff;
+        display: block;
+        margin: 3rem;
+      
+      }
+      
+      .footer-social{
+        margin-top: 3rem;
+      }
+      
+      .footer-social a{
+        border-bottom:1px solid rgb(1, 1, 24);
+        display: inline;
+      }
+      
+      .footer-copyright p{
+        text-align: center;
+        color: #fff;
+        margin-top: 3rem;
+      }
+      
+      .fa-social{
+        font-size: 2rem;
+        margin-top: 1rem;
+      }
+      
+      .footer a:hover{
+        color: rgb(146, 192, 252);
+      }
+      .footer-font-color{
+        color: white;
+      }

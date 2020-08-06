@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Report Issue</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Report Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="media_queries.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="report.css">
 </head>
- <header>
+<header>
     <nav class="navbar navbar-expand-sm">
         
         <div class="nav-logo">
@@ -37,57 +45,64 @@
     </nav>
   </header>
 <body>
-    <div class="container" style="width: 300px;">
-        <p style="margin-top: 30px; color: grey;">Issue Type</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img class="product-image" src="img/product-for-report-page.png" alt="">
+        </div>
+        <div class="col-md-6">
+          <p class="first-paragraph" >Issue Type</p>
         <div class="dropdown">
             <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Refund Issue
               </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Currier Issue</a>
-              <a class="dropdown-item" href="#">Payment</a>
-              <a class="dropdown-item" href="#">Order Cancel</a>
-            </div>
-
-            <p style="margin-top: 10px; color: grey;">Description</p>
-            <input style="height: 150px ; width: 300px; ;" type="text" name="" id="">
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Currier Issue</a>
+                <a class="dropdown-item" href="#">Payment</a>
+                <a class="dropdown-item" href="#">Order Cancel</a>
+              </div>
+              <p class="second-paragraph">Description</p>
+            <input class="input-style"  type="text" name="" id="">
             <p style="color: red;">Please write your issue description</p>
 
             <input type="file" name="" id="">
             <p style="color: red;">Attach file if needed</p>
 
-            <button type="button" class="btn btn-danger btn-lg btn-block">Submit</button>
-          </div>
+            <button type="button" class="btn btn-danger btn-lg btn-block submit-btn">Submit</button>
     </div>
-
-    <footer>
-      <div class="footer">
-       <div class="row">
-         <div class="col-md-4">
-            <a>About</a>
-            <a>Trust &#38 Safety</a>
+        </div>
+      </div>
+      </div>
+      <footer>
+        <div class="footer">
+         <div class="row">
+           <div class="col-md-4">
+              <a class="footer-font-color">About</a>
+              <a class="footer-font-color">Trust &#38 Safety</a>
+           </div>
+           <div class="col-md-4">
+            <a class="footer-font-color">Career</a>
+            <a class="footer-font-color">Privacy & Terms</a>
+          </div>
+          <div class="col-md-4 footer-social">
+             <a href="#"><i class="fa fa-facebook fa-social"></i></a>
+             <a href="#"><i class="fa fa-twitter fa-social"></i></a>
+             <a href="#"><i class="fa fa-instagram fa-social"></i></a>
+          </div>
          </div>
-         <div class="col-md-4">
-          <a>Career</a>
-          <a>Privacy & Terms</a>
+         <div class="row">
+           <div class="col-md-12">
+           <div class="footer-copyright">
+            <p>&copy 2020 PANDA, Inc. All rights reserved </p>
+          </div>
         </div>
-        <div class="col-md-4 footer-social">
-           <a href="#"><i class="fa fa-facebook fa-social"></i></a>
-           <a href="#"><i class="fa fa-twitter fa-social"></i></a>
-           <a href="#"><i class="fa fa-instagram fa-social"></i></a>
+         </div>
         </div>
-       </div>
-       <div class="row">
-         <div class="col-md-12">
-         <div class="footer-copyright">
-          <p>&copy 2020 PANDA, Inc. All rights reserved </p>
-        </div>
-      </div>
-       </div>
-      </div>
-    </footer>
+      </footer>
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
 </body>
 </html>
