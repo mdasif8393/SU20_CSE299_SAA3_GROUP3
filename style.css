@@ -356,12 +356,16 @@ a:link{
 
 .user-menu-options a{
     display: block;
-    margin: 3rem 0rem 3rem 2rem;
+    padding: 2rem 0rem 2rem 2rem;
 }
 
 .fa-black{
     color: rgb(0, 0, 0);
     font-size: 1.2rem;
+}
+
+.user-menu-options-sidebar{
+    background-color: #fff;
 }
 
 .user-menu-options-sidebar a{
@@ -370,31 +374,31 @@ a:link{
 
 .user-menu-options-sidebar a{
     display: block;
-    margin: 3rem 0rem 3rem 2rem;
+    padding:  2rem 0rem 2rem 2rem;
+   /* margin: 3rem 0rem 3rem 2rem;*/
 }
 
-.user-menu-options-sidebar a:hover{
+.user-menu-options-sidebar a:hover,
+.user-menu-options a:hover{
     background-color: rgb(129, 129, 255);
     color: #fff;
     cursor: pointer;
 }
 
 .user-info table {
-    width:100%;
+    width: 100%;
     margin-top: 5rem;
     margin-left: 15rem;
     border-radius: 2rem;
     padding: 2rem;
-   background-color: #fff;
-
-        box-shadow:
+    background-color: #fff;
+    box-shadow:
         0 2.8px 2.2px rgba(0, 0, 0, 0.034),
         0 6.7px 5.3px rgba(0, 0, 0, 0.048),
         0 12.5px 10px rgba(0, 0, 0, 0.06),
         0 22.3px 17.9px rgba(0, 0, 0, 0.072),
         0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-        0 100px 80px rgba(0, 0, 0, 0.12)
-      ;
+        0 100px 80px rgba(0, 0, 0, 0.12);
     
 }
 
@@ -415,6 +419,25 @@ a:link{
 
 .user-info h6{
     margin-left: 1rem;
+}
+
+
+.user-dashboard-heading{
+     margin-top: 2rem;
+     border-bottom:1px solid rgb(206, 205, 205);
+     border-width: 100%;
+}
+
+.edit-profile-form{
+    border:1px solid rgb(248, 245, 245);
+    padding: 5rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 2.8px 2.2px rgb(138, 129, 129);
+    background-color: rgb(252, 252, 252);
+}
+
+.edit-profile-form input[type="text"]{
+     
 }
 
 /*****************************  FOOTER *****************************/

@@ -18,10 +18,11 @@
         
           <div id="main" class="user-menu-options col-md-1">
           <button class="user-menu" onclick="openSidebar()"><i class="fa fa-bars fa-black"></i></button>
-          <a><i class="fa fa-user-circle fa-black"></i></a>
-          <a><i class="fa fa-shopping-basket fa-black"></i></a>
-          <a><i class="fa fa-heart fa-black"></i></a>
-          <a><i class="fa fa-cog fa-black"></i></a>
+          <a onclick="profile_page()"><i class="fa fa-user-circle fa-black"></i></a>
+          <a onclick="my_orders_page()"><i class="fa fa-shopping-cart fa-black"></i></a>
+          <a onclick="wish_list_page()"><i class="fa fa-shopping-basket fa-black"></i></a>
+          <a onclick="favourites_page()"><i class="fa fa-heart fa-black"></i></a>
+          <a onclick="settings_page()"><i class="fa fa-cog fa-black"></i></a>
         </div>
       
 
@@ -29,7 +30,8 @@
         <div class="user-menu-options-sidebar">
           <button class="user-menu " onclick="closeSidebar()"><i class="fa fa-bars fa-black"></i></button>
           <a onclick="profile_page()"><i class="fa fa-user-circle fa-black" ></i> My Profile</a>
-          <a onclick="my_orders_page()"><i class="fa fa-shopping-basket fa-black"></i> My Orders</a>
+          <a onclick="my_orders_page()"><i class="fa fa-shopping-cart fa-black"></i> My Orders</a>
+          <a onclick="wish_list_page()"><i class="fa fa-shopping-basket fa-black"></i> Wish list </a>
           <a onclick="favourites_page()"><i class="fa fa-heart fa-black"></i> Favourites </a>
           <a onclick="settings_page()"><i class="fa fa-cog fa-black"></i> Settings </a>
         </div>
@@ -51,13 +53,14 @@
         </nav>
     
     <section>
-     
+     <!----------------------My Profile Section--------------------------->
         <div class="row" id="my-profile">
-          <div class="col-md-2"></div>
+          <div class="col-md-2 col-xs-12 col-sm-12 "></div>
             
-              <div class="col-md-7">
-                <div class="user-info">
-                    <table class="table">
+          <div class="user-info col-xs-12 col-sm-12 col-md-7">
+              <div class="">
+                  <h4 class="user-dashboard-heading">Profile Information</h4>
+                    <table>
                       <tr>
                         <th>Username : </th>
                         <td> nusy_b </td>
@@ -97,10 +100,12 @@
          
           <div class="col-md-3"></div>
         </div>
-
+        <section>
+          <!----------------------My Orders Section--------------------------->
         <div class="row" id="my-orders">
             <div class="col-md-1"></div>
             <div class="col-xs-12 col-sm-12 col-md-10 product-list">
+              <h4 class="user-dashboard-heading">Past Orders</h4>
               <a href="single_product.html">
                 <img src="img/white-shirt.jpg"/>
                 <p>Lorem, ipsum dolor sit </p>
@@ -134,10 +139,51 @@
             </div>
             <div class="col-md-1"></div>
         </div>  
-        
+        <section>
+          <section>
+          <!----------------------Wishlist Section--------------------------->
+          <div class="row" id="wish-list">
+            <div class="col-md-1"></div>
+            <div class="col-xs-12 col-sm-12 col-md-10 product-list">
+              <h4 class="user-dashboard-heading">Wish list</h4>
+              <a href="single_product.html">
+                <img src="img/white-shirt.jpg"/>
+                <p>Lorem, ipsum dolor sit </p>
+                <p>Tk. 250</p>
+              </a>
+              <a href="#">
+               <img src="img/shoe.jpg"/>
+               <p>Lorem, ipsum dolor sit </p>
+               <p>Tk. 250</p>
+              </a>     
+              <a href="#">
+               <img src="img/pink-dress.jpg"/>
+               <p>Lorem, ipsum dolor sit </p>
+               <p>Tk. 250</p>
+              </a>          
+              <a href="#">
+               <img src="img/mobile.jpg"/>
+               <p>Lorem, ipsum dolor sit </p>
+               <p>Tk. 250</p>
+              </a>
+              <a href="#">
+                <img src="img/red-skirt.jpg"/>
+                <p>Lorem, ipsum dolor sit </p>
+                <p>Tk. 250</p>
+              </a>
+              <a href="#">
+                <img src="img/mobile.jpg"/>
+                <p>Lorem, ipsum dolor sit </p>
+                <p>Tk. 250</p>
+              </a>    
+            </div>
+            <div class="col-md-1"></div>
+        </div> 
+          <!----------------------Favourites Section--------------------------->
         <div class="row" id="favourites">
           <div class="col-md-1"></div>
           <div class="col-xs-12 col-sm-12 col-md-10 product-list">
+            <h4 class="user-dashboard-heading">Favourites</h4>
             <a href="single_product.html">
               <img src="img/white-shirt.jpg"/>
               <p>Lorem, ipsum dolor sit </p>
@@ -171,20 +217,21 @@
           </div>
           <div class="col-md-1"></div>
       </div> 
-      
+      <!----------------------Settings Section--------------------------->
       <div class="row" id="settings">
         <div class="col-md-3"></div>
           
             <div class="col-md-6">
+              <h4 class="user-dashboard-heading">Settings</h4>
               <div class="user-info">
                   <table >
 
                     <tr>
-                      <td> Change Personal Information</td>
+                      <td><a onclick="edit_profile_page()"> Change Personal Information </a></td>
                     </tr>
 
                     <tr>
-                      <td> Change Password </td>
+                      <td><a onclick="change_password_page()"> Change Password </a></td>
                     </tr>
 
                     <tr>
@@ -197,7 +244,74 @@
        
         <div class="col-md-3"></div>
       </div>
+
+      <!--------------------Edit Profile--------------------------->
+      <div class="row" id="edit-profile">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+          <div>
+            <h5>Edit Profile</h5>
+            <div class="edit-profile-form">
+              <form>
+                <div class="container">
+                <div class="row">
+                   <div class="col-md-10">
+                      <label>Full Name</label>
+                      <input type="text" id="full-name" name="full-name">
+                      <label>Username</label>
+                      <input type="text" id="username" name="username"><br>
+                      <label>Password</label>
+                      <input type="password" id="pws1" name="pws1">
+                      <label>Confirm Password</label>
+                      <input type="password" id="pws2" name="pws2"><br>
+                      <label>Email</label>
+                      <input type="email" id="email" name="email">
+                      <label>Address</label>
+                      <textarea></textarea><br>
+                      <label>Phone Number</label>
+                      <input type="text" id="num" name="num">
+                      <label>Profile Picture</label>
+                      <input type="file" id="profile-pic" name="profile-pic">
+                   </div>
+                   <div class="col-md-2">
+                      <img style="width: 200px; height: 200px; border-radius: 50%;" src="img/profile-pic.jpg">
+                   </div>
+                   </div>
+                </div>
+                    <input type="submit" value="Submit">
+                </form>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--------------------Reset Password--------------------------->
            
+      <div class="row" id="reset-password">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+          <div>
+            <h5>Change Password</h5>
+            <div class="reset-password-form">
+              <form>
+                <div class="row">
+                   <div class="col-md-12">
+                      <label>Old Password</label>
+                      <input type="password" id="pws1" name="pws1"><br>
+                      <label>New Password</label>
+                      <input type="password" id="pws2" name="pws2"><br>
+                      <label>Re-Type New Password</label>
+                      <input type="password" id="pws3" name="pws3"><br>
+                   </div>
+                   </div>
+                    <input type="submit" value="Submit">
+                </form>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
      
     </section>
 
