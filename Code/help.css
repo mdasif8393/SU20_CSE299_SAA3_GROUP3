@@ -48,18 +48,17 @@ a:link{
 .help-search{
     width: auto;
     height: 250px;
-    background-color: rgb(158, 233, 214);
+    background-color: rgb(223, 233, 231);
     padding: 55px 400px;
     display: auto;
     margin-bottom: 50px;
 }
 .font-color{
-    color: rgb(39, 39, 199);
+    color: rgb(39, 42, 199);
 }
 .icon-resize{
     height: 75px;
     width: 75px;
-    
 }
 .text-align{
     text-align: center;
@@ -70,7 +69,7 @@ a:link{
     margin-right: auto;
   }
   .card-decoration{
-      background-color: rgb(228, 241, 238);
+      background-color: rgb(223, 233, 231);
       box-shadow: 1px 1px 1px 1px ;
   }
 .feedback-col{
