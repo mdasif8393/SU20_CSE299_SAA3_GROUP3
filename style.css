@@ -484,7 +484,8 @@ a:link{
     display: block;
 }
 
-.order-table table{
+.order-table table,
+.product-table table{
     border:1px solid rgb(206, 205, 205);
     margin-top: 1rem;
     background-color: rgb(252, 252, 252);
@@ -510,10 +511,22 @@ a:link{
     text-align: center;
 }
 
-.order-table img{
+.order-table img,
+.product-table img{
     width: 50px;
     height: 40px;
     margin-right: 0.3rem;
+}
+
+.product-table button{
+    background-color: rgb(129, 129, 255);
+    border: 1px solid rgb(129, 129, 255);
+    color: #fff;
+}
+
+.edit-icon{
+    width: 20px !important;
+    height: 20px !important;
 }
 
 
