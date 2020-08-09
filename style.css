@@ -445,9 +445,6 @@ a:link{
     background-color: rgb(252, 252, 252);
 }
 
-.edit-profile-form input[type="text"]{
-     
-}
 
 /***************************** SELLER DASHBOARD *****************************/
 .seller-menu-options-sidebar img,
@@ -455,6 +452,38 @@ a:link{
       width: 1.5rem;
       display: inline-block;
 }
+
+.dashboard-heading{
+    float: left;
+    margin: 1rem;
+    width: 14rem;
+    height:7rem;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    background-color:  rgb(129, 129, 255);
+    text-align: center;
+    color:#fff;
+}
+
+.dashboard-heading h5{
+    border-bottom:1px solid rgb(206, 205, 205);
+    background-color:  rgb(102, 102, 250);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.dashboard-heading img{
+    float:left;
+    margin-left: 0.6rem;
+    display: block;
+}
+
+.dashboard-heading p{
+    float:right;
+    margin-right: 0.6rem;
+    display: block;
+}
+
 
 /*****************************  FOOTER *****************************/
 .footer{
