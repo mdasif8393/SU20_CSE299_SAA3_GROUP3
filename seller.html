@@ -170,6 +170,8 @@
           <div class="col-md-2"></div>
           <div class="col-md-10 col-sm-12">
             <div>
+              <div class="row">
+               <div class="col-md-6">
                <form>
                  <input type="date" placeholder="Today">
                  <label for="category-list">Category :</label>
@@ -188,6 +190,11 @@
                         </select>
                     <input type="submit" value="Search">
                </form>
+              </div>
+              <div class="col-md-6">
+                <a onclick="add_product_page()"><button>Add Product</button></a>
+              </div>
+            </div>
             </div>
             <div class="table-responsive product-table">
               <table class="table">
@@ -205,7 +212,7 @@
                   <td>2000 &#2547;</td>
                   <td>Women's Clothes</td>
                   <td>100 units</td>
-                  <td><a><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+                  <td><a onclick="edit_product_page()"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
                 </tr>
                 <tr>
                   <td><a><img src="img/pink-dress.jpg">pink short dress</a></td>
@@ -213,7 +220,7 @@
                   <td>1500<span>&#2547;</span></td>
                   <td>Women's Clothes</td>
                   <td>20 units</td>
-                  <td><a><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+                  <td><a onclick="edit_product_page()"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
                 </tr>
                 <tr>
                   <td><a><img src="img/watch.jpg">Rolex watch</a></td>
@@ -221,7 +228,7 @@
                   <td>1500<span>&#2547;</span></td>
                   <td>Accessories</td>
                   <td>1000 units</td>
-                  <td><a><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+                  <td><a onclick="edit_product_page()"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
                 </tr>
                 <tr>
                   <td><a><img src="img/mobile.jpg">iphone 5s</a></td>
@@ -229,7 +236,7 @@
                   <td>150000<span>&#2547;</span></td>
                   <td>Phones</td>
                   <td>20 units</td>
-                  <td><a><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+                  <td><a onclick="edit_product_page()"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
                 </tr>
                 <tr>
                   <td><a><img src="img/watch.jpg">Rolex watch</a></td>
@@ -237,7 +244,7 @@
                   <td>30000<span>&#2547;</span></td>
                   <td>Accessories</td>
                   <td>307 units</td>
-                  <td><a><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+                  <td><a onclick="edit_product_page()"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
                 </tr>
                 <tr>
                   <td><a><img src="img/red-skirt.jpg">red mini skirt</a></td>
@@ -245,12 +252,57 @@
                   <td>5000<span>&#2547;</span></td>
                   <td>Women's Clothes</td>
                   <td>2060 units</td>
-                  <td><a><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+                  <td><a onclick="edit_product_page()"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
                 </tr>
               </table>
             </div>
           </div>
        </div>
+    </section>
+
+    <!----------------------Edit Products Section--------------------------->
+    <section id="edit-product">
+      <div class="row">
+         <div class="col-md-2"></div>
+         <div class="col-md-10">
+           <form>
+            <div class="row">
+               <div class="col-md-6">
+                  <img src="">
+               </div>
+               <div class="col-md-6">
+                 <input type="text" placeholder="Name Of the Product" required><br>
+                 Price <input type type="text" required><br>
+                 <label>Description</label>
+                 <textarea></textarea><br><br>
+                 <input type="submit" value="Edit Product">
+              </div>
+            </div>
+           </form>
+         </div>
+      </div>
+    </section>
+    <!----------------------Add Products Section--------------------------->
+    <section id="add-product">
+      <div class="row">
+         <div class="col-md-2"></div>
+         <div class="col-md-10">
+           <form>
+            <div class="row">
+               <div class="col-md-6">
+                  <img src="">
+               </div>
+               <div class="col-md-6">
+                 <input type="text" placeholder="Name Of the Product" required><br>
+                 Price <input type type="text" required><br>
+                 <label>Description</label>
+                 <textarea></textarea><br><br>
+                 <input type="submit" value="Add Product">
+              </div>
+            </div>
+           </form>
+         </div>
+      </div>
     </section>
          
 </div>

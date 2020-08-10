@@ -7,10 +7,12 @@ var sidebar_menu_options = document.getElementById("menu-sidebar"),
     reviews = document.getElementById("reviews"),
     reports = document.getElementById("reports"),
     refunds = document.getElementById("refunds"),
-    transactions = document.getElementById("transactions");
+    transactions = document.getElementById("transactions"),
     seller_profile_settings = document.getElementById("seller-settings"),
     seller_edit_profile = document.getElementById("seller-edit-profile"),
-    seller_reset_password = document.getElementById("seller-reset-password");
+    seller_reset_password = document.getElementById("seller-reset-password"),
+    edit_product = document.getElementById("edit-product"),
+    add_product = document.getElementById("add-product"); 
 
 sidebar_menu_options.style.display = "none"; 
 dashboard.style.display = "block"; 
@@ -24,6 +26,8 @@ transactions.style.display = "none";
 seller_profile_settings.style.display = "none"; 
 seller_edit_profile.style.display = "none"; 
 seller_reset_password.style.display = "none";
+edit_product.style.display = "none";
+add_product.style.display = "none";
 
 function openSidebar() {
     main_body.style.display = "none"; 
@@ -47,7 +51,8 @@ function dashboard_home_page(){
     seller_profile_settings.style.display = "none"; 
     seller_edit_profile.style.display = "none"; 
     seller_reset_password.style.display = "none";
-    
+    edit_product.style.display = "none";
+    add_product.style.display = "none";
 }
 
 function orders_page(){
@@ -61,7 +66,8 @@ function orders_page(){
     seller_profile_settings.style.display = "none"; 
     seller_edit_profile.style.display = "none"; 
     seller_reset_password.style.display = "none";
-     
+    edit_product.style.display = "none";
+    add_product.style.display = "none";
 }
 
 function products_page(){
@@ -76,7 +82,8 @@ function products_page(){
     seller_profile_settings.style.display = "none"; 
     seller_edit_profile.style.display = "none"; 
     seller_reset_password.style.display = "none";
-       
+    edit_product.style.display = "none";
+    add_product.style.display = "none";  
 }
 
 function favourites_page(){
@@ -91,7 +98,8 @@ function favourites_page(){
     seller_profile_settings.style.display = "none"; 
     seller_edit_profile.style.display = "none"; 
     seller_reset_password.style.display = "none";
-    
+    edit_product.style.display = "none";
+    add_product.style.display = "none";
 }
 
 function messages_page(){
@@ -106,7 +114,8 @@ function messages_page(){
     seller_profile_settings.style.display = "none"; 
     seller_edit_profile.style.display = "none"; 
     seller_reset_password.style.display = "none";
-      
+    edit_product.style.display = "none";
+    add_product.style.display = "none"; 
 }
 
 function reviews_page(){
@@ -121,7 +130,8 @@ function reviews_page(){
     seller_profile_settings.style.display = "none"; 
     seller_edit_profile.style.display = "none"; 
     seller_reset_password.style.display = "none";
-    
+    edit_product.style.display = "none";
+    add_product.style.display = "none";
 }
 
 function reports_page(){
@@ -136,7 +146,8 @@ function reports_page(){
     seller_profile_settings.style.display = "none"; 
     seller_edit_profile.style.display = "none"; 
     seller_reset_password.style.display = "none";
-    
+    edit_product.style.display = "none";
+    add_product.style.display = "none";
 }
 
 function refunds_page(){
@@ -151,7 +162,8 @@ function refunds_page(){
     seller_profile_settings.style.display = "none"; 
     seller_edit_profile.style.display = "none"; 
     seller_reset_password.style.display = "none";
-    
+    edit_product.style.display = "none";
+    add_product.style.display = "none";
 }
 
 function transactions_page(){
@@ -166,7 +178,8 @@ function transactions_page(){
     seller_profile_settings.style.display = "none"; 
     seller_edit_profile.style.display = "none"; 
     seller_reset_password.style.display = "none";
-    
+    edit_product.style.display = "none";
+    add_product.style.display = "none";
 }
 
 function seller_settings_page(){
@@ -181,5 +194,38 @@ function seller_settings_page(){
     seller_profile_settings.style.display = "block"; 
     seller_edit_profile.style.display = "none"; 
     seller_reset_password.style.display = "none";
-    
+    edit_product.style.display = "none";
+    add_product.style.display = "none";
+}
+
+function edit_product_page(){
+    dashboard.style.display = "none"; 
+    orders.style.display = "none"; 
+    products.style.display = "none"; 
+    messages.style.display = "none"; 
+    reviews.style.display = "none";
+    reports.style.display = "none";  
+    refunds.style.display = "none"; 
+    transactions.style.display = "none"; 
+    seller_profile_settings.style.display = "none"; 
+    seller_edit_profile.style.display = "none"; 
+    seller_reset_password.style.display = "none";
+    edit_product.style.display = "block";
+    add_product.style.display = "none";
+}
+
+function add_product_page(){
+    dashboard.style.display = "none"; 
+    orders.style.display = "none"; 
+    products.style.display = "none"; 
+    messages.style.display = "none"; 
+    reviews.style.display = "none";
+    reports.style.display = "none";  
+    refunds.style.display = "none"; 
+    transactions.style.display = "none"; 
+    seller_profile_settings.style.display = "none"; 
+    seller_edit_profile.style.display = "none"; 
+    seller_reset_password.style.display = "none";
+    edit_product.style.display = "none";
+    add_product.style.display = "block";
 }
