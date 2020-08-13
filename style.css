@@ -172,6 +172,7 @@ a:link{
     background-color: #dddada;
     width: 15.4rem;
     height: 15rem;
+    margin-bottom: 3rem;
 }
 
 .product-list img{
@@ -188,7 +189,7 @@ a:link{
  }
 
 .pagination{
-    display: inline-block;
+   width:100%;
 }
   
 .pagination a {
@@ -198,7 +199,7 @@ a:link{
   }
   
 .pagination a.active {
-    background-color: #4CAF50;
+    background-color: rgb(129, 129, 255);
     color: white;
   }
   
@@ -219,9 +220,13 @@ a:link{
     cursor: pointer;
 }
 
+.item-vid-img{
+    margin-left:1rem;
+}
+
 .single-product-image img{
    width: 80%;
-   margin:2rem;
+   margin:2rem 2rem 2rem 0rem;
 }
 
 .product-heading{
@@ -233,7 +238,7 @@ a:link{
     color:rgb(204, 204, 204);
 }
 
-.fa-star{
+.avg-star{
     margin: 0.5rem 0.5rem 3rem 0.5rem;
 }
 
@@ -247,7 +252,6 @@ a:link{
 
 .product-info-review{
     color: #000;
-    margin-left:8%;
     margin-top: 2rem;
     border-bottom: 2px solid rgb(99, 99, 99);
 }
@@ -257,10 +261,45 @@ a:link{
 }
 
 .product-description p{
-    margin-left:2.5rem;
     margin-top: 1rem;
 }
 
+.review-info-section{
+    margin-left:2.5rem;
+}
+
+.reviews,
+.write-review{
+    border-bottom: 1px solid rgb(99, 99, 99);
+}
+
+.single-product-actions p,
+.single-product-actions button{
+    float: left;
+    margin-right: 1rem;
+}
+
+.single-product-actions button{
+    border: 1px solid rgb(129, 129, 255);
+    background-color: rgb(108, 108, 248);
+    border-radius: 0.5rem;
+    color: #fff;
+}
+
+.single-product-actions button:hover{
+    background-color: rgb(57, 202, 101);
+    color: #fff;
+}
+
+.write-review textarea{
+    width:100%;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(68, 68, 68);
+}
+
+.write-review{
+    margin-top: 1rem;
+}
 /*****************************  SIGNUP PAGE *****************************/
 .signup-section{
     background-color: #f3e7ee;
@@ -395,9 +434,8 @@ a:link{
 }
 
 .user-info table {
-    width: 100%;
     margin-top: 5rem;
-    margin-left: 15rem;
+   
     border-radius: 2rem;
     padding: 2rem;
     background-color: #fff;
@@ -414,7 +452,6 @@ a:link{
 .user-info tr,
 .user-info td,
 .user-info th{
-    margin: 1rem;
     padding : 2rem;
     border-bottom: 1px solid rgb(218, 218, 218);
 }

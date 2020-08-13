@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -58,18 +58,27 @@
         <div class="container">
            <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="item-vid-img">
                  <div class="single-product-image">
                      <img src="img/white-shirt.jpg" alt="white shirt"/>
+                     <div class="single-product-actions">
+                       <p><i class="fa fa-shopping-basket fa-black"></i>Add to Wish list</p>
+                       <p><i class="fa fa-heart"></i>Add to Favourites</p>
+                     </div>
                  </div>
                  <div>
-                     <video></video>
+                    <video width="400" height="240" controls>
+                        <source src="vid/unbox.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                      </video> 
                  </div>
               </div>
+            </div>
               <div class="col-xs-12 col-sm-12 col-md-6">
                  <div class="product-heading">
                      <p>Lorem ipsum dolor sit amet consectetur</p>
                      <p>TK. 250</p>
-                     <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star hollow-star"></i><i class="fa fa-star hollow-star"></i><!--<p>(35)</p>-->
+                     <i class="fa fa-star avg-star"></i><i class="fa fa-star avg-star"></i><i class="fa fa-star avg-star"></i><i class="fa fa-star hollow-star avg-star"></i><i class="fa fa-star hollow-star avg-star"></i><!--<p>(35)</p>-->
                  </div>
                  <div class="cart-button">
                      <button>Add to Cart</button>
@@ -77,13 +86,45 @@
 
                  <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="col-xs-12 col-sm-12 col-md-12 review-info-section">
                             <div class="product-info-review">
-                               <a href="#">ITEM INFO</a>
-                               <a href="#">REVIEWS (20)</a>
+                               <a href="#"  onclick="item_info_page()">ITEM INFO</a>
+                               <a href="#"  onclick="review_page()">REVIEWS (20)</a>
                             </div>
-                            <div class="product-description">
+                            <div class="product-description" id="item-info">
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat blanditiis vero voluptatem accusamus eum autem doloribus quos Deserunt, repellendus eligendi.</p>
+                            </div>
+                            <div class="product-review" id="item-review">
+                                <div class="write-review">
+                                  <form>
+                                    <div class="rvw-star">
+                                    <i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+                                    </div>
+                                    <textarea placeholder="Write a review..."></textarea><br><br>
+                                    <input type="text" value="Submit"><br><br>
+                                  </form>
+                                </div>
+                                <div class="reviews">
+                                    <h6>Hellen</h6>
+                                    <div class="rvw-star">
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star hollow-star"></i><i class="fa fa-star hollow-star"></i>
+                                    </div>
+                                    <p>It's alright :)</p>
+                                </div>
+                                <div class="reviews">
+                                    <h6>Rahul</h6>
+                                    <div class="rvw-star">
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star hollow-star"></i><i class="fa fa-star hollow-star"></i>
+                                    </div>
+                                    <p>Unfortunately, the color faded away within a few days of washing. The material wasn't much comfortable either. Overall, I wouldn't recommend buying this.</p>
+                                </div>
+                                <div class="reviews">
+                                    <h6>Sara</h6>
+                                    <div class="rvw-star">
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star hollow-star"></i><i class="fa fa-star hollow-star"></i>
+                                    </div>
+                                    <p>It's alright :)</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -96,4 +137,6 @@
     </section>
      
 </body>
+
+<script type="text/javascript" src="scripts/single_product.js" rel="stylesheet"></script>
 </html>
