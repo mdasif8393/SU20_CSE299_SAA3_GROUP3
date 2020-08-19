@@ -1,0 +1,70 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="media_queries.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>Panda</title>
+</head>
+<body class="signup-section">
+   <section>
+    <div class="back-button">
+        <a href="product_list.html"><button>Go Back</button></a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-xs-12 col-sm-12 col-md-6 signup-container">
+                <div class="container">
+                    <div class="logo-in-signup">
+                       <a href="product_list.html"><img src="img/logo.png"/></a>
+                       <p>Register for PANDA</p>
+                    </div>
+                    <form action="{% url 'customer_register' %}" method="POST" novalidate>
+                      {% csrf_token %}
+                      {% for hidden in form.hidden_fields %}
+                        {{ hidden }}
+                      {% endfor %}
+
+                      {% for field in form.visible_fields %}
+                          <div class="form-group">
+                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                            {% render_field field class="form-control" %}
+                              {% for error in field.errors %}
+                              <span class="help-block">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                      {% endfor %}
+           
+                      <div class="container">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-xs-12 col-sm-12 col-md-10  signup-input">
+                             <input type="submit" value="Submit">
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+                      </div>
+                      
+                    </form>
+                     
+                  </div>
+                  
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>

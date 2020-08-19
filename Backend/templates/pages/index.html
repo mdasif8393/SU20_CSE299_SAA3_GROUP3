@@ -26,16 +26,16 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="signup.html">Become a Seller</a>
+            <a class="nav-link" href="{% url 'seller_register' %}">Become a Seller</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="product_list.html">Browse Products</a>
+            <a class="nav-link" href="{% url 'products' %}">Browse Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="signup.html">Sign up</a>
+            <a class="nav-link" href="{% url 'customer_register' %}">Sign up</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.html">Login</a>
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="cart.html">My Cart</a>
