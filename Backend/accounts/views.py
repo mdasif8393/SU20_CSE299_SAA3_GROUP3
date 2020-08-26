@@ -11,14 +11,10 @@ from .models import User
 
 # Create your views here.
 
-
-# def login(request):
-    #return render(request, '../templates/accounts/login.html')
-
 class CustomerSignUpView(CreateView):
     model = User
     form_class = CustomerSignUpForm
-    template_name = '../templates/accounts/customer_register.html'
+    template_name = 'accounts/customer_register.html'
 
     def form_valid(self, form):
         user = form.save()
@@ -28,36 +24,45 @@ class CustomerSignUpView(CreateView):
 class SellerSignUpView(CreateView):
     model = User
     form_class = SellerSignUpForm
-    template_name = '../templates/accounts/seller_register.html'
+    template_name = 'accounts/seller_register.html'
     
 
     def form_valid(self, form):
         user = form.save()
-        login(self.request, user)
-        return redirect("login.html")
+        login(self.request,user)
+        return redirect("/")
+
+def login_page(request):
+    return render(request, 'accounts/login.html')
 
 def login_request(request):
     if request.method == 'POST':
-        form = AuthenticationForm(request=request, data=request.POST)
+        valuenext= request.POST.get('next')
+        form =     AuthenticationForm(request=request, data=request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
-            user = authenticate(username=email, password=password)
-            if user is not None:
-                login(request, user)
+            user = authenticate(username=username, password=password)
+            if user is not None and valuenext =='':
+                login(request,user)
                 messages.info(request, f"You are now logged in as {username}")
                 return redirect('/')
+            if user is not None and valuenext !='':
+                login(request, user)
+                messages.info(request,"You have successfully logged in")
+                context= {'form': form, 'valuenext':valuenext}
+                return redirect(valuenext)
             else:
                 messages.error(request, "Invalid username or password.")
         else:
             messages.error(request, "Invalid username or password.")
     form = AuthenticationForm()
     return render(request = request,
-                    template_name = "../templates/login.html",
+                    template_name = "accounts/login.html",
                     context={"form":form})
 
 def logout_request(request):
     logout(request)
     messages.info(request, "Logged out successfully!")
-    return redirect("index.html")
+    return redirect("/")
       

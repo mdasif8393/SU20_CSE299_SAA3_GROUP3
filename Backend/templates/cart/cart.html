@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Shopping Cart</title>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <link rel="stylesheet" href="media_queries.css">
+   <link href="cart.css" rel="stylesheet">
+   
+</head>
+
+  <!----------------------Navbar--------------------------->
+  <header>
+    <nav class="navbar navbar-expand-sm">
+        <!-- Brand/logo -->
+        <div class="nav-logo">
+            <a href="#"><img src="img/logo.png"/></a>
+        </div>
+        <!-- Links -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"><i class="fa fa-bars"></i>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="product_list.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html">Sign up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="payment.html">My Cart</a>
+          </li>
+        </ul>
+        </div>
+    </nav>
+</header>
+
+<body>
+
+      <div class="container">
+         <div class="cart">
+            <div class="cart-align">
+               <h3>Shopping Cart</h3>
+            </div>
+            
+            <div class="col-md-12 col-lg-10 mx-auto">
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <img src="img/product-1.png" alt="">
+                        <h5>iPhone 11 128GB Black</h5>
+                     </div>
+
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button id="iphoneMinusButton" class="btn btn-default"><i class="fas fa-minus"></i></button>
+
+                           <input type="text" id="iphoneNumber" class="form-control text-center" value="1"> 
+
+                           <button id="iphonePlusButton" class="btn btn-default"><i class="fas fa-plus"></i></button>
+
+                        </div>
+
+                        <h5>$ <span id = "iphonePrice">1219</span></h5>
+
+                        <img src="img/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item mx-auto">
+                        <img src="img/product-2.png" alt="">
+                        <h5>iPhone 11 Silicone Case - Black</h5>
+                     </div>
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+
+                           <button id="iphoneCaseMinusButton" class="btn btn-default"><i class="fas fa-minus"></i></button>
+
+                           <input id="iphoneCaseNumber" type="text" class="form-control text-center" value="1">
+
+                           <button id="iphoneCasePlusButton" class="btn btn-default"><i class="fas fa-plus"></i></button>
+
+                        </div>
+                        <h5>$ <span id = "iphoneCasePrice">59</span> </h5>
+                        <img src="img/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+
+                     <div class="col-md-8">
+                        <h5>Subtotal: </h5>
+                        <h5>Tax:</h5>
+                        <h5>Total:</h5>
+                     </div>
+
+                     <div class="col-md-4 status">
+                        <h5>$<span id="subTotal">1,278</span></h5>
+                        <h5>$0</h5>
+                        <h5>$<span id="total">1,278</span></h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 pt-4 pb-4">
+                  <a href="{% url 'checkout' %}"><button type="button" class=" check-out">Check Out</button></a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="footer">
+         <div class="row">
+           <div class="col-md-4">
+              <a class="footer-font-color">About</a>
+              <a class="footer-font-color">Trust &#38 Safety</a>
+           </div>
+           <div class="col-md-4">
+            <a class="footer-font-color">Career</a>
+            <a class="footer-font-color">Privacy & Terms</a>
+          </div>
+          <div class="col-md-4 footer-social">
+             <a href="#"><i class="fa fa-facebook fa-social"></i></a>
+             <a href="#"><i class="fa fa-twitter fa-social"></i></a>
+             <a href="#"><i class="fa fa-instagram fa-social"></i></a>
+          </div>
+         </div>
+         <div class="row">
+           <div class="col-md-12">
+           <div class="footer-copyright">
+            <p>&copy 2020 PANDA, Inc. All rights reserved </p>
+          </div>
+        </div>
+         </div>
+        </div>
+      </footer>
+      <script src="script.js"></script> 
+   </body>
+</html>

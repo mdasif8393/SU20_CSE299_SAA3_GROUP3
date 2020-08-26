@@ -1,3 +1,5 @@
+{% load static %}
+{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +10,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="media_queries.css">
   <title>PANDA</title>
 </head>
@@ -17,11 +19,11 @@
         
           <div id="main" class="seller-menu-options col-md-1">
           <button class="user-menu" onclick="openSidebar()"><i class="fa fa-bars fa-black"></i></button>
-          <a onclick="change_content('dashboard-homepage')"><img src="icons/home.png"></a>
-          <a onclick="change_content('orders')"><img src="icons/shopping cart.png"></a>
-          <a onclick="change_content('products')"><img src="icons/products.png"></a>
-          <a onclick="change_content('reports')"><img src="icons/report.png"></a>
-          <a onclick="change_content('refunds')"><img src="icons/refund.png"></a>
+          <a onclick="change_content('dashboard-homepage')"><img src="{% static 'icons/home.png' %}"></a>
+          <a onclick="change_content('orders')"><img src="{% static 'icons/shopping cart.png' %}"></a>
+          <a onclick="change_content('products')"><img src="{% static 'icons/products.png' %}"></a>
+          <a onclick="change_content('reports')"><img src="{% static 'icons/report.png' %}"></a>
+          <a onclick="change_content('refunds')"><img src="{% static 'icons/refund.png' %}"></a>
           <a onclick="change_content('seller-settings')"><i class="fa fa-cog fa-black"></i></a>
         </div>
       
@@ -29,11 +31,11 @@
       <div class="col-md-2" id="menu-sidebar">
         <div class="seller-menu-options-sidebar">
           <button class="user-menu " onclick="closeSidebar()"><i class="fa fa-bars fa-black"></i></button>
-          <a onclick="change_content('dashboard-homepage')"><img src="icons/home.png"> Dashboard </a>
-          <a onclick="change_content('orders')"><img src="icons/shopping cart.png"> Orders </a>
-          <a onclick="change_content('products')"><img src="icons/products.png"> Products </a>
-          <a onclick="change_content('reports')"><img src="icons/report.png"> Reports </a>
-          <a onclick="change_content('refunds')"><img src="icons/refund.png"> Refunds </a>
+          <a onclick="change_content('dashboard-homepage')"><img src="{% static 'icons/home.png' %}"> Dashboard </a>
+          <a onclick="change_content('orders')"><img src="{% static 'icons/shopping cart.png' %}"> Orders </a>
+          <a onclick="change_content('products')"><img src="{% static 'icons/products.png' %}"> Products </a>
+          <a onclick="change_content('reports')"><img src="{% static 'icons/report.png' %}"> Reports </a>
+          <a onclick="change_content('refunds')"><img src="{% static 'icons/refund.png' %}"> Refunds </a>
           <a onclick="change_content('seller-settings')"><i class="fa fa-cog fa-black"></i> Settings </a>
         </div>
       </div>
@@ -48,7 +50,7 @@
             <!-- Links -->
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Logout</a>
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
               </li>
             </ul>
         </nav>
@@ -283,16 +285,10 @@
       <div class="row">
          <div class="col-md-2"></div>
          <div class="col-md-10">
-           <form>
+           <form action="{% url 'add_product' %}" method="POST" enctype="multipart/form-data">
             <div class="row">
-               <div class="col-md-6">
-                  <img src="">
-               </div>
-               <div class="col-md-6">
-                 <input type="text" placeholder="Name Of the Product" required><br>
-                 Price <input type type="text" required><br>
-                 <label>Description</label>
-                 <textarea></textarea><br><br>
+              {% csrf_token %}
+                {{form}}
                  <input type="submit" value="Add Product">
               </div>
             </div>
@@ -373,7 +369,7 @@
     </section>
          
 </div>
-<script type="text/javascript" src="scripts/seller_dashboard.js" rel="stylesheet"></script>
-<script type="text/javascript" src="scripts/user_dashboard.js" rel="stylesheet"></script>
+<script type="text/javascript" src="{% static 'scripts/seller_dashboard.js' %}" rel="stylesheet"></script>
+<script type="text/javascript" src="{% static 'scripts/user_dashboard.js' %}" rel="stylesheet"></script>
 </body>
 </html>

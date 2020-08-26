@@ -26,7 +26,7 @@
             <div class="col-xs-12 col-sm-12 col-md-6 signup-container">
                 <div class="container">
                     <div class="logo-in-signup">
-                       <a href="product_list.html"><img src="img/logo.png"/></a>
+                       <a href="{% url 'products' %}"><img src="{% static 'img/logo.png' %}"/></a>
                        <p>Register for PANDA</p>
                     </div>
                     <form action="{% url 'customer_register' %}" method="POST" novalidate>

@@ -1,4 +1,5 @@
 {% load static %}
+{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,109 +29,22 @@
                        <a href="product_list.html"><img src="img/logo.png"/></a>
                        <p>Register for PANDA</p>
                     </div>
-                    <form action="">
-                       <div class="container">
-                         <div class="row">
-                           <div class="col-md-2"></div>
-                           <div class="col-xs-12 col-sm-12 col-md-8">
-                              <label for="email">Email</label>
-                           </div>
-                           <div class="col-md-2"></div>
-                         </div>
-                         <div class="row">
-                           <div class="col-md-2"></div>
-                           <div class="col-xs-12 col-sm-12 col-md-8  signup-input">
-                              <input type="email" id="email" name="email" required>
-                           </div>
-                           <div class="col-md-2"></div>
-                         </div>
-                       </div>
+                    <form action="{% url 'seller_register' %}" method="POST" novalidate>
+                      {% csrf_token %}
+                      {% for hidden in form.hidden_fields %}
+                        {{ hidden }}
+                      {% endfor %}
 
-                       <div class="container">
-                        <div class="row">
-                          <div class="col-md-2"></div>
-                          <div class="col-xs-12 col-sm-12 col-md-8">
-                             <label for="full-name">Full Name</label>
-                          </div>
-                          <div class="col-md-2"></div>
+                      {% for field in form.visible_fields %}
+                          <div class="form-group">
+                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                            {% render_field field class="form-control" %}
+                              {% for error in field.errors %}
+                              <span class="help-block">{{ error }}</span>
+                            {% endfor %}
                         </div>
-                        <div class="row">
-                           <div class="col-md-2"></div>
-                           <div class="col-xs-12 col-sm-12 col-md-8  signup-input">
-                             <input type="text" id="full-name" name="full-name" required>
-                           </div>
-                           <div class="col-md-2"></div>
-                        </div>
-                      </div>
-
-                      <div class="container">
-                        <div class="row">
-                          <div class="col-md-2"></div>
-                          <div class="col-xs-12 col-sm-12 col-md-8">
-                             <label for="username">Username</label>
-                          </div>
-                          <div class="col-md-2"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2"></div>
-                            <div class="col-xs-12 col-sm-12 col-md-8  signup-input">
-                              <input type="text" id="username" name="username" required>
-                            </div>
-                            <div class="col-md-2"></div>
-                        </div>
-                      </div>
-
-                      <div class="container">
-                        <div class="row">
-                          <div class="col-md-2"></div>
-                          <div class="col-xs-12 col-sm-12 col-md-8">
-                             <label for="pws">Password</label>
-                          </div>
-                          <div class="col-md-2"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2"></div>
-                            <div class="col-xs-12 col-sm-12 col-md-8  signup-input">
-                             <input type="password" id="pws" name="pws" required>
-                            </div>
-                            <div class="col-md-2"></div>
-                        </div>
-                      </div>
-
-                      <div class="container">
-                        <div class="row">
-                          <div class="col-md-2"></div>
-                          <div class="col-xs-12 col-sm-12 col-md-8">
-                             <label>Address</label>
-                          </div>
-                          <div class="col-md-2"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2"></div>
-                            <div class="col-xs-12 col-sm-12 col-md-8  signup-input">
-                             <textarea></textarea>
-                            </div>
-                            <div class="col-md-2"></div>
-                        </div>
-                      </div>
-                      
-                      <div class="container">
-                        <div class="row">
-                          <div class="col-md-2"></div>
-                          <div class="col-xs-12 col-sm-12 col-md-8">
-                             <label>Phone Number</label>
-                          </div>
-                          <div class="col-md-2"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2"></div>
-                            <div class="col-xs-12 col-sm-12 col-md-8  signup-input">
-                             <input type="text" id="num" name="num" required>
-                            </div>
-                            <div class="col-md-2"></div>
-                        </div>
-                      </div>
-
+                      {% endfor %}
+           
                       <div class="container">
                         <div class="row">
                             <div class="col-md-1"></div>

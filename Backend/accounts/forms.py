@@ -47,14 +47,13 @@ class SellerSignUpForm(UserCreationForm):
     @transaction.atomic
     def save(self):
         user = super().save(commit=False)
-        user.is_owner = True
+        user.is_seller = True
         user.save()
         seller = Seller.objects.create(user=user)
         seller.full_name=self.cleaned_data.get('full_name')
         seller.email=self.cleaned_data.get('email')
         seller.address=self.cleaned_data.get('address')
         seller.phone_number=self.cleaned_data.get('phone_number')
-        seller.image=self.cleaned_data.get('image')
         seller.save()
         return user
 

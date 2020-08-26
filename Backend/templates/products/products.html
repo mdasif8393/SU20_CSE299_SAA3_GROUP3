@@ -21,7 +21,7 @@
       <nav class="navbar navbar-expand-sm">
           <!-- Brand/logo -->
           <div class="nav-logo">
-              <a href="#"><img src="../static/img/logo.png"/></a>
+              <a href="#"><img src="../static/img/logo.png"</a>
           </div>
           <!-- Links -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -30,21 +30,47 @@
           </button>
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="signup.html">Become a Seller</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="product_list.html">Browse Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="signup.html">Sign up</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="payment.html">My Cart</a>
-            </li>
+  
+            {% if user.is_authenticated and user.is_seller%}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'seller_dashboard' %}">Seller dashboard</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+            {% else %}
+                 
+                {% if user.is_authenticated and user.is_customer %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'seller_register' %}">Become a Seller</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'products' %}">Browse Products</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'cart' %}">My Cart</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'seller_register' %}">Become a Seller</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'products' %}">Browse Products</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'customer_register' %}">Sign up</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'login_page' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'cart' %}">My Cart</a>
+                    </li>
+                {% endif %}
+            {% endif %}
           </ul>
           </div>
       </nav>
@@ -115,28 +141,28 @@
              </div>
              <div class="col-xs-12 col-sm-12 col-md-9">
                <div class="custom-search">
-                  <form class="custom-search-form">
+                  <form class="custom-search-form" action="{% url 'custom_search' %}" method="GET">
                     <div class="row">
                       <div clas="col-md-6 col-xl-6">
                         <label for="category-list">Category :</label>
-                        <select name="" id="">
-                          <option value=""> Phones & Accessories</option>
-                          <option value=""> Kitchen Tools</option>
-                          <option value=""> Baby Products</option>
-                          <option value=""> Women's Clothing</option>
-                          <option value=""> Men's Clothing</option>
-                          <option value=""> Beauty, Hair & Health</option>
-                          <option value=""> Shoes</option>
-                          <option value=""> Bags</option>
-                          <option value=""> Sports & Outdoors</option>
-                          <option value=""> Home Improvement Tools</option>
-                          <option value=""> Gadgets</option>
+                        <select name="category" id="">
+                          <option value="Phones & Accessories"> Phones & Accessories</option>
+                          <option value="Kitchen Tools"> Kitchen Tools</option>
+                          <option value="Baby Products"> Baby Products</option>
+                          <option value="Women's Clothing"> Women's Clothing</option>
+                          <option value="Men's Clothing"> Men's Clothing</option>
+                          <option value="Beauty, Hair & Health"> Beauty, Hair & Health</option>
+                          <option value="Shoes"> Shoes</option>
+                          <option value="Bags"> Bags</option>
+                          <option value="Sports & Outdoors"> Sports & Outdoors</option>
+                          <option value="Home Improvement Tools"> Home Improvement Tools</option>
+                          <option value=" Gadgets"> Gadgets</option>
                         </select>
                       </div>
                       <div clas="col-md-6 col-xl-6">
                         <label for="category-list">Price :</label>
-                        <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Min"/><span> -</span>
-                        <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Max"/>
+                        <input type="text" name="min" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Min"/><span> -</span>
+                        <input type="text" name="max" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Max"/>
                       </div>
                     </div>
 
@@ -169,7 +195,17 @@
                       </a>
                   {% endfor %}                                                      
                 {% else %}
-                 <p>No products to show</p>
+                      {% if product %}
+                      {% for prod in product %}
+                          <a href="single_product.html">
+                            <img src="{{prod.image.url}}"/>
+                            <p>{{prod.name}} </p>
+                            <p>Tk. {{prod.price}}</p>
+                          </a>
+                      {% endfor %}                                                      
+                    {% else %}
+                    <p>No products to show</p>
+                    {% endif %}
                 {% endif %}
              </div>
 

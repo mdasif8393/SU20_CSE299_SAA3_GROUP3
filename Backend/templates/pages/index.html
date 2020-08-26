@@ -25,21 +25,47 @@
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'seller_register' %}">Become a Seller</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'products' %}">Browse Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'customer_register' %}">Sign up</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cart.html">My Cart</a>
-          </li>
+
+          {% if user.is_authenticated and user.is_seller%}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'seller_dashboard' %}">Seller dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+              </li>
+          {% else %}
+               
+              {% if user.is_authenticated and user.is_customer %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'seller_register' %}">Become a Seller</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'products' %}">Browse Products</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cart' %}">My Cart</a>
+                  </li>
+              {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'seller_register' %}">Become a Seller</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'products' %}">Browse Products</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'customer_register' %}">Sign up</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login_page' %}">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cart' %}">My Cart</a>
+                  </li>
+              {% endif %}
+          {% endif %}
         </ul>
         </div>
     </nav>
@@ -147,31 +173,18 @@
     </div>
     <div class="card-deck">
       <div class="card ">
-        <img src="..static/img/shoes/shoe-1.png" class="card-img-top" alt="...">
-        <div class="card-body ">
-          <h5 class="card-title text-center">Bata 350</h5>
-          <p class="card-text">This is one of the best shoe. Yoy can use it for your daily need. You can use it for travelling, hiking.</p>
-          <h5>2200 Taka</h5>
-          <button class="buy-now-button">Buy Now >></button>
+          {% for shoe in shoes %}
+            <img style="width:30%;" src="{{shoe.image.url}}" class="card-img-top" alt="...">
+            <div class="card-body ">
+              <h5 class="card-title text-center">{{shoe.name}}</h5>
+              <p class="card-text">{{shoe.description}}</p>
+              <h5>{{shoe.price}} Taka</h5>
+              <button class="buy-now-button">Buy Now >></button>
+              
         </div>
+          {% endfor%}
       </div>
-      <div class="card">
-        <img src="..static/img/shoes/shoe-2.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title text-decoration text-center">Nike 360</h5>
-          <p class="card-text text-decoration">This is one of the best shoe. Yoy can use it for your daily need. You can use it for travelling, hiking.</p>
-          <h5 class="text-decoration">5600 Taka</h5>
-          <button class="buy-now-button text-decoration">Buy Now >></button>
-        </div>
-      </div>
-      <div class="card">
-        <img src="..static/img/shoes/shoe-3.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title text-center">Nike 370</h5>
-          <p class="card-text">This is one of the best shoe. Yoy can use it for your daily need. You can use it for travelling, hiking. </p>
-          <h5>6500 Taka</h5>
-          <button class="buy-now-button">Buy Now >></button>
-        </div>
+    
       </div>
     </div>
   </div>
