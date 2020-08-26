@@ -1,0 +1,405 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+</head>
+<body>
+<!----------------------Navbar--------------------------->
+<header>
+    <nav class="navbar navbar-expand-sm">
+        <!-- Brand/logo -->
+        <div class="nav-logo">
+            <a href="#"><img src="../static/img/logo.png"</a>
+        </div>
+        <!-- Links -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"><i class="fa fa-bars"></i>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+
+          {% if user.is_authenticated and user.is_seller%}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'seller_dashboard' %}">Seller dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+              </li>
+          {% else %}
+               
+              {% if user.is_authenticated and user.is_customer %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'seller_register' %}">Become a Seller</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'products' %}">Browse Products</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cart' %}">My Cart</a>
+                  </li>
+              {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'seller_register' %}">Become a Seller</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'products' %}">Browse Products</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'customer_register' %}">Sign up</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login_page' %}">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cart' %}">My Cart</a>
+                  </li>
+              {% endif %}
+          {% endif %}
+        </ul>
+        </div>
+    </nav>
+</header>
+ 
+
+    <div class="container" style="margin-top: 10px;">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action product-catagories">Top Catagories</a>
+            <a href="#" class="list-group-item list-group-item-action">Watch</a>
+            <a href="#" class="list-group-item list-group-item-action">Bag</a>
+            <a href="#" class="list-group-item list-group-item-action">Shoe</a>
+            <a href="#" class="list-group-item list-group-item-action">Smartphone</a>
+            <a href="#" class="list-group-item list-group-item-action">Laptop</a>
+            <a href="#" class="list-group-item list-group-item-action">Women's Fashion</a>
+            <a href="#" class="list-group-item list-group-item-action">Men's Fashion</a>
+          </div>
+        </div>
+        <div class="col-md-10">
+          <div id="carouselExampleControls" class="carousel slide orange-bg" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row align-items-center"> <!--small image size in carousal-->
+                    <div class="col-md-7">
+                        <h1>Mega LCD TV</h1>
+                        <p>This is the best tv in the world.</p>
+                        <h1 class="price">65000 Taka</h1>
+                        <button class="buy-now-button">Buy Now</button>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="{% static 'img/banner-images/tv.png' %}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row align-items-center">
+                    <div class="col-md-7">
+                      <h1>Star Headphone</h1>
+                        <p>This is the best headphone in the world.</p>
+                        <h1 class="price">1200 Taka</h1>
+                        <button class="buy-now-button">Buy Now</button>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="{% static 'img/banner-images/headphone.png' %}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row align-items-center">
+                    <div class="col-md-7">
+                      <h1>X-Box</h1>
+                        <p>This is the best x-box in the world.</p>
+                        <h1 class="price">30000 Taka</h1>
+                        <button class="buy-now-button">Buy Now</button>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="{% static 'img/banner-images/xbox.png' %}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="container catagories">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center cat1">
+          <h1>Watch</h1>
+        <img src="{% static 'img/categories/watch.png' %}" alt="">
+        </div>
+      </div>
+      <div class="col-md-4 ">
+        <div class="d-flex justify-content-between align-items-center cat2">
+          <h1>Bag</h1>
+        <img src="{% static 'img/categories/bag1.png' %}" alt="">
+        </div>
+      </div>
+      <div class="col-md-4 ">
+        <div class="d-flex justify-content-between align-items-center cat3">
+          <h1>Shoes</h1>
+        <img src="static/img/categories/shoes.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container shoes" id="shoes">
+    <div class="d-flex justify-content-between see-all">
+        <h3>Shoes</h3> 
+        <p class="box-title-decoration">See all</p>
+    </div>
+    <div class="card-deck">
+      <div class="card ">
+          {% for shoe in shoes %}
+            <img style="width:30%;" src="{{shoe.image.url}}" class="card-img-top" alt="...">
+            <div class="card-body ">
+              <h5 class="card-title text-center">{{shoe.name}}</h5>
+              <p class="card-text">{{shoe.description}}</p>
+              <h5>{{shoe.price}} Taka</h5>
+              <button class="buy-now-button">Buy Now >></button>
+              
+        </div>
+          {% endfor%}
+      </div>
+    
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="backpack">
+    <div class="d-flex justify-content-between see-all">
+        <h3>Backpack</h3> 
+        <p class="box-title-decoration">See all</p>
+    </div>
+    <div class="card-deck">
+      <div class="card">
+        <img src="..static/img/bags/bag-1.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center">Red Bag</h5>
+          <p class="card-text">This is the most comfortable bag which you want. You can use it for Office,Travel,School.</p>
+          <h5>1125 Taka</h5>
+        </div>
+        <div class="card-footer">
+          <button class="buy-now-button">Buy Now >></button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="..static/img/bags/bag-2.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center">Blue Bag</h5>
+          <p class="card-text">This is the most comfortable bag which you want. You can use it for Office,Travel,School.</p>
+          <h5>2299 Taka</h5>
+        </div>
+        <div class="card-footer">
+          <button class="buy-now-button">Buy Now >></button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="..static/img/bags/bag-3.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center">Black Bag</h5>
+          <p class="card-text">This is the most comfortable bag which you want. You can use it for Office,Travel,School.</p>
+          <h5 >2699 Taka</h5>
+        </div>
+        <div class="card-footer">
+          <button class="buy-now-button">Buy Now >></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container ">
+    <div class="d-flex justify-content-between see-all">
+      <h3 >Smartphone</h3> 
+      <p class="box-title-decoration">See all</p>
+    </div>
+    
+      <div class="card-deck ">
+          <div class="card card-decoration d-flex align-items-center justify-content-center padding-card">
+            <img src="..static/img/phone/phone-1.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">Redmi K30</h5>
+              <small class="card-text">This is one of the best smartphone right now in market. The cameras is the best one.</small>
+            </div>
+            <div class="card-footer">
+              <h5>21500 Taka</h5>
+              <button class="buy-now-button">BUY NOW >></button>
+            </div>
+          </div>
+          <div class="card card-decoration d-flex align-items-center justify-content-center padding-card">
+            <img src="..static/img/phone/phone-2.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">iPhone11 Pro</h5>
+              <small class="card-text">This is one of the best smartphone right now in market. The cameras is the best one.</small>
+            </div>
+            <div class="card-footer">
+              <h5>9999 Taka</h5>
+              <button class="buy-now-button">BUY NOW >></button>
+            </div>
+          </div>
+          <div class="card card-decoration d-flex align-items-center justify-content-center padding-card">
+            <img src="..static/img/phone/phone-3.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">Note 10 Plus</h5>
+              <small class="card-text">This is one of the best smartphone right now in market. The cameras is the best one.</small>
+              
+            </div>
+            <div class="card-footer">
+              <h5>65000 Taka</h5>
+              <button class="buy-now-button">BUY NOW >></button>
+            </div>
+          </div>
+        </div>
+  </div>
+
+
+  <div class="container ">
+    <div class="d-flex justify-content-between see-all">
+      <h3>Laptop</h3> 
+      <p class="box-title-decoration">See all</p>
+    </div>
+    
+      <div class="card-deck ">
+          <div class="card card-decoration d-flex align-items-center justify-content-center padding-card">
+            <img src="..static/img/laptop/product-1.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">Vivobook S15</h5>
+              <small class="card-text">This is the most powerful laptop in market right now with Core i9 10th, 16gb ram.</small>
+            </div>
+            <div class="card-footer">
+              <h5>56000 Taka</h5>
+              <button class="buy-now-button">BUY NOW >></button>
+            </div>
+          </div>
+          <div class="card card-decoration d-flex align-items-center justify-content-center padding-card">
+            <img src="..static/img/laptop/product-2.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">Razor 14</h5>
+              <small class="card-text">This is the most powerful laptop in market right now with Core i9 10th, 16gb ram.</small>
+            </div>
+            <div class="card-footer">
+              <h5>112000 Taka</h5>
+              <button class="buy-now-button">BUY NOW >></button>
+            </div>
+          </div>
+          <div class="card card-decoration d-flex align-items-center justify-content-center padding-card">
+            <img src="..static/img/laptop/product-3.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">Xiaomibook 16</h5>
+              <small class="card-text">This is the most powerful laptop in market right now with Core i9 10th, 16gb ram.</small>
+              
+            </div>
+            <div class="card-footer">
+              <h5>70000 Taka</h5>
+              <button class="buy-now-button">BUY NOW >></button>
+            </div>
+          </div>
+        </div>
+  </div>
+
+
+  <div class="container">
+    <h5>Catagories</h5>
+    <div>
+        <div>
+            
+        </div>
+      <div class="row d-flex align-items-center">
+        <div  class="col-md-3 d-flex align-items-center card-decoration d-flex flex-column col-resize decoration">
+          <img class="footer-images" src="..static/img/Categories/bag.png" alt="">
+          <h6>Bag</h6>
+        </div>
+        <div  class="col-md-3 ">
+          <div class="row card-decoration d-flex flex-column decoration">
+            <img class="footer-images" src="..static/img/Categories/perfume.png" alt="">
+            <h6>Beauty</h6>
+          </div>
+          <div class="row card-decoration d-flex flex-column decoration">
+            <img class="footer-images" src="..static/img/Categories/shoe.png" alt="">
+            <h6>Shoe</h6>
+          </div>
+        </div>
+        <div  class="col-md-5 ">
+          <img id="footer-margin" class="images" src="..static/img/Categories/pale-order.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container orange-bg d-flex justify-content-center align-items-center" id="subscribe">
+    <div>
+       <h3>LET'S STAY IN TOUCH</h3>
+       <h6>Get updates on sales, specials and more</h6>
+       <input class="form-control" type="text">
+       <button class="buy-now-button">SUBMIT</button>
+    </div>
+   </div>
+
+   <div class="container">
+     <div class="row">
+       <div class="col-md-12">
+        <img src="..static/img/payment.png" alt="">
+       </div>
+     </div>
+   </div>
+
+
+  <!----------------------Footer---------------------------> 
+  <footer>
+    <div class="footer">
+     <div class="row">
+       <div class="col-md-4">
+          <a>About</a>
+          <a>Trust &#38 Safety</a>
+       </div>
+       <div class="col-md-4">
+        <a>Career</a>
+        <a>Privacy & Terms</a>
+      </div>
+      <div class="col-md-4 footer-social">
+         <a href="#"><i class="fa fa-facebook fa-social"></i></a>
+         <a href="#"><i class="fa fa-twitter fa-social"></i></a>
+         <a href="#"><i class="fa fa-instagram fa-social"></i></a>
+      </div>
+     </div>
+     <div class="row">
+       <div class="col-md-12">
+       <div class="footer-copyright">
+        <p>&copy 2020 PANDA, Inc. All rights reserved </p>
+      </div>
+    </div>
+     </div>
+    </div>
+  </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
+
+{% endblock %}

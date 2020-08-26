@@ -1,0 +1,375 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="media_queries.css">
+  <title>PANDA</title>
+</head>
+<body class="user-dashboard-body">
+      <div class="row">
+        
+          <div id="main" class="seller-menu-options col-md-1">
+          <button class="user-menu" onclick="openSidebar()"><i class="fa fa-bars fa-black"></i></button>
+          <a onclick="change_content('dashboard-homepage')"><img src="{% static 'icons/home.png' %}"></a>
+          <a onclick="change_content('orders')"><img src="{% static 'icons/shopping cart.png' %}"></a>
+          <a onclick="change_content('products')"><img src="{% static 'icons/products.png' %}"></a>
+          <a onclick="change_content('reports')"><img src="{% static 'icons/report.png' %}"></a>
+          <a onclick="change_content('refunds')"><img src="{% static 'icons/refund.png' %}"></a>
+          <a onclick="change_content('seller-settings')"><i class="fa fa-cog fa-black"></i></a>
+        </div>
+      
+
+      <div class="col-md-2" id="menu-sidebar">
+        <div class="seller-menu-options-sidebar">
+          <button class="user-menu " onclick="closeSidebar()"><i class="fa fa-bars fa-black"></i></button>
+          <a onclick="change_content('dashboard-homepage')"><img src="{% static 'icons/home.png' %}"> Dashboard </a>
+          <a onclick="change_content('orders')"><img src="{% static 'icons/shopping cart.png' %}"> Orders </a>
+          <a onclick="change_content('products')"><img src="{% static 'icons/products.png' %}"> Products </a>
+          <a onclick="change_content('reports')"><img src="{% static 'icons/report.png' %}"> Reports </a>
+          <a onclick="change_content('refunds')"><img src="{% static 'icons/refund.png' %}"> Refunds </a>
+          <a onclick="change_content('seller-settings')"><i class="fa fa-cog fa-black"></i> Settings </a>
+        </div>
+      </div>
+        <div class="col-md-10">
+     <!----------------------Seller Dashboard Navbar--------------------------->
+     
+        <nav class="navbar user-navbar navbar-expand-sm">
+            <!-- Brand/logo -->
+            <div class="nav-logo">
+                <a href="#"><img src="img/logo.png"/></a>
+            </div>
+            <!-- Links -->
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+              </li>
+            </ul>
+        </nav>
+    
+    <section>
+     <!----------------------Dashboard Section--------------------------->
+        <div class="row" id="dashboard-homepage">     
+          <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="dashboard-heading">
+                    <h5>Total Earned</h5>
+                    <p>Tk. 50,000</p>
+              </div>
+
+              <div class="dashboard-heading">
+                <h5>Total Sales</h5>
+                <img src="icons/transaction.png">
+                <p>15</p>
+              </div>
+
+              <div class="dashboard-heading">
+                <h5>Total Views</h5>
+                <p>100,000</p>
+              </div>
+
+              <div class="dashboard-heading">
+                <h5>Total Views</h5>
+                <p>100,000</p>
+              </div>
+            </div>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="">
+               
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+ <!----------------------Orders Section--------------------------->
+    <section>
+      <div class="row" id="orders">
+        <div class="col-md-1"></div>
+        <div class="col-xs-12 col-sm-12 col-md-10">
+          <h4 class="">Orders</h4>
+          <div class="table-responsive order-table">
+            <table class="table">
+              <tr>
+                <th>Product</th>
+                <th>Order no.</th>
+                <th>Quantity</th>
+                <th>Purchase amount</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+              <tr>
+                <td><a><img src="img/red-skirt.jpg">Red mini skirt</a></td>
+                <td>123000</td>
+                <td>2</td>
+                <td>5000tk</td>
+                <td>21/2/20</td>
+                <td><p class="status-d">Delivered</p></td>
+              </tr>
+              <tr>
+                <td><a><img src="img/pink-dress.jpg">pink short dress</a></td>
+                <td>123000</td>
+                <td>2</td>
+                <td>5000tk</td>
+                <td>21/2/20</td>
+                <td><p class="status-d">Delivered</p></td>
+              </tr>
+              <tr>
+                <td><a><img src="img/watch.jpg">Rolex watch</a></td>
+                <td>123000</td>
+                <td>2</td>
+                <td>5000tk</td>
+                <td>21/2/20</td>
+                <td ><p class="status-p">Pending</p></td>
+              </tr>
+              <tr>
+                <td><a><img src="img/mobile.jpg">iphone 5s</a></td>
+                <td>123000</td>
+                <td>2</td>
+                <td>5000tk</td>
+                <td>21/2/20</td>
+                <td><p class="status-d">Delivered</p></td>
+              </tr>
+              <tr>
+                <td><a><img src="img/watch.jpg">Rolex watch</a></td>
+                <td>123000</td>
+                <td>2</td>
+                <td>5000tk</td>
+                <td>21/2/20</td>
+                <td><p class="status-p">Pending</p></td>
+              </tr>
+              <tr>
+                <td><a><img src="img/red-skirt.jpg">red mini skirt</a></td>
+                <td>123000</td>
+                <td>2</td>
+                <td>5000tk</td>
+                <td>21/2/20</td>
+                <td><p class="status-d">Delivered</p></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>  
+    </section>
+    <!----------------------Products Section--------------------------->
+    <section>
+       <div class="row" id="products">
+          <div class="col-md-2"></div>
+          <div class="col-md-10 col-sm-12">
+            <div>
+              <div class="row">
+               <div class="col-md-8 seller-custom-search-form">
+               <form>
+                 <input type="date" placeholder="Today">
+                 <label for="category-list">Category :</label>
+                        <select name="" id="">
+                          <option value=""> Phones & Accessories</option>
+                          <option value=""> Kitchen Tools</option>
+                          <option value=""> Baby Products</option>
+                          <option value=""> Women's Clothing</option>
+                          <option value=""> Men's Clothing</option>
+                          <option value=""> Beauty, Hair & Health</option>
+                          <option value=""> Shoes</option>
+                          <option value=""> Bags</option>
+                          <option value=""> Sports & Outdoors</option>
+                          <option value=""> Home Improvement Tools</option>
+                          <option value=""> Gadgets</option>
+                        </select>
+                    <input type="submit" value="Search">
+               </form>
+              </div>
+              <div class="col-md-4 seller-add-product">
+                <a onclick="change_content('add-product')"><button>Add Product</button></a>
+              </div>
+            </div>
+            </div>
+            <div class="table-responsive product-table">
+              <table class="table">
+                <tr>
+                  <th>Product</th>
+                  <th>Stock</th>
+                  <th>Price</th>
+                  <th>Category</th>
+                  <th>Sold</th>
+                  <th>Modify</th>
+                </tr>
+                <tr>
+                  <td><a><img src="img/red-skirt.jpg">Red mini skirt</a></td>
+                  <td>In Stock</td>
+                  <td>2000 &#2547;</td>
+                  <td>Women's Clothes</td>
+                  <td>100 units</td>
+                  <td><a onclick="change_content('edit-product')"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+                </tr>
+                <tr>
+                  <td><a><img src="img/pink-dress.jpg">pink short dress</a></td>
+                  <td>In Stock</td>
+                  <td>1500<span>&#2547;</span></td>
+                  <td>Women's Clothes</td>
+                  <td>20 units</td>
+                  <td><a onclick="change_content('edit-product')"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+                </tr>
+                <tr>
+                  <td><a><img src="img/watch.jpg">Rolex watch</a></td>
+                  <td>Out of Stock</td>
+                  <td>1500<span>&#2547;</span></td>
+                  <td>Accessories</td>
+                  <td>1000 units</td>
+                  <td><a onclick="change_content('edit-product')"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+                </tr>
+                <tr>
+                  <td><a><img src="img/mobile.jpg">iphone 5s</a></td>
+                  <td>In Stock</td>
+                  <td>150000<span>&#2547;</span></td>
+                  <td>Phones</td>
+                  <td>20 units</td>
+                  <td><a onclick="change_content('edit-product')"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+                </tr>
+                <tr>
+                  <td><a><img src="img/watch.jpg">Rolex watch</a></td>
+                  <td>Out of Stock</td>
+                  <td>30000<span>&#2547;</span></td>
+                  <td>Accessories</td>
+                  <td>307 units</td>
+                  <td><a onclick="change_content('edit-product')"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+                </tr>
+                <tr>
+                  <td><a><img src="img/red-skirt.jpg">red mini skirt</a></td>
+                  <td>In Stock</td>
+                  <td>5000<span>&#2547;</span></td>
+                  <td>Women's Clothes</td>
+                  <td>2060 units</td>
+                  <td><a onclick="change_content('add-product')"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+       </div>
+
+        <!----------------------Edit Products Section--------------------------->
+  
+    <div class="row" id="edit-product">
+       <div class="col-md-2"></div>
+       <div class="col-md-10 col-sm-12">
+         <form action="">
+          <div class="container">
+          <div class="row">
+             <div class="col-md-6">
+                <img src="" alt = "Insert Image">
+             </div>
+             <div class="col-md-6">
+               <input type="text" placeholder="Name Of the Product" required><br>
+               Price <input type="text" required><br>
+               <label>Description</label>
+               <textarea></textarea><br><br>
+               <input type="submit" value="Update">
+            </div>
+          </div>
+          </div>
+          </form>
+       </div>
+    </div>
+    </section>
+
+    <!----------------------Add Products Section--------------------------->
+   <section id="add-product">
+      <div class="row">
+         <div class="col-md-2"></div>
+         <div class="col-md-10">
+           <form action="{% url 'add_product' %}" method="POST" enctype="multipart/form-data">
+            <div class="row">
+              {% csrf_token %}
+                {{form}}
+                 <input type="submit" value="Add Product">
+              </div>
+            </div>
+           </form>
+         </div>
+      </div>
+    </section>
+
+    <!----------------------Refund Section--------------------------->
+    <section>
+      <div class="row" id="refunds">
+        <div class="col-md-1"></div>
+        <div class="col-xs-12 col-sm-12 col-md-10">
+          <h4 class="">Orders</h4>
+          <div class="table-responsive order-table">
+            <table class="table">
+              <tr>
+                <th>Product</th>
+                <th>Order no.</th>
+                <th>Quantity</th>
+                <th>Purchase amount</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+              <tr>
+                <td><a><img src="img/red-skirt.jpg">Red mini skirt</a></td>
+                <td>123000</td>
+                <td>2</td>
+                <td>5000tk</td>
+                <td>21/2/20</td>
+                <td><p class="status-d">Refunded</p></td>
+              </tr>
+              <tr>
+                <td><a><img src="img/pink-dress.jpg">pink short dress</a></td>
+                <td>123000</td>
+                <td>2</td>
+                <td>5000tk</td>
+                <td>21/2/20</td>
+                <td><p class="status-d">Refunded</p></td>
+              </tr>
+              <tr>
+                <td><a><img src="img/watch.jpg">Rolex watch</a></td>
+                <td>123000</td>
+                <td>2</td>
+                <td>5000tk</td>
+                <td>21/2/20</td>
+                <td ><p class="status-p">Refund Pending</p></td>
+              </tr>
+              <tr>
+                <td><a><img src="img/mobile.jpg">iphone 5s</a></td>
+                <td>123000</td>
+                <td>2</td>
+                <td>5000tk</td>
+                <td>21/2/20</td>
+                <td><p class="status-d">Refunded</p></td>
+              </tr>
+              <tr>
+                <td><a><img src="img/watch.jpg">Rolex watch</a></td>
+                <td>123000</td>
+                <td>2</td>
+                <td>5000tk</td>
+                <td>21/2/20</td>
+                <td><p class="status-p">Refund Pending</p></td>
+              </tr>
+              <tr>
+                <td><a><img src="img/red-skirt.jpg">red mini skirt</a></td>
+                <td>123000</td>
+                <td>2</td>
+                <td>5000tk</td>
+                <td>21/2/20</td>
+                <td><p class="status-d">Refunded</p></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>  
+    </section>
+         
+</div>
+<script type="text/javascript" src="{% static 'scripts/seller_dashboard.js' %}" rel="stylesheet"></script>
+<script type="text/javascript" src="{% static 'scripts/user_dashboard.js' %}" rel="stylesheet"></script>
+</body>
+</html>
