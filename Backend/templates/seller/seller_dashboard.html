@@ -21,7 +21,7 @@
           <button class="user-menu" onclick="openSidebar()"><i class="fa fa-bars fa-black"></i></button>
           <a onclick="change_content('dashboard-homepage')"><img src="{% static 'icons/home.png' %}"></a>
           <a onclick="change_content('orders')"><img src="{% static 'icons/shopping cart.png' %}"></a>
-          <a onclick="change_content('products')"><img src="{% static 'icons/products.png' %}"></a>
+          <a onclick="change_content('products')" href="{% url 'show_products' pk=user.pk %}"><img src="{% static 'icons/products.png' %}"></a>
           <a onclick="change_content('reports')"><img src="{% static 'icons/report.png' %}"></a>
           <a onclick="change_content('refunds')"><img src="{% static 'icons/refund.png' %}"></a>
           <a onclick="change_content('seller-settings')"><i class="fa fa-cog fa-black"></i></a>
@@ -33,7 +33,7 @@
           <button class="user-menu " onclick="closeSidebar()"><i class="fa fa-bars fa-black"></i></button>
           <a onclick="change_content('dashboard-homepage')"><img src="{% static 'icons/home.png' %}"> Dashboard </a>
           <a onclick="change_content('orders')"><img src="{% static 'icons/shopping cart.png' %}"> Orders </a>
-          <a onclick="change_content('products')"><img src="{% static 'icons/products.png' %}"> Products </a>
+          <a onclick="change_content('products')" href="{% url 'show_products' pk=user.pk %}"><img src="{% static 'icons/products.png' %}"> Products </a>
           <a onclick="change_content('reports')"><img src="{% static 'icons/report.png' %}"> Reports </a>
           <a onclick="change_content('refunds')"><img src="{% static 'icons/refund.png' %}"> Refunds </a>
           <a onclick="change_content('seller-settings')"><i class="fa fa-cog fa-black"></i> Settings </a>
@@ -161,7 +161,7 @@
     </div>  
     </section>
     <!----------------------Products Section--------------------------->
-    <section>
+   <!---- <section>
        <div class="row" id="products">
           <div class="col-md-2"></div>
           <div class="col-md-10 col-sm-12">
@@ -188,7 +188,7 @@
                </form>
               </div>
               <div class="col-md-4 seller-add-product">
-                <a onclick="change_content('add-product')"><button>Add Product</button></a>
+                <a  href="{% url 'add_product' pk=user.pk %}""><button>Add Product</button></a>
               </div>
             </div>
             </div>
@@ -203,99 +203,24 @@
                   <th>Modify</th>
                 </tr>
                 <tr>
-                  <td><a><img src="img/red-skirt.jpg">Red mini skirt</a></td>
-                  <td>In Stock</td>
-                  <td>2000 &#2547;</td>
-                  <td>Women's Clothes</td>
-                  <td>100 units</td>
-                  <td><a onclick="change_content('edit-product')"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
-                </tr>
-                <tr>
-                  <td><a><img src="img/pink-dress.jpg">pink short dress</a></td>
-                  <td>In Stock</td>
-                  <td>1500<span>&#2547;</span></td>
-                  <td>Women's Clothes</td>
-                  <td>20 units</td>
-                  <td><a onclick="change_content('edit-product')"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
-                </tr>
-                <tr>
-                  <td><a><img src="img/watch.jpg">Rolex watch</a></td>
-                  <td>Out of Stock</td>
-                  <td>1500<span>&#2547;</span></td>
-                  <td>Accessories</td>
-                  <td>1000 units</td>
-                  <td><a onclick="change_content('edit-product')"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
-                </tr>
-                <tr>
-                  <td><a><img src="img/mobile.jpg">iphone 5s</a></td>
-                  <td>In Stock</td>
-                  <td>150000<span>&#2547;</span></td>
-                  <td>Phones</td>
-                  <td>20 units</td>
-                  <td><a onclick="change_content('edit-product')"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
-                </tr>
-                <tr>
-                  <td><a><img src="img/watch.jpg">Rolex watch</a></td>
-                  <td>Out of Stock</td>
-                  <td>30000<span>&#2547;</span></td>
-                  <td>Accessories</td>
-                  <td>307 units</td>
-                  <td><a onclick="change_content('edit-product')"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
-                </tr>
-                <tr>
-                  <td><a><img src="img/red-skirt.jpg">red mini skirt</a></td>
-                  <td>In Stock</td>
-                  <td>5000<span>&#2547;</span></td>
-                  <td>Women's Clothes</td>
-                  <td>2060 units</td>
-                  <td><a onclick="change_content('add-product')"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
-                </tr>
+                  {% for product in products %}
+                        <td><a><img src="img/red-skirt.jpg">{{product.name}}</a></td>
+                        <td>In Stock</td>
+                        <td>{{product.price}}&#2547;</td>
+                        <td>{{product.category}}</td>
+                        <td>100 units</td>
+                        <td><a onclick="change_content('edit-product')"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+                        </tr>
+                  {% empty %}
+                        <p>No comments here yet :(</p>
+                  {% endfor %}
+                
               </table>
             </div>
           </div>
-       </div>
+       </div>-->
 
-        <!----------------------Edit Products Section--------------------------->
   
-    <div class="row" id="edit-product">
-       <div class="col-md-2"></div>
-       <div class="col-md-10 col-sm-12">
-         <form action="">
-          <div class="container">
-          <div class="row">
-             <div class="col-md-6">
-                <img src="" alt = "Insert Image">
-             </div>
-             <div class="col-md-6">
-               <input type="text" placeholder="Name Of the Product" required><br>
-               Price <input type="text" required><br>
-               <label>Description</label>
-               <textarea></textarea><br><br>
-               <input type="submit" value="Update">
-            </div>
-          </div>
-          </div>
-          </form>
-       </div>
-    </div>
-    </section>
-
-    <!----------------------Add Products Section--------------------------->
-   <section id="add-product">
-      <div class="row">
-         <div class="col-md-2"></div>
-         <div class="col-md-10">
-           <form action="{% url 'add_product' %}" method="POST" enctype="multipart/form-data">
-            <div class="row">
-              {% csrf_token %}
-                {{form}}
-                 <input type="submit" value="Add Product">
-              </div>
-            </div>
-           </form>
-         </div>
-      </div>
-    </section>
 
     <!----------------------Refund Section--------------------------->
     <section>

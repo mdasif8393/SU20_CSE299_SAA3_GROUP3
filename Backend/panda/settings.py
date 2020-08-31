@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
-     "requests",
+    'requests',
+    'taggit',
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
@@ -148,3 +149,5 @@ LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'index'
 
 LOGOUT_REDIRECT_URL = 'index'
+
+CART_SESSION_ID = 'cart'

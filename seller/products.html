@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../media_queries.css">
+  <title>PANDA</title>
+</head>
+<body class="user-dashboard-body">
+      <div class="row">
+        <div class="col-md-12">
+          <!----------------------Seller Dashboard Navbar--------------------------->
+          <div class="dash-nav">
+             <nav class="">
+                 <!-- Brand/logo -->
+                 <div class="dash-nav-logo">
+                     <a href="#"><img src="../img/logo.png"/></a>
+                 </div>
+                 <!-- Links -->
+                 <ul class="navbar-nav ml-auto">
+                   <li class="dash-nav-item">
+                     <a class="nav-link" href="index.html">Logout</a>
+                   </li>
+                 </ul>
+             </nav>
+           </div>
+         
+     </div>
+    </div>
+      
+    <div class="row">
+      <div class="col-md-2" id="menu-sidebar">
+        <div class="seller-menu-options-sidebar" id="myTopnav">
+          <button class="navbar-toggler visible-xs visible-sm" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"><i class="fa fa-bars"></i>
+            </span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <a href="dashaboard.html"><img src="../icons/home.png"> Dashboard </a>
+          <a href="orders.html"><img src="../icons/shopping cart.png"> Orders </a>
+          <a href="products.html"><img src="../icons/products.png"> Products </a>
+          <a href="report.html"><img src="../icons/report.png"> Reports </a>
+          <a href="refund.html"><img src="../icons/refund.png"> Refunds </a>
+          <a ><i class="fa fa-cog fa-black"></i> Settings </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<section>
+    <div class="row" id="products">
+       <div class="col-md-3"></div>
+       <div class="col-md-7 col-sm-12">
+         <div>
+           <div class="row">
+            <div class="col-md-8 seller-custom-search-form">
+            <form>
+              <input type="date" placeholder="Today">
+              <label for="category-list">Category :</label>
+                     <select name="" id="">
+                       <option value=""> Phones & Accessories</option>
+                       <option value=""> Kitchen Tools</option>
+                       <option value=""> Baby Products</option>
+                       <option value=""> Women's Clothing</option>
+                       <option value=""> Men's Clothing</option>
+                       <option value=""> Beauty, Hair & Health</option>
+                       <option value=""> Shoes</option>
+                       <option value=""> Bags</option>
+                       <option value=""> Sports & Outdoors</option>
+                       <option value=""> Home Improvement Tools</option>
+                       <option value=""> Gadgets</option>
+                     </select>
+                 <input type="submit" value="Search">
+            </form>
+           </div>
+           <div class="col-md-4 seller-add-product">
+             <a href="add_product.html"><button>Add Product</button></a>
+           </div>
+         </div>
+         </div>
+         <div class="table-responsive product-table">
+           <table class="table">
+             <tr>
+               <th>Product</th>
+               <th>Stock</th>
+               <th>Price</th>
+               <th>Category</th>
+               <th>Sold</th>
+               <th>Modify</th>
+             </tr>
+             <tr>
+               <td><a><img src="img/red-skirt.jpg">Red mini skirt</a></td>
+               <td>In Stock</td>
+               <td>2000 &#2547;</td>
+               <td>Women's Clothes</td>
+               <td>100 units</td>
+               <td><a href="modify.html"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+             </tr>
+             <tr>
+               <td><a><img src="img/pink-dress.jpg">pink short dress</a></td>
+               <td>In Stock</td>
+               <td>1500<span>&#2547;</span></td>
+               <td>Women's Clothes</td>
+               <td>20 units</td>
+               <td><a onclick="change_content('edit-product')"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+             </tr>
+             <tr>
+               <td><a><img src="img/watch.jpg">Rolex watch</a></td>
+               <td>Out of Stock</td>
+               <td>1500<span>&#2547;</span></td>
+               <td>Accessories</td>
+               <td>1000 units</td>
+               <td><a onclick="change_content('edit-product')"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+             </tr>
+             <tr>
+               <td><a><img src="img/mobile.jpg">iphone 5s</a></td>
+               <td>In Stock</td>
+               <td>150000<span>&#2547;</span></td>
+               <td>Phones</td>
+               <td>20 units</td>
+               <td><a onclick="change_content('edit-product')"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+             </tr>
+             <tr>
+               <td><a><img src="img/watch.jpg">Rolex watch</a></td>
+               <td>Out of Stock</td>
+               <td>30000<span>&#2547;</span></td>
+               <td>Accessories</td>
+               <td>307 units</td>
+               <td><a onclick="change_content('edit-product')"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+             </tr>
+             <tr>
+               <td><a><img src="img/red-skirt.jpg">red mini skirt</a></td>
+               <td>In Stock</td>
+               <td>5000<span>&#2547;</span></td>
+               <td>Women's Clothes</td>
+               <td>2060 units</td>
+               <td><a onclick="change_content('add-product')"><button>Modify<img class="edit-icon"src="icons/edit.png"></button></a></td>
+             </tr>
+           </table>
+         </div>
+       </div>
+       <div class="col-md-2"></div>
+    </div>

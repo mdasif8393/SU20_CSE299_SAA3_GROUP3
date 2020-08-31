@@ -25,5 +25,9 @@ def custom_search(request):
     return render(request, 'products/products.html', context)
 
 
-def single_product(request):
-    return render(request, 'products/single_product.html')
+def single_product(request,pk):
+    product = Product.objects.filter(id=pk)
+    context={
+        'product': product,
+    }
+    return render(request, 'products/single_product.html',context)

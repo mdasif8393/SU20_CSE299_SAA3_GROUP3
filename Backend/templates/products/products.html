@@ -188,7 +188,7 @@
               <div class="product-list">
                 {% if products %}
                   {% for product in products %}
-                      <a href="single_product.html">
+                      <a href="{% url 'single_product' pk=product.pk%}">
                         <img src="{{product.image.url}}"/>
                         <p>{{product.name}} </p>
                         <p>Tk. {{product.price}}</p>
@@ -197,7 +197,7 @@
                 {% else %}
                       {% if product %}
                       {% for prod in product %}
-                          <a href="single_product.html">
+                          <a href="{% url 'single_product' pk=product.pk%}">
                             <img src="{{prod.image.url}}"/>
                             <p>{{prod.name}} </p>
                             <p>Tk. {{prod.price}}</p>

@@ -28,7 +28,7 @@
 
           {% if user.is_authenticated and user.is_seller%}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'seller_dashboard' %}">Seller dashboard</a>
+                <a class="nav-link" href="{% url 'seller_dashboard'%}">Seller dashboard</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'logout' %}">Logout</a>
