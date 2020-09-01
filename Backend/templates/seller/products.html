@@ -1,0 +1,68 @@
+{% extends 'seller/menu.html' %}
+{% load static %}
+{% block content %}
+
+   <!----------------------Products Section--------------------------->
+<section>
+        <div class="row" id="products">
+           <div class="col-md-3"></div>
+           <div class="col-md-7 col-sm-12">
+             <div>
+               <div class="row">
+                <div class="col-md-8 seller-custom-search-form">
+                <form>
+                  <input type="date" placeholder="Today">
+                  <label for="category-list">Category :</label>
+                         <select name="" id="">
+                           <option value=""> Phones & Accessories</option>
+                           <option value=""> Kitchen Tools</option>
+                           <option value=""> Baby Products</option>
+                           <option value=""> Women's Clothing</option>
+                           <option value=""> Men's Clothing</option>
+                           <option value=""> Beauty, Hair & Health</option>
+                           <option value=""> Shoes</option>
+                           <option value=""> Bags</option>
+                           <option value=""> Sports & Outdoors</option>
+                           <option value=""> Home Improvement Tools</option>
+                           <option value=""> Gadgets</option>
+                         </select>
+                     <input type="submit" value="Search">
+                </form>
+               </div>
+               <div class="col-md-4 seller-add-product">
+                 <a href="{% url 'add_product' pk=user.pk %}"><button>Add Product</button></a>
+               </div>
+             </div>
+             </div>
+             <div class="table-responsive product-table">
+               <table class="table">
+                 <tr>
+                   <th>Product</th>
+                   <th>Stock</th>
+                   <th>Price</th>
+                   <th>Category</th>
+                   <th>Sold</th>
+                   <th>Modify</th>
+                 </tr>
+                 {% for product in products %}
+                    <td><a><img src="{{product.image.url}}">{{product.name}}</a></td>
+                    <td>In Stock</td>
+                    <td>{{product.price}}&#2547;</td>
+                    <td>{{product.category}}</td>
+                    <td>100 units</td>
+                    <td><a href="{% url 'seller_modify_product' pk=product.pk seller=user.pk%}"><button>Modify<img class="edit-icon"src="{% static 'icons/edit.png' %}"></button></a></td>
+                    </tr>
+                 {% empty %}
+                    <p>You did not add any products here yet :(</p>
+                 {% endfor %}
+                 
+               </table>
+             </div>
+           </div>
+           <div class="col-md-2"></div>
+        </div>    
+</section>
+
+{% endblock %}
+
+

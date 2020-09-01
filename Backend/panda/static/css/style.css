@@ -490,6 +490,38 @@ a:link{
       display: inline-block;
 }
 
+.seller-menu-options-sidebar {
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    background-color:rgb(1, 1, 24);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    color: #fff;
+}
+
+.seller-menu-options-sidebar a{
+    color: #fff;
+}
+
+.dash-nav{
+    height: 4rem !important;
+    background-color: #fff;
+}
+
+.dash-nav-item a{
+    float: right;
+    margin-right: 3rem;
+    margin-top: -2rem;
+}
+
+.dash-nav-logo img{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    width: 8rem;
+}
+
 .dashboard-heading{
     float: left;
     margin: 1rem;
@@ -564,6 +596,43 @@ a:link{
 .edit-icon{
     width: 20px !important;
     height: 20px !important;
+}
+
+#edit-product img{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(206, 205, 205);
+}
+
+#edit-product input[type="text"],
+#edit-product textarea,
+#add-product input[type="text"],
+#add-product textarea{
+    width:50%;
+    margin-bottom: 2rem;
+    text-indent: 1rem;
+}
+
+#edit-product input[type="submit"],
+#add-product input[type="submit"]{
+    float: right;
+    background-color: rgb(129, 129, 255);
+    border: 1px solid rgb(72, 72, 245);
+    color: #fff;
+    margin-right: 6rem;
+}
+
+.seller-custom-search-form form{
+    margin-top: 2rem;
+}
+
+.seller-add-product button{
+    float:right;
+    background-color: rgb(129, 129, 255);
+    border: 1px solid rgb(72, 72, 245);
+    color: #fff;
+    margin-top: 2rem;
+  
 }
 
 

@@ -8,3 +8,10 @@ class AddProductForm(forms.ModelForm):
           model = Product
           fields=('name', 'price', 'category', 'description', 'image', 'tags')
 
+class ModifyProductForm(forms.ModelForm):
+      class Meta:
+          model = Product
+          fields=('name', 'price', 'category', 'description', 'image', 'tags')
+
+      
+
