@@ -1,4 +1,5 @@
 {% load static %}
+{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,38 +99,40 @@
                                             <p>{{product.description}}</p>
                                         </div>
                       {% endfor %}
-              +
+                         
                             <div class="product-review" id="item-review">
                                 <div class="write-review">
-                                  <form>
                                     <div class="rvw-star">
                                     <i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
                                     </div>
-                                    <textarea placeholder="Write a review..."></textarea><br><br>
-                                    <input type="text" value="Submit"><br><br>
+                                  <form method="POST">
+                                    {% csrf_token %}
+                                          {% for hidden in form.hidden_fields %}
+                                            {{ hidden }}
+                                          {% endfor %}
+                            
+                                          {% for field in form.visible_fields %}
+                                              <div class="form-group">
+                                                <label for="{{ field.id_for_label }}">{{ field.label }}</label><br>
+                                                {% render_field field class="form-control" %}
+                                                  {% for error in field.errors %}
+                                                  <span class="help-block">{{ error }}</span>
+                                                  
+                                                {% endfor %}
+                                            </div>
+                                          {% endfor %}
+                                    <input type="submit" value="Submit"><br><br>
                                   </form>
                                 </div>
+                                {% for review in reviews %}
                                 <div class="reviews">
-                                    <h6>Hellen</h6>
+                                    <h6> {{ review.customer }}</h6>
                                     <div class="rvw-star">
                                     <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star hollow-star"></i><i class="fa fa-star hollow-star"></i>
                                     </div>
-                                    <p>It's alright :)</p>
+                                    <p>{{ review.text }}</p>
                                 </div>
-                                <div class="reviews">
-                                    <h6>Rahul</h6>
-                                    <div class="rvw-star">
-                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star hollow-star"></i><i class="fa fa-star hollow-star"></i>
-                                    </div>
-                                    <p>Unfortunately, the color faded away within a few days of washing. The material wasn't much comfortable either. Overall, I wouldn't recommend buying this.</p>
-                                </div>
-                                <div class="reviews">
-                                    <h6>Sara</h6>
-                                    <div class="rvw-star">
-                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star hollow-star"></i><i class="fa fa-star hollow-star"></i>
-                                    </div>
-                                    <p>It's alright :)</p>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>

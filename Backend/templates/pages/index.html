@@ -77,13 +77,13 @@
         <div class="col-md-2">
           <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action product-catagories">Top Catagories</a>
-            <a href="#" class="list-group-item list-group-item-action">Watch</a>
-            <a href="#" class="list-group-item list-group-item-action">Bag</a>
-            <a href="#" class="list-group-item list-group-item-action">Shoe</a>
-            <a href="#" class="list-group-item list-group-item-action">Smartphone</a>
-            <a href="#" class="list-group-item list-group-item-action">Laptop</a>
-            <a href="#" class="list-group-item list-group-item-action">Women's Fashion</a>
-            <a href="#" class="list-group-item list-group-item-action">Men's Fashion</a>
+            <a href="{% url 'product_category' pk=user.pk tag='watch' %}" class="list-group-item list-group-item-action">Watch</a>
+            <a href="{% url 'product_category' pk=user.pk tag='bag' %}" class="list-group-item list-group-item-action">Bag</a>
+            <a href="{% url 'product_category' pk=user.pk tag='shoe' %}" class="list-group-item list-group-item-action">Shoe</a>
+            <a href="{% url 'product_category' pk=user.pk tag='phone' %}" class="list-group-item list-group-item-action">Smartphone</a>
+            <a href="{% url 'product_category' pk=user.pk tag='laptop' %}" class="list-group-item list-group-item-action">Laptop</a>
+            <a href="{% url 'product_category' pk=user.pk tag='women' %}" class="list-group-item list-group-item-action">Women's Fashion</a>
+            <a href="{% url 'product_category' pk=user.pk tag='men' %}" class="list-group-item list-group-item-action">Men's Fashion</a>
           </div>
         </div>
         <div class="col-md-10">

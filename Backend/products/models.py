@@ -34,6 +34,20 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+class Review(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, related_name="reviews")
+    customer = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name="user_review")
+    text = models.TextField()
+    added_at = models.DateTimeField(default=timezone.now, null=True)
+
+    class Meta:
+        db_table = 'Review'
+        verbose_name = "review"
+
+    def __str__(self):
+        return self.product
+
+
 '''class Order(models.Model):
     seller = models.ForeignKey(Seller, on_delete=models.CASCADE)
     name = models.ForeignKey(Seller, on_delete=models.CASCADE)
