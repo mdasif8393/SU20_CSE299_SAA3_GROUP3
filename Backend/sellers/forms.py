@@ -6,5 +6,12 @@ from products.models import Product
 class AddProductForm(forms.ModelForm):
       class Meta:
           model = Product
-          exclude=('seller_id',)
+          fields=('name', 'price', 'category', 'description', 'image','tags')
+
+class ModifyProductForm(forms.ModelForm):
+      class Meta:
+          model = Product
+          fields=('name', 'price', 'category', 'description', 'image', 'tags')
+
+      
 

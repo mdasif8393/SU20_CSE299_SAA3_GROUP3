@@ -1,0 +1,23 @@
+
+/*****seller dashboard*******/
+
+@media screen and (max-width: 800px) {
+    .seller-menu-options-sidebar a{
+      text-align: center;
+      float: none;
+    }
+    .seller-menu-options-sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+
+  }
+
+
+  @media screen and (min-width: 800px) {
+    #collapsibleNavbar{
+      display:block;
+    }
+
+  }

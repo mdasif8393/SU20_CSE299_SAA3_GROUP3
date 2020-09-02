@@ -1,0 +1,165 @@
+.container{
+    margin-bottom: 80px;
+}
+.navbar{
+    background-color: #e4e4e4;
+    border-bottom: 1px solid rgb(148, 146, 146);
+}
+
+.navbar-nav a{
+    border-bottom: 1px solid transparent;
+}
+
+.navbar-nav a:hover,
+.navbar-nav a:active{
+    border-bottom: 1px solid #000;
+}
+
+.nav-item,
+.nav-logo a{
+    padding: 1rem;
+    color: rgb(0, 0, 0);
+}
+
+.nav-logo a:hover,
+.nav-logo a:link{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border-bottom: hidden;
+}
+
+.nav-logo{
+    font-family: Pacifico;
+}
+.nav-item a{
+    color: rgb(0, 0, 0);
+}
+a,
+a:hover,
+a:link{
+   text-decoration: none;
+   color: #000;
+   cursor: pointer;
+}
+.orange-bg{
+    background-color: #fceae8;
+    border-radius: 10px;
+}
+
+.carousel-item{
+    padding: 20px 40px;
+}
+.price{
+    color: #FF136F;
+}
+.product-catagories{
+    font-weight: bold;
+    background-color: rgb(214, 212, 212);
+}
+.buy-now-button{
+    background-image: linear-gradient(to bottom, #ff589b 0%, #ff136f 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 25px;
+    cursor: pointer;
+}
+.cat1, .cat2, .cat3{
+    padding: 10px 30px;
+    border-radius: 10px;   
+}
+.cat1{
+    background-image:linear-gradient(45deg, #FB9A35 0%, #FFD019 100%);
+}
+.cat2{
+    background-image: linear-gradient(45deg, #FF589B 0%, #FF136F 100%);
+}
+.cat3{
+    background-image: linear-gradient(45deg, #4289FF 0%, #3F07F8 100%);
+}
+.catagories h1{
+    color: white;
+}
+.catagories img{
+    width: 100px;
+}
+.card{
+    border-radius: 10px;
+    border: none;
+    box-shadow: 5px 5px 10px lightgray;
+}
+.card-footer{
+    border: none;
+    background-color: white;
+}
+#subscribe{
+    height: 300px;
+}
+#subscribe h6{
+    color:gray;
+}
+footer small{
+    color: gray;
+}
+footer{
+    text-align: center;
+}
+img{
+    width:100%;
+}
+.footer-images{
+    height: 150px;
+    width: 150px;
+}
+#footer-margin{
+    margin-left: 20px;
+}
+.cart-image{
+    height: 20px;
+    width: 20px;
+}
+.text-center{
+    text-align: center;
+    color: red;
+}
+.box-title-decoration{
+    color: orange;
+}
+
+/*****************************  FOOTER *****************************/
+.footer{
+    background-color: rgb(1, 1, 24);
+    margin-top: 3rem;
+}
+
+.footer a{
+    border-bottom:1px solid rgb(112, 102, 102);
+    color: #fff;
+    display: block;
+    margin: 3rem;
+
+}
+
+.footer-social{
+    margin-top: 3rem;
+}
+
+.footer-social a{
+    border-bottom:1px solid rgb(1, 1, 24);
+    display: inline;
+}
+
+.footer-copyright p{
+    text-align: center;
+    color: #fff;
+    margin-top: 3rem;
+}
+
+.fa-social{
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.footer a:hover{
+    color: rgb(146, 192, 252);
+}

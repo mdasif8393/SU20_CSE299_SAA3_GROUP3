@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/media_queries.css' %}">
+  <title>PANDA</title>
+</head>
+<body class="user-dashboard-body">
+      <div class="row">
+        <div class="col-md-12">
+          <!----------------------Seller Dashboard Navbar--------------------------->
+          <div class="dash-nav">
+             <nav class="">
+                 <!-- Brand/logo -->
+                 <div class="dash-nav-logo">
+                     <a href="#"><img src="{% static 'img/logo.png' %}"/></a>
+                 </div>
+                 <!-- Links -->
+                 <ul class="navbar-nav ml-auto">
+                   <li class="dash-nav-item">
+                     <a class="nav-link" href="index.html">Logout</a>
+                   </li>
+                 </ul>
+             </nav>
+           </div>
+         
+     </div>
+    </div>
+      
+    <div class="row">
+      <div class="col-md-2" id="menu-sidebar">
+        <div class="seller-menu-options-sidebar" id="myTopnav">
+          <button class="navbar-toggler visible-xs visible-sm" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"><i class="fa fa-bars"></i>
+            </span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <a href="{% url 'seller_dashboard' %}"><img src="../icons/home.png"> Dashboard </a>
+          <a href="{%  url 'seller_orders' %}"><img src="../icons/shopping cart.png"> Orders </a>
+          <a href="{%  url 'seller_products' pk=user.pk %}"><img src="../icons/products.png"> Products </a>
+          <a href=""><img src="../icons/report.png"> Reports </a>
+          <a href=""><img src="../icons/refund.png"> Refunds </a>
+          <a href="{% url 'seller_settings' %}"><i class="fa fa-cog fa-black"></i> Settings </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% block content %}
+  {% endblock %}
+
+  </body>
+</html>
+

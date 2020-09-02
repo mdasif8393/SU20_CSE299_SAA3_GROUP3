@@ -1,0 +1,64 @@
+{% extends 'seller/menu.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+
+<section id="add-product">
+  <div class="row">
+     <div class="col-md-3"></div>
+     <div class="col-md-8">
+      <h5 class="user-dashboard-heading">Add Product</h5>
+        
+            <form  method="POST" enctype="multipart/form-data">
+              <div class="row">
+                <!-- <div class="col-md-6">
+                    <img src="">
+                 </div>-->
+                 <div class="col-md-2"></div>
+                 <div class="col-md-9">
+              <div class="row">
+                {% csrf_token %}
+                          {% for hidden in form.hidden_fields %}
+                            {{ hidden }}
+                          {% endfor %}
+            
+                          {% for field in form.visible_fields %}
+                              <div class="form-group">
+                                <label for="{{ field.id_for_label }}">{{ field.label }}</label><br>
+                                {% render_field field class="form-control" %}
+                                  {% for error in field.errors %}
+                                  <span class="help-block">{{ error }}</span>
+                                  
+                                {% endfor %}
+                            </div>
+                          {% endfor %}
+                   <input type="submit" value="Add Product">
+                </div>
+              </div>
+            </div>
+             </form>
+         
+     
+     </div>
+     <div class="col-md-1"></div>
+  </div>
+</section>
+{% endblock %}
+
+<!--<label>Name of the Product</label><br>
+<input type="text" placeholder="Name Of the Product" required><br>
+<label>Price</label><br>
+ <input type type="text" required><br>
+   <label class="file"><br>
+     <input type="file" id="file" aria-label="File browser example">
+     <span class="file-custom"></span>
+   </label><br>
+<label>Description</label><br>
+<textarea></textarea><br><br>
+<input type="submit" value="Add Product">-->
+
+
+
+
+
+
