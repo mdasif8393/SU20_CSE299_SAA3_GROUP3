@@ -9,6 +9,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/index.css'%}">
+    <script type="text/javascript">
+      var user = '{{request.user}}';
+      
+      function get_token(name){
+        var cookieValue = null;
+        if(document.cookie && document.cookie!==''){
+          var cookies = document.cookie.split(';');
+          for(var i=0; i<cookies.length;i++){
+              var cookie = cookies[i].trim();
+              if(cookie.substring(0, name.length+1) === (name + '=')){
+                 cookieValue = decodeURIComponent(cookie.substring(name.length+1));
+                 break;
+              }
+          }
+        }
+        return cookieValue;
+      }
+      var csrftoken = get_token('csrftoken');
+    </script>
 </head>
 <body>
 <!----------------------Navbar--------------------------->
@@ -37,6 +56,9 @@
                
               {% if user.is_authenticated and user.is_customer %}
                   <li class="nav-item">
+                    <a class="nav-link" href="{% url 'customer_dashboard' %}">Account</a>
+                  </li>
+                  <li class="nav-item">
                     <a class="nav-link" href="{% url 'seller_register' %}">Become a Seller</a>
                   </li>
                   <li class="nav-item">
@@ -46,7 +68,7 @@
                     <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'cart' %}">My Cart</a>
+                    <a class="nav-link" href="{% url 'cart:cart_detail' %}">My Cart</a>
                   </li>
               {% else %}
                   <li class="nav-item">
@@ -62,7 +84,7 @@
                     <a class="nav-link" href="{% url 'login_page' %}">Login</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'cart' %}">My Cart</a>
+                    <a class="nav-link" href="{% url 'cart:cart_detail' %}">My Cart</a>
                   </li>
               {% endif %}
           {% endif %}
@@ -77,13 +99,13 @@
         <div class="col-md-2">
           <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action product-catagories">Top Catagories</a>
-            <a href="{% url 'product_category' pk=user.pk tag='watch' %}" class="list-group-item list-group-item-action">Watch</a>
-            <a href="{% url 'product_category' pk=user.pk tag='bag' %}" class="list-group-item list-group-item-action">Bag</a>
-            <a href="{% url 'product_category' pk=user.pk tag='shoe' %}" class="list-group-item list-group-item-action">Shoe</a>
-            <a href="{% url 'product_category' pk=user.pk tag='phone' %}" class="list-group-item list-group-item-action">Smartphone</a>
-            <a href="{% url 'product_category' pk=user.pk tag='laptop' %}" class="list-group-item list-group-item-action">Laptop</a>
-            <a href="{% url 'product_category' pk=user.pk tag='women' %}" class="list-group-item list-group-item-action">Women's Fashion</a>
-            <a href="{% url 'product_category' pk=user.pk tag='men' %}" class="list-group-item list-group-item-action">Men's Fashion</a>
+            <a href="{% url 'product_category' tag='watch' %}" class="list-group-item list-group-item-action">Watch</a>
+            <a href="{% url 'product_category' tag='bag' %}" class="list-group-item list-group-item-action">Bag</a>
+            <a href="{% url 'product_category' tag='shoe' %}" class="list-group-item list-group-item-action">Shoe</a>
+            <a href="{% url 'product_category' tag='phone' %}" class="list-group-item list-group-item-action">Smartphone</a>
+            <a href="{% url 'product_category' tag='laptop' %}" class="list-group-item list-group-item-action">Laptop</a>
+            <a href="{% url 'product_category' tag='women' %}" class="list-group-item list-group-item-action">Women's Fashion</a>
+            <a href="{% url 'product_category' tag='men' %}" class="list-group-item list-group-item-action">Men's Fashion</a>
           </div>
         </div>
         <div class="col-md-10">

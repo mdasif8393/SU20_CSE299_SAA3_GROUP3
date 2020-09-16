@@ -1,30 +1,43 @@
 {% load static %}
+{% load widget_tweaks %}
+{% block content %}
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Shopping Cart</title>
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
-    <link rel="stylesheet" href="media_queries.css">
-   <link href="cart.css" rel="stylesheet">
-   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/cart.css'%}">
+    <script type="text/javascript">
+      var user = '{{request.user}}';
+      
+      function get_token(name){
+        var cookieValue = null;
+        if(document.cookie && document.cookie!==''){
+          var cookies = document.cookie.split(';');
+          for(var i=0; i<cookies.length;i++){
+              var cookie = cookies[i].trim();
+              if(cookie.substring(0, name.length+1) === (name + '=')){
+                 cookieValue = decodeURIComponent(cookie.substring(name.length+1));
+                 break;
+              }
+          }
+        }
+        return cookieValue;
+      }
+      var csrftoken = get_token('csrftoken');
+    </script>
 </head>
-
-  <!----------------------Navbar--------------------------->
-  <header>
+<body>
+<!----------------------Navbar--------------------------->
+<header>
     <nav class="navbar navbar-expand-sm">
         <!-- Brand/logo -->
         <div class="nav-logo">
-            <a href="#"><img src="img/logo.png"/></a>
+            <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}"</a>
         </div>
         <!-- Links -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -33,18 +46,50 @@
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="product_list.html">Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="signup.html">Sign up</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="payment.html">My Cart</a>
-          </li>
+
+          {% if user.is_authenticated and user.is_seller%}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'seller_dashboard' %}">Seller dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+              </li>
+          {% else %}
+               
+              {% if user.is_authenticated and user.is_customer %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'customer_dashboard' %}">Account</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'seller_register' %}">Become a Seller</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'products' %}">Browse Products</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="">My Cart</a>
+                  </li>
+              {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'seller_register' %}">Become a Seller</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'products' %}">Browse Products</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'customer_register' %}">Sign up</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login_page' %}">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="">My Cart</a>
+                  </li>
+              {% endif %}
+          {% endif %}
         </ul>
         </div>
     </nav>
@@ -57,77 +102,53 @@
             <div class="cart-align">
                <h3>Shopping Cart</h3>
             </div>
-            
+            {% for item in cart %}
+            {% with product=item.product %}
             <div class="col-md-12 col-lg-10 mx-auto">
                <div class="cart-item">
                   <div class="row">
                      <div class="col-md-7 center-item">
-                        <img src="img/product-1.png" alt="">
-                        <h5>iPhone 11 128GB Black</h5>
+                        <img src="{{product.image.url}}" alt="">
+                        <h5>{{product.name}}</h5>
                      </div>
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button id="iphoneMinusButton" class="btn btn-default"><i class="fas fa-minus"></i></button>
-
-                           <input type="text" id="iphoneNumber" class="form-control text-center" value="1"> 
-
-                           <button id="iphonePlusButton" class="btn btn-default"><i class="fas fa-plus"></i></button>
-
+                                   
+                           <td>
+                            <form action="{% url "cart:cart_add" product.id %}" method="post">
+                            {{ item.update_quantity_form.quantity }}
+                            {{ item.update_quantity_form.update }}
+                            <input type="submit" value="Update">
+                            {% csrf_token %}
+                            </form>
+                           </td>
                         </div>
 
-                        <h5>$ <span id = "iphonePrice">1219</span></h5>
-
+                        <h5><span id = "iphonePrice">Tk.{{item.price}}</span></h5>
+              
+                        <h5> <span id = "iphonePrice">Tk.{{ item.total_price }}</span></h5>
+                        <a href="{% url 'cart:cart_remove' product_id=product.id %}">Remove</a>
                         <img src="img/remove.png" alt="" class="remove-item">
-                     </div>
-                  </div>
-               </div>
+                      </div>
+                   </div>
+                </div>
+             {%endwith%}
+             {%endfor%}
+                       
 
-               <div class="cart-item">
-                  <div class="row">
-                     <div class="col-md-7 center-item mx-auto">
-                        <img src="img/product-2.png" alt="">
-                        <h5>iPhone 11 Silicone Case - Black</h5>
-                     </div>
-                     <div class="col-md-5 center-item">
-                        <div class="input-group number-spinner">
-
-                           <button id="iphoneCaseMinusButton" class="btn btn-default"><i class="fas fa-minus"></i></button>
-
-                           <input id="iphoneCaseNumber" type="text" class="form-control text-center" value="1">
-
-                           <button id="iphoneCasePlusButton" class="btn btn-default"><i class="fas fa-plus"></i></button>
-
-                        </div>
-                        <h5>$ <span id = "iphoneCasePrice">59</span> </h5>
-                        <img src="img/remove.png" alt="" class="remove-item">
-                     </div>
-                  </div>
-               </div>
-
-               <div class="cart-item">
-                  <div class="row">
-
-                     <div class="col-md-8">
-                        <h5>Subtotal: </h5>
-                        <h5>Tax:</h5>
-                        <h5>Total:</h5>
-                     </div>
-
-                     <div class="col-md-4 status">
-                        <h5>$<span id="subTotal">1,278</span></h5>
-                        <h5>$0</h5>
-                        <h5>$<span id="total">1,278</span></h5>
-                     </div>
-                  </div>
-               </div>
+           
                <div class="col-md-12 pt-4 pb-4">
-                  <a href="{% url 'checkout' %}"><button type="button" class=" check-out">Check Out</button></a>
+                  <a href="{% url "cart:order_create" %}"><button type="button" class=" check-out">Check Out</button></a>
                </div>
             </div>
          </div>
       </div>
-
+      {% if order %}
+        <h1>Thank you</h1>
+        <p>Your order has been successfully completed. Your order number is
+      <strong>{{ order.id }}</strong>.</p>
+      {%endif%}
       <div class="footer">
          <div class="row">
            <div class="col-md-4">
@@ -153,6 +174,7 @@
          </div>
         </div>
       </footer>
-      <script src="script.js"></script> 
+     
    </body>
 </html>
+{% endblock %}

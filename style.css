@@ -505,6 +505,15 @@ a:link{
     color: #fff;
 }
 
+.delete-button{
+    background-color:red;
+    float:right;
+    margin-right: 11rem;
+    width: 7rem;
+    border: 2px solid red;
+    margin-top: 1rem;
+}
+
 .dash-nav{
     height: 4rem !important;
     background-color: #fff;

@@ -1,0 +1,49 @@
+{% extends 'customers/menu.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+<section>
+    <!----------------------My Profile Section--------------------------->
+       <div class="row" id="my-profile">
+         <div class="col-md-4 col-xs-12 col-sm-12 "></div>
+           
+         <div class="user-info col-xs-12 col-sm-12 col-md-5">
+                 <h4 class="user-dashboard-heading ">Profile Information</h4>
+                 <div class="table-responsive">
+                   <table class="table">
+                     {% if user %}
+                     <tr>
+                       <th> Full Name :</th>
+                       <td> {{user.full_name}} </td>
+                       <td rowspan="6">
+                         <h6> <strong> Profile Picture</strong></h6>
+                         <img src="img/profile-pic.jpg">
+                      </td>
+                     </tr>
+                    
+                     <tr>
+                       <th> Email : </th>
+                       <td> {{user.email}} </td>
+                     </tr>
+                     <tr>
+                       <th> Phone Number : </th>
+                       <td> {{user.phone_number}} </td>
+                     </tr>
+
+                     <tr>
+                       <th> Address : </th>
+                       <td> {{user.address}} </td>
+                     </tr>
+                       {% endif %}
+                     <tr>
+                       <th> City : </th>
+                       <td> Dhaka </td>
+                     </tr>
+                   </table>
+               </div>
+            </div>
+        
+         <div class="col-md-3"></div>
+       </div>
+       <section>
+{%endblock%}
