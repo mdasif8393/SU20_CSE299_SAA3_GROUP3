@@ -8,6 +8,7 @@ from django.utils.decorators import method_decorator
 from .decorators import seller_required
 from products.models import Product
 from accounts.models import Seller,User
+from cart.models import OrderItem, Order
 from .forms import AddProductForm, ModifyProductForm
 from django import forms
 
@@ -46,7 +47,7 @@ def seller_modify_product(request,  seller, pk):
             product = form.save(commit=False)
             product.seller = user
             product.save()
-            return redirect('../templates/seller/seller_dashboard.html', seller=user.pk)
+            return redirect('../templates/seller/dashboard.html', seller=user.pk)
     context = {
         'form': form
     }
@@ -63,7 +64,7 @@ def add_product(request, pk):
             product = form.save(commit=False)
             product.seller = user
             product.save()
-            return redirect('../templates/seller/seller_dashboard.html', pk=user.pk)
+            return render(request, '../templates/seller/dashboard.html')
     else:
         form = AddProductForm()
 

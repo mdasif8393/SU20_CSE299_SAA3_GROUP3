@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 from datetime import date
 from taggit.managers import TaggableManager
-from accounts.models import Seller, User
+from accounts.models import Seller, User, Customer
 
 class Product(models.Model):
     CATEGORY = (
@@ -25,6 +25,7 @@ class Product(models.Model):
     description = models.TextField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True, upload_to="gallery")
     uploaded_at = models.DateTimeField(default=timezone.now, null=True)
+    total_units = models.IntegerField(default=1)
     tags = TaggableManager()
 
     class Meta:

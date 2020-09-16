@@ -1,0 +1,25 @@
+{% extends 'customers/menu.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+<section>
+    <!----------------------My Orders Section--------------------------->
+  <div class="row" id="my-orders">
+      <div class="col-md-1"></div>
+      <div class="col-xs-12 col-sm-12 col-md-10 product-list">
+        <h4 class="user-dashboard-heading">Past Orders</h4>
+        {% for order in orders %}
+          {% for item in order.items.all%}
+            <a href="single_product.html">
+              <img src="{{item.product.image.url}}"/>
+              <p>Product name: {{item.product.name}} </p>
+              <p>Order no: {{order.id}} </p>
+              <p>Price: {{item.price}}</p>
+            </a>
+          {% endfor %}
+        {% endfor %}
+      </div>
+      <div class="col-md-1"></div>
+  </div>  
+</section>
+{%endblock%}

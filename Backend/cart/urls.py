@@ -2,6 +2,9 @@ from django.urls import path
 from .import views
 
 urlpatterns = [
-    path('',views.cart, name='cart'),
-    path('checkout/',views.checkout, name='checkout'),
+    path('', views.cart_detail, name='cart_detail'),
+    path('remove/<int:product_id>', views.cart_remove, name='cart_remove'),
+    path('add/(<int:product_id>', views.cart_add, name='cart_add'),
+    path('create/', views.order_create, name='order_create'),
+    #path('checkout/',views.checkout, name='checkout'),
 ]

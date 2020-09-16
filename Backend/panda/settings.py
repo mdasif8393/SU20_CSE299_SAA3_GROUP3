@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'requests',
     'taggit',
+    #'cart',
 ]
 
 AUTH_USER_MODEL = 'accounts.User'

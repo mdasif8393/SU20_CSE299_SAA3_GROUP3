@@ -7,8 +7,8 @@ from products.models import Product
 # Create your models here.
 
 class Wish_list(models.Model):
-      customer = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name="wish_list")
-      product  = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, related_name="wish_list_product")
+      customer = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+      product  = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
       added_at = models.DateTimeField(default=timezone.now, null=True)
 
 class Favourite(models.Model):

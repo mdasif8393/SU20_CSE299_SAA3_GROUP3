@@ -1,0 +1,20 @@
+{% extends 'customers/menu.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+ <!----------------------Favourites Section--------------------------->
+ <div class="row" id="favourites">
+    <div class="col-md-1"></div>
+    <div class="col-xs-12 col-sm-12 col-md-10 product-list">
+      <h4 class="user-dashboard-heading">Favourites</h4>
+      {% for favourite in favourites%}
+            <a href="{% url 'single_product' pk=favourite.product.pk token='None' %}">
+                <img src="{{favourite.product.image.url}}"/>
+                <p>{{favourite.product.name}}</p>
+                <p>{{favourite.product.price}}</p>
+            </a>
+      {% endfor %}
+    </div>
+    <div class="col-md-1"></div>
+</div> 
+{% endblock %}

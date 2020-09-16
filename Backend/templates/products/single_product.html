@@ -1,51 +1,98 @@
 {% load static %}
 {% load widget_tweaks %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="media_queries.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <title>Panda</title>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <script type="text/javascript">
+      var user = '{{request.user}}';
+      
+      function get_token(name){
+        var cookieValue = null;
+        if(document.cookie && document.cookie!==''){
+          var cookies = document.cookie.split(';');
+          for(var i=0; i<cookies.length;i++){
+              var cookie = cookies[i].trim();
+              if(cookie.substring(0, name.length+1) === (name + '=')){
+                 cookieValue = decodeURIComponent(cookie.substring(name.length+1));
+                 break;
+              }
+          }
+        }
+        return cookieValue;
+      }
+      var csrftoken = get_token('csrftoken');
+    </script>
 </head>
 <body>
-    <!----------------------Navbar--------------------------->
-    <header>
-        <nav class="navbar navbar-expand-sm">
-            <!-- Brand/logo -->
-            <div class="nav-logo">
-                <a href="#"><img src="img/logo.png"/></a>
-            </div>
-            <!-- Links -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-              <span class="navbar-toggler-icon"><i class="fa fa-bars"></i>
-              </span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav ml-auto">
+<!----------------------Navbar--------------------------->
+<header>
+    <nav class="navbar navbar-expand-sm">
+        <!-- Brand/logo -->
+        <div class="nav-logo">
+            <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}"</a>
+        </div>
+        <!-- Links -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"><i class="fa fa-bars"></i>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+
+          {% if user.is_authenticated and user.is_seller%}
               <li class="nav-item">
-                <a class="nav-link" href="product_list.html">Products</a>
+                <a class="nav-link" href="{% url 'seller_dashboard' %}">Seller dashboard</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="signup.html">Sign up</a>
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="payment.html">My Cart</a>
-              </li>
-            </ul>
-            </div>
-        </nav>
-    </header>
+          {% else %}
+               
+              {% if user.is_authenticated and user.is_customer %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'customer_dashboard' %}">Account</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'seller_register' %}">Become a Seller</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'products' %}">Browse Products</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cart:cart_detail' %}">My Cart</a>
+                  </li>
+              {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'seller_register' %}">Become a Seller</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'products' %}">Browse Products</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'customer_register' %}">Sign up</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login_page' %}">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cart:cart_detail' %}">My Cart</a>
+                  </li>
+              {% endif %}
+          {% endif %}
+        </ul>
+        </div>
+    </nav>
+</header>
 
     <div class="row">
         <div class="col span-2-of-2">
@@ -63,11 +110,11 @@
                 <div class="item-vid-img">
                  <div class="single-product-image">
                   
-                      {% for product in product %}
+                      {% if product %}
                                 <img src="{{product.image.url}}" alt=""/>
                                 <div class="single-product-actions">
-                                  <p><i class="fa fa-shopping-basket fa-black"></i>Add to Wish list</p>
-                                  <p><i class="fa fa-heart"></i>Add to Favourites</p>
+                                  <p><i class="fa fa-shopping-basket fa-black"></i><a href="{% url 'single_product' pk=product.pk token='wish' %}">Add to Wish list</a></p>
+                                  <p><i class="fa fa-heart"></i><a href="{% url 'single_product' pk=product.pk token='favourite' %}">Add to Favourites</a></p>
                                 </div>
                             </div>
                             <!---- <div>
@@ -85,9 +132,14 @@
                                 <i class="fa fa-star avg-star"></i><i class="fa fa-star avg-star"></i><i class="fa fa-star avg-star"></i><i class="fa fa-star hollow-star avg-star"></i><i class="fa fa-star hollow-star avg-star"></i><!--<p>(35)</p>-->
                             </div>
                             <div class="cart-button">
-                                <button>Add to Cart</button>
+                              <form action="{% url "cart:cart_add" product.id %}" method="post">
+                                {{ cart_product_form }}
+                                {% csrf_token %}
+                                <input style="width:400px; border: 2px solid #000; background-color: #000; color: #fff;" type="submit" value="Add to cart">
+                              </form>
+                               
                             </div>
-
+                               
                             <div class="container">
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 review-info-section">
@@ -98,7 +150,7 @@
                                         <div class="product-description" id="item-info">
                                             <p>{{product.description}}</p>
                                         </div>
-                      {% endfor %}
+                      {% endif %}
                          
                             <div class="product-review" id="item-review">
                                 <div class="write-review">
@@ -124,14 +176,16 @@
                                     <input type="submit" value="Submit"><br><br>
                                   </form>
                                 </div>
-                                {% for review in reviews %}
+                                {% for review in product.reviews.all %}
                                 <div class="reviews">
-                                    <h6> {{ review.customer }}</h6>
+                                    <h6> </h6>
                                     <div class="rvw-star">
                                     <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star hollow-star"></i><i class="fa fa-star hollow-star"></i>
                                     </div>
                                     <p>{{ review.text }}</p>
                                 </div>
+                                {% empty %}
+                                    <p>No comments here yet :(</p>
                                 {% endfor %}
                             </div>
                         </div>
@@ -148,3 +202,4 @@
 
 <script type="text/javascript" src="{% static 'scripts/single_product.js' %}" rel="stylesheet"></script>
 </html>
+{% endblock %}

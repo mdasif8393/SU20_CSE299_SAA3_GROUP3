@@ -1,0 +1,22 @@
+{% extends 'customers/menu.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+<section>
+    <!----------------------Wishlist Section--------------------------->
+    <div class="row" id="wish-list">
+      <div class="col-md-3"></div>
+      <div class="col-xs-12 col-sm-12 col-md-8 product-list">
+        <h4 class="user-dashboard-heading">Wish list</h4>
+        {% for wish_list in wish_lists%}
+            <a href="{% url 'single_product' pk=wish_list.product.pk token='None' %}">
+            <img src="{{wish_list.product.image.url}}"/>
+            <p>{{wish_list.product.name}}</p>
+            <p>{{wish_list.product.price}}</p>
+            </a>
+        {% endfor %}
+      </div>
+      <div class="col-md-1"></div>
+  </div> 
+</section>
+{%endblock%}

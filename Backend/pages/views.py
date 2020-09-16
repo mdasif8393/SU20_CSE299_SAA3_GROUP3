@@ -12,7 +12,7 @@ def index(request):
 
     return render(request, '../templates/pages/index.html', context)
    
-def product_category(request, pk, tag):
+def product_category(request, tag):
     tags = Tag.objects.get(name__exact=tag)
     products = Product.objects.filter(tags__exact=tags)
     context={
