@@ -3,7 +3,7 @@
 [![Python Version](https://img.shields.io/badge/python-3.8-hotpink.svg)](https://python.org)
 [![Django Version](https://img.shields.io/badge/django-3.0-hotpink.svg)](https://djangoproject.com)
 
-This is a e-commerce project done for CSE299 junior design group project. 
+This is an e-commerce project where buyers can buy products and sellers can sell items. This project was done for CSE299 junior design group project. 
 
 Group Members : 
    1. Nusrat Ameen Barsha (1731689)
