@@ -59,13 +59,12 @@ def order_create(request):
 def checkout(request):
     cart = Cart(request)
     customer = Customer.objects.get(user_id=request.user)
-    request.session['customer'] = customer
     settings = { 'store_id': 'bookr5f41517d60625', 'store_pass': 'bookr5f41517d60625@ssl', 'issandbox': True }
     sslcommez = SSLCOMMERZ(settings)
     post_body = {}
     post_body['total_amount'] = cart.get_total_price()
     post_body['currency'] = "BDT"
-    post_body['tran_id'] = "1234"
+    post_body['tran_id'] = '5E121A0D01F92'
     post_body['success_url'] = "http://127.0.0.1:8000/cart/success/"
     post_body['fail_url'] = "your fail url"
     post_body['cancel_url'] = "your cancel url"
@@ -89,11 +88,11 @@ def checkout(request):
 def success(request):
     settings = { 'store_id': 'bookr5f41517d60625', 'store_pass': 'bookr5f41517d60625@ssl', 'issandbox': True }
     sslcommez = SSLCOMMERZ(settings)
-
-    tranid = "1234"
+    tranid = '59C2A4F6432F8'
     response = sslcommez.transaction_query_tranid(tranid)
     context={
         "response":response,
     }
-
+    cart = Cart(request)
+    cart.clear()
     return render(request,'cart/checkout.html', context)
