@@ -139,7 +139,7 @@
 
            
                <div class="col-md-12 pt-4 pb-4">
-                  <a href="{% url "cart:order_create" %}"><button type="button" class=" check-out">Check Out</button></a>
+                  <a href="{% url "cart:checkout" %}"><button type="button" class=" check-out">Check Out</button></a>
                </div>
             </div>
          </div>
@@ -149,7 +149,16 @@
         <p>Your order has been successfully completed. Your order number is
       <strong>{{ order.id }}</strong>.</p>
       {%endif%}
-      <div class="footer">
+      lass="col-md-4 footer-social">
+             <a href="#"><i class="fa fa-facebook fa-social"></i></a>
+             <a href="#"><i class="fa fa-twitter fa-social"></i></a>
+             <a href="#"><i class="fa fa-instagram fa-social"></i></a>
+          </div>
+         </div>
+         <div class="row">
+           <div class="col-md-12">
+           <div class="footer-copyright">
+            <p>&copy<div class="footer">
          <div class="row">
            <div class="col-md-4">
               <a class="footer-font-color">About</a>
@@ -159,16 +168,7 @@
             <a class="footer-font-color">Career</a>
             <a class="footer-font-color">Privacy & Terms</a>
           </div>
-          <div class="col-md-4 footer-social">
-             <a href="#"><i class="fa fa-facebook fa-social"></i></a>
-             <a href="#"><i class="fa fa-twitter fa-social"></i></a>
-             <a href="#"><i class="fa fa-instagram fa-social"></i></a>
-          </div>
-         </div>
-         <div class="row">
-           <div class="col-md-12">
-           <div class="footer-copyright">
-            <p>&copy 2020 PANDA, Inc. All rights reserved </p>
+          <div c 2020 PANDA, Inc. All rights reserved </p>
           </div>
         </div>
          </div>

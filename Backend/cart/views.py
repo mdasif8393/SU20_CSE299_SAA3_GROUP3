@@ -5,13 +5,16 @@ from .models import Order, OrderItem
 from products.models import Product
 import json
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from products.models import Product
 from accounts.models import Customer, User, Seller
 from .cart import Cart
 from .forms import CartAddProductForm
+from django.views.decorators.csrf import ensure_csrf_cookie
+import uuid
 #import pycurl 
-
+@login_required
 @require_POST
 def cart_add(request, product_id):
     cart = Cart(request)
@@ -51,58 +54,46 @@ def order_create(request):
 
     cart.clear()
     return render(request,'cart/cart.html',{'order': order})
-
-'''def checkout(request):
-    #settings = { 'store_id': 'bookr5f41517d60625', 'store_pass': 'bookr5f41517d60625@ssl', 'issandbox': True }
-    #sslcommez = SSLCOMMERZ(settings)
-    #sessionkey = 'A8EF93B75B8107E4F36049E80B4F9149'
+    
+@ensure_csrf_cookie
+def checkout(request):
+    cart = Cart(request)
+    customer = Customer.objects.get(user_id=request.user)
+    request.session['customer'] = customer
+    settings = { 'store_id': 'bookr5f41517d60625', 'store_pass': 'bookr5f41517d60625@ssl', 'issandbox': True }
+    sslcommez = SSLCOMMERZ(settings)
     post_body = {}
-    post_data['store_id'] = "bookr5f41517d60625";
-    post_data['store_passwd'] = "bookr5f41517d60625@ssl";
-    post_body['tran_id'] = '5E121A0D01F92'
-    post_body['val_id'] = '200105225826116qFnATY9sHIwo'
-    post_data['success_url'] = "http://localhost/book_rental/public/success.py";
-    post_data['fail_url'] = "http://localhost/new_sslcz_gw/fail.py";
-    post_data['cancel_url'] = "http://localhost/new_sslcz_gw/cancel.py";
-    post_body['amount'] = "10.00"
-    post_body['card_type'] = "VISA-Dutch Bangla"
-    post_body['store_amount'] = "9.75"
-    post_body['card_no'] = "418117XXXXXX6675"
-    post_body['bank_tran_id'] = "200105225825DBgSoRGLvczhFjj"
-    post_body['status'] = "VALID"
-    post_body['tran_date'] = "2020-01-05 22:58:21"
+    post_body['total_amount'] = cart.get_total_price()
     post_body['currency'] = "BDT"
-    post_body['card_issuer'] = "TRUST BANK, LTD."
-    post_body['card_brand'] = "VISA"
-    post_body['card_issuer_country'] = "Bangladesh"
-    post_body['card_issuer_country_code'] = "BD"
-    post_body['store_id'] = "bookr5f41517d60625"
-    post_body['currency_type'] = "BDT"
-    post_body['currency_amount'] = "10.00"
-    post_body['currency_rate'] = "1.0000"
-    post_body['base_fair'] = "0.00"
-    post_body['risk_level'] = "0"
-    post_body['risk_title'] = "Safe"
+    post_body['tran_id'] = "1234"
+    post_body['success_url'] = "http://127.0.0.1:8000/cart/success/"
+    post_body['fail_url'] = "your fail url"
+    post_body['cancel_url'] = "your cancel url"
+    post_body['emi_option'] = 0
+    post_body['cus_name'] = "request.user"
+    post_body['cus_email'] = customer.email
+    post_body['cus_phone'] = customer.phone_number
+    post_body['cus_add1'] = customer.address
+    post_body['cus_city'] = "Dhaka"
+    post_body['cus_country'] = "Bangladesh"
+    post_body['shipping_method'] = "NO"
+    post_body['multi_card_name'] = ""
+    post_body['num_of_item'] = 1
+    post_body['product_name'] = "Test"
+    post_body['product_category'] = "Test Category"
+    post_body['product_profile'] = "general"
+    response = sslcommez.createSession(post_body)
+    return redirect(response['GatewayPageURL'])
 
-    handle = pycurl.Curl() 
-    handle.setopt(pycurl.URL, "https://sandbox.sslcommerz.com/gwprocess/v3/api.php")
-    handle.setopt(pycurl.CONNECTTIMEOUT, 30)
-    handle.setopt(pycurl.TIMEOUT, 30)
-    handle.setopt(pycurl.POST, 1 )
-    handle.setopt(pycurl.POSTFIELDS, post_body)
-    handle.setopt(pycurl.RETURNTRANSFER, True)
-    handle.setopt(pycurl.SSL_VERIFYPEER, False)
 
-    content = handle.perform()
-    code = handle.getinfo(pycurl.HTTP_CODE)
+def success(request):
+    settings = { 'store_id': 'bookr5f41517d60625', 'store_pass': 'bookr5f41517d60625@ssl', 'issandbox': True }
+    sslcommez = SSLCOMMERZ(settings)
 
-    if code == 200 and not handle.errno():
-       handle.close()
-	   sslcommerzResponse = content
-    else :
-	    handle.close()
-	    exit;
+    tranid = "1234"
+    response = sslcommez.transaction_query_tranid(tranid)
+    context={
+        "response":response,
+    }
 
-    response = sslcommez.hash_validate_ipn(post_body)
-    print(response)
-    return response'''
+    return render(request,'cart/checkout.html', context)

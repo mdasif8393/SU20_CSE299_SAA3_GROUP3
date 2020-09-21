@@ -144,7 +144,7 @@ MEDIA_URL = '/media/'
 
 
 
-LOGIN_URL = 'login'
+LOGIN_URL = 'login_page'
 
 LOGOUT_URL = 'logout'
 

@@ -15,6 +15,13 @@ def products(request):
     }
     return render(request, 'products/products.html', context)
 
+def product_category(request, cat):
+    products = Product.objects.filter(category__iexact=cat)
+    context={
+        'products': products,
+    }
+    return render(request, 'products/products.html',context)
+
 def custom_search(request):
 
     if request.method == 'GET':

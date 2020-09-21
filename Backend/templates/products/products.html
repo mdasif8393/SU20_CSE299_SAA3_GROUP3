@@ -9,25 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
-    <script type="text/javascript">
-      var user = '{{request.user}}';
-      
-      function get_token(name){
-        var cookieValue = null;
-        if(document.cookie && document.cookie!==''){
-          var cookies = document.cookie.split(';');
-          for(var i=0; i<cookies.length;i++){
-              var cookie = cookies[i].trim();
-              if(cookie.substring(0, name.length+1) === (name + '=')){
-                 cookieValue = decodeURIComponent(cookie.substring(name.length+1));
-                 break;
-              }
-          }
-        }
-        return cookieValue;
-      }
-      var csrftoken = get_token('csrftoken');
-    </script>
 </head>
 <body>
 <!----------------------Navbar--------------------------->
@@ -94,7 +75,7 @@
 </header>
    
     <!----------------------Search Item--------------------------->
-    <section>
+    <!--<section>
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-xs-12 col-sm-12 col-md-6  category-border-length">
@@ -107,7 +88,7 @@
             </div>
             <div class="col-md-3"></div>
          </div>
-    </section>
+    </section>-->
 
     <!----------------------Product Category List--------------------------->
     <section>
@@ -120,37 +101,37 @@
                     <th>Categories</th>
                   </tr>
                   <tr >
-                    <td><a><img src="{% static 'icons/mobile.png' %}"> Phones & Accessories</a> </td>
+                    <td><a href="{% url 'product_category' cat='Phones & Accessories' %}"><img src="{% static 'icons/mobile.png' %}"> Phones & Accessories</a> </td>
                   </tr>
                   <tr>
-                    <td><a><img src="{% static 'icons/knife.png' %}"> Kitchen Tools</a> </td>
+                    <td><a href="{% url 'product_category' cat=' Kitchen Tools' %}"><img src="{% static 'icons/knife.png' %}"> Kitchen Tools</a> </td>
                   </tr>
                   <tr>
-                    <td><a><img src="{% static 'icons/baby bottle.png' %}">  Baby Products</a> </td>
+                    <td><a href="{% url 'product_category' cat='Baby Products' %}"><img src="{% static 'icons/baby bottle.png' %}">  Baby Products</a> </td>
                   </tr>
                   <tr>
-                    <td><a><img src="{% static 'icons/dress.png' %}">  Women's Clothing</a> </td>
+                    <td><a href="{% url 'product_category' cat='Women\'s Clothing' %}"><img src="{% static 'icons/dress.png' %}">  Women's Clothing</a> </td>
                   </tr>
                   <tr>
-                    <td><a><img src="{% static 'icons/men shirt.png' %}">  Men's Clothing</a> </td>
+                    <td><a href="{% url 'product_category' cat='Men\'s Clothing' %}"><img src="{% static 'icons/men shirt.png' %}">  Men's Clothing</a> </td>
                   </tr>
                   <tr>
-                    <td><a><img src="{% static 'icons/lipstick.png' %}">  Beauty, Hair & Health</a> </td>
+                    <td><a href="{% url 'product_category' cat='Beauty, Hair & Health' %}"><img src="{% static 'icons/lipstick.png' %}">  Beauty, Hair & Health</a> </td>
                   </tr>
                   <tr>
-                    <td><a><img src="{% static 'cons/shoe.png' %}">  Shoes</a> </td>
+                    <td><a href="{% url 'product_category' cat='Shoes' %}"><img src="{% static 'cons/shoe.png' %}">  Shoes</a> </td>
                   </tr>
                   <tr>
-                    <td><a><img src="{% static 'icons/bag.png' %}">  Bags</a> </td>
+                    <td><a href="{% url 'product_category' cat='Bags' %}"><img src="{% static 'icons/bag.png' %}">  Bags</a> </td>
                   </tr>
                   <tr>
-                    <td><a><img src="{% static 'icons/ball.png' %}"> Sports & Outdoors</a> </td>
+                    <td><a href="{% url 'product_category' cat='Sports & Outdoors' %}"><img src="{% static 'icons/ball.png' %}"> Sports & Outdoors</a> </td>
                   </tr>
                   <tr>
-                    <td><a><img src="{% static 'icons/game.png' %}"> Home Improvement Tools</a> </td>
+                    <td><a href="{% url 'product_category' cat='Home Improvement Tools' %}"><img src="{% static 'icons/game.png' %}"> Home Improvement Tools</a> </td>
                   </tr>
                   <tr>
-                    <td><a><img src="{% static 'icons/game.png' %}"> Gadgets</a> </td>
+                    <td><a href="{% url 'product_category' cat='Gadgets' %}"><img src="{% static 'icons/game.png' %}"> Gadgets</a> </td>
                   </tr>
                  
                 </table>
@@ -183,14 +164,7 @@
                       </div>
                     </div>
 
-                    <div class="row">
-                       <div class="col-md-12 col-xl-12">
-                           <span><p>Sort by: </p></span>
-                           <span><button>Best Match</button></span>
-                           <span><button>Newest</button></span>
-                           <span><button>Orders</button></span>
-                       </div>
-                    </div>
+                   
 
                     <div class="row">
                       <div class="col-md-1"></div>

@@ -5,11 +5,11 @@ from taggit.models import Tag
 # Create your views here.
 
 def index(request):
-    shoes = Product.objects.filter(category__iexact='shoes')
-    context= {
-        'shoes' : shoes,
+    tags = Tag.objects.get(name__exact="shirt")
+    shoes = Product.objects.filter(tags__exact=tags)
+    context={
+        'shoes': shoes,
     }
-
     return render(request, '../templates/pages/index.html', context)
    
 def product_category(request, tag):
